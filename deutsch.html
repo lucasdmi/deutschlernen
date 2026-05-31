@@ -1101,6 +1101,162 @@
     letter-spacing: 0.08em; padding: 1px 5px; border: 1px solid var(--gray-soft); color: var(--gray);
   }
 
+  /* ============ SPRECHEN — phrasebook + shadowing ============ */
+  .rede-intro {
+    background: var(--paper); border: 2px solid var(--ink); border-left: 6px solid var(--mustard);
+    padding: 16px 20px; margin-bottom: 22px; box-shadow: var(--shadow);
+    font-size: 14px; line-height: 1.6; color: var(--ink-soft);
+  }
+  .rede-intro strong { color: var(--ink); }
+  .rede-list { display: grid; grid-template-columns: 1fr; gap: 14px; }
+  @media (min-width: 720px) { .rede-list { grid-template-columns: 1fr 1fr; } }
+  .rede-card { background: var(--paper); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 0; overflow: hidden; }
+  .rede-you { padding: 14px 16px; }
+  .rede-you .tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--mustard); margin-bottom: 8px; display: block;
+  }
+  .rede-you .de-row { display: flex; align-items: flex-start; gap: 10px; }
+  .rede-you .de { font-family: 'Fraunces', serif; font-weight: 600; font-size: 19px; line-height: 1.25; color: var(--ink); flex: 1; }
+  .rede-you .tr { font-size: 13px; color: var(--ink-soft); margin-top: 6px; line-height: 1.4; }
+  .rede-you .tr .pt { color: var(--green); display: block; margin-top: 2px; }
+  .rede-reply {
+    padding: 12px 16px; background: var(--cream-dark); border-top: 2px dashed var(--gray-soft);
+  }
+  .rede-reply .tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--blue); margin-bottom: 6px; display: block;
+  }
+  .rede-reply .de-row { display: flex; align-items: flex-start; gap: 10px; }
+  .rede-reply .de { font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; color: var(--ink); flex: 1; }
+  .rede-reply .tr { font-size: 12px; color: var(--gray); margin-top: 4px; }
+  .rede-reply .tr .pt { color: var(--green); display: block; margin-top: 1px; }
+  .rede-reply .speak-btn { width: 24px; height: 24px; }
+  .rede-reply .speak-btn svg { width: 13px; height: 13px; }
+
+  /* ---- shadowing drill ---- */
+  .shadow-stage { max-width: 560px; margin: 0 auto; }
+  .shadow-card { background: var(--paper); border: 2px solid var(--ink); padding: 30px; box-shadow: var(--shadow-deep); text-align: center; }
+  .shadow-progress {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray);
+    text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 22px;
+    display: flex; align-items: center; justify-content: center; gap: 14px; flex-wrap: wrap;
+  }
+  .shadow-progress .bar { width: 160px; height: 6px; background: var(--cream-dark); border: 1.5px solid var(--ink); overflow: hidden; }
+  .shadow-progress .bar-fill { height: 100%; background: var(--mustard); transition: width 0.3s; }
+  .shadow-cat {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em;
+    color: var(--mustard); margin-bottom: 16px;
+  }
+  .shadow-meaning { font-size: 14px; color: var(--gray); margin-bottom: 4px; }
+  .shadow-prompt { font-size: 19px; color: var(--ink); font-weight: 500; margin-bottom: 6px; }
+  .shadow-prompt-pt { font-size: 14px; color: var(--green); margin-bottom: 24px; }
+  .shadow-listen {
+    display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--cream);
+    border: 2px solid var(--ink); padding: 14px 26px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 17px;
+    cursor: pointer; box-shadow: var(--shadow); transition: all 0.12s;
+  }
+  .shadow-listen:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+  .shadow-listen svg { width: 20px; height: 20px; }
+  .shadow-listen.speaking { background: var(--mustard); color: var(--ink); animation: pulseSpk 0.8s ease-in-out infinite; }
+  .shadow-instruction { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.12em; margin: 18px 0; }
+  .shadow-actions { display: flex; gap: 10px; justify-content: center; align-items: center; flex-wrap: wrap; }
+  .shadow-peek-btn {
+    display: inline-flex; align-items: center; gap: 8px; background: var(--paper); color: var(--ink);
+    border: 2px solid var(--ink); padding: 14px 20px; font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px;
+    cursor: pointer; box-shadow: var(--shadow); transition: all 0.12s;
+  }
+  .shadow-peek-btn:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+  .shadow-peek-btn.on { background: var(--cream-dark); }
+  .shadow-peek-btn svg { width: 17px; height: 17px; }
+  .shadow-peek-line {
+    margin: 16px 0 4px; padding: 12px 16px; background: #F7EDD3; border: 1.5px dashed var(--mustard);
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+  }
+  .shadow-peek-line .pk-de { font-family: 'Fraunces', serif; font-weight: 700; font-size: 22px; color: var(--ink); line-height: 1.25; }
+  .shadow-peek-line .speak-btn { border-color: var(--mustard); }
+  .shadow-answer { margin-top: 8px; padding-top: 22px; border-top: 1px dashed var(--gray-soft); }
+  .shadow-de { font-family: 'Fraunces', serif; font-weight: 700; font-size: 26px; line-height: 1.25; color: var(--ink); margin-bottom: 8px; }
+  .shadow-reply-block { margin-top: 16px; padding: 12px 16px; background: var(--cream-dark); border: 1.5px dashed var(--gray); text-align: left; }
+  .shadow-reply-block .tag { font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--blue); display: block; margin-bottom: 4px; }
+  .shadow-reply-block .r-de { font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; color: var(--ink); }
+  .shadow-reply-block .r-tr { font-size: 12px; color: var(--gray); margin-top: 3px; }
+  .shadow-controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 22px; }
+
+  /* ============ HÖREN — listening comprehension ============ */
+  .hoeren-stage { max-width: 580px; margin: 0 auto; }
+  .hoeren-card { background: var(--paper); border: 2px solid var(--ink); padding: 28px; box-shadow: var(--shadow-deep); }
+  .hoeren-top {
+    display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray);
+    text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 18px;
+  }
+  .hoeren-top .score { color: var(--ink); }
+  .hoeren-badges { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+  .hoeren-badge {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    padding: 4px 9px; border: 1.5px solid var(--ink); background: var(--mustard); color: var(--ink); font-weight: 600;
+  }
+  .hoeren-badge.replay { background: var(--cream-dark); color: var(--gray); }
+  .hoeren-playbar { display: flex; justify-content: center; margin: 8px 0 20px; }
+  .hoeren-q { font-family: 'Fraunces', serif; font-weight: 600; font-size: 20px; color: var(--ink); line-height: 1.3; margin-bottom: 4px; text-align: center; }
+  .hoeren-q-en { font-size: 13px; color: var(--gray); text-align: center; margin-bottom: 20px; }
+  .hoeren-opt-en { display: block; font-size: 12px; color: var(--gray); margin-top: 2px; }
+  .hoeren-transcript {
+    margin-top: 20px; padding: 14px 16px; background: var(--cream-dark); border: 1.5px dashed var(--gray);
+  }
+  .hoeren-transcript .tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em;
+    color: var(--blue); display: block; margin-bottom: 8px;
+  }
+  .hoeren-line { font-size: 15px; line-height: 1.5; color: var(--ink); margin-bottom: 4px; }
+  .hoeren-line .spk { font-weight: 700; color: var(--mustard); margin-right: 6px; }
+  .hoeren-feedback {
+    font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em;
+    text-align: center; margin: 16px 0 4px; font-weight: 600;
+  }
+  .hoeren-feedback.right { color: var(--green); }
+  .hoeren-feedback.wrong { color: var(--red); }
+  .hoeren-note {
+    background: var(--paper); border: 2px solid var(--ink); border-left: 6px solid var(--mustard);
+    padding: 14px 18px; margin-bottom: 22px; font-size: 13px; line-height: 1.55; color: var(--ink-soft); box-shadow: var(--shadow);
+  }
+  .hoeren-note strong { color: var(--ink); }
+
+  /* ============ ABC (alphabet) + ZAHLEN (numbers) ============ */
+  .abc-intro, .num-intro {
+    background: var(--paper); border: 2px solid var(--ink); border-left: 6px solid var(--mustard);
+    padding: 14px 18px; margin-bottom: 22px; font-size: 13px; line-height: 1.55; color: var(--ink-soft); box-shadow: var(--shadow);
+  }
+  .abc-intro strong, .num-intro strong { color: var(--ink); }
+  .letter-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+  .letter-card { background: var(--paper); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 14px 14px 12px; display: flex; flex-direction: column; }
+  .letter-row { display: flex; align-items: baseline; gap: 10px; }
+  .letter-big { font-family: 'Fraunces', serif; font-weight: 700; font-size: 38px; line-height: 1; color: var(--ink); }
+  .letter-hint { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: var(--mustard); }
+  .letter-card .letter-speak { margin-left: auto; }
+  .letter-word { font-size: 13px; color: var(--ink-soft); margin-top: 10px; display: flex; align-items: center; gap: 8px; }
+  .letter-word .lw-de { font-weight: 600; color: var(--ink); }
+  .letter-word .lw-en { color: var(--gray); }
+  .letter-word .speak-btn { width: 22px; height: 22px; }
+  .letter-word .speak-btn svg { width: 12px; height: 12px; }
+
+  .num-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 10px; }
+  .num-chip {
+    background: var(--paper); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 10px 12px;
+    display: flex; align-items: center; gap: 8px; cursor: pointer; transition: all 0.1s;
+  }
+  .num-chip:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+  .num-chip.ten { border-left: 5px solid var(--mustard); }
+  .num-figure { font-family: 'Fraunces', serif; font-weight: 700; font-size: 22px; color: var(--ink); min-width: 30px; }
+  .num-word { font-size: 12px; color: var(--ink-soft); line-height: 1.2; word-break: break-word; }
+
+  .drill-num-input {
+    font-family: 'Fraunces', serif; font-size: 30px; text-align: center; width: 140px; padding: 10px;
+    border: 2px solid var(--ink); background: var(--cream-dark); color: var(--ink); box-shadow: var(--shadow); margin: 4px 0 8px;
+  }
+  .drill-num-input:focus { outline: none; border-color: var(--mustard); }
+
   /* ============ EMPTY / RESPONSIVE ============ */
   .empty {
     text-align: center;
@@ -1140,6 +1296,10 @@
     .drill-card { padding: 20px; }
     .drill-verb { font-size: 26px; }
     .drill-input { font-size: 18px; }
+    .shadow-card { padding: 20px; }
+    .shadow-de { font-size: 22px; }
+    .hoeren-card { padding: 20px; }
+    .hoeren-q { font-size: 18px; }
   }
 </style>
 </head>
@@ -1149,13 +1309,18 @@
   <div class="brand">
     <span class="brand-mark"></span>
     <h1>Deutsch<span class="accent"> lernen</span></h1>
-    <span class="subtitle">A1 · A2 · Alltag · Verben · Grammatik</span>
+    <span class="subtitle">Sprechen · Hören · Verben · A1–B1</span>
   </div>
   <div class="header-controls">
     <div class="level-toggle" id="levelToggle">
       <button data-level="A1" class="active">A1</button>
       <button data-level="A2">A2</button>
+      <button data-level="B1">B1</button>
       <button data-level="Alltag">Alltag</button>
+      <button data-level="ABC">ABC</button>
+      <button data-level="Zahlen">Zahlen</button>
+      <button data-level="Sprechen">Sprechen</button>
+      <button data-level="Hören">Hören</button>
       <button data-level="Verben">Verben</button>
       <button data-level="Grammatik">Grammatik</button>
       <button data-level="Texte">Texte</button>
@@ -1487,6 +1652,178 @@ const VOCAB = {
       { de: "auch", en: "also", pt: "também", art: null, ex: "Ich auch!", exTr: "Me too!" },
       { de: "immer", en: "always", pt: "sempre", art: null, ex: "Er ist immer pünktlich.", exTr: "He is always on time." },
       { de: "nie", en: "never", pt: "nunca", art: null, ex: "Ich trinke nie Alkohol.", exTr: "I never drink alcohol." }
+    ]
+  },
+  B1: {
+    "Arbeit & Beruf": [
+      { de: "Bewerbung", en: "application (job)", pt: "candidatura", art: "die", ex: "Ich schreibe eine Bewerbung für die neue Stelle.", exTr: "I'm writing an application for the new position." },
+      { de: "Vorstellungsgespräch", en: "job interview", pt: "entrevista de emprego", art: "das", ex: "Morgen habe ich ein Vorstellungsgespräch.", exTr: "Tomorrow I have a job interview." },
+      { de: "Lebenslauf", en: "CV / résumé", pt: "currículo", art: "der", ex: "Mein Lebenslauf ist auf dem neuesten Stand.", exTr: "My CV is up to date." },
+      { de: "Stelle", en: "position / job", pt: "vaga / cargo", art: "die", ex: "Sie sucht eine neue Stelle.", exTr: "She's looking for a new position." },
+      { de: "Erfahrung", en: "experience", pt: "experiência", art: "die", ex: "Ich habe viel Erfahrung in diesem Bereich.", exTr: "I have a lot of experience in this area." },
+      { de: "Verantwortung", en: "responsibility", pt: "responsabilidade", art: "die", ex: "Er übernimmt mehr Verantwortung.", exTr: "He's taking on more responsibility." },
+      { de: "Fähigkeit", en: "ability / skill", pt: "habilidade", art: "die", ex: "Kommunikation ist eine wichtige Fähigkeit.", exTr: "Communication is an important skill." },
+      { de: "Abteilung", en: "department", pt: "departamento", art: "die", ex: "Ich arbeite in der IT-Abteilung.", exTr: "I work in the IT department." },
+      { de: "Gehaltserhöhung", en: "pay raise", pt: "aumento salarial", art: "die", ex: "Ich habe um eine Gehaltserhöhung gebeten.", exTr: "I asked for a pay raise." },
+      { de: "Vorgesetzte", en: "supervisor", pt: "superior / chefe", art: "der", ex: "Mein Vorgesetzter ist sehr fair.", exTr: "My supervisor is very fair." },
+      { de: "Kündigung", en: "resignation / notice", pt: "demissão / aviso prévio", art: "die", ex: "Er hat seine Kündigung eingereicht.", exTr: "He handed in his resignation." },
+      { de: "sich bewerben", en: "to apply", pt: "candidatar-se", art: "v", ex: "Ich bewerbe mich um den Job.", exTr: "I'm applying for the job." },
+      { de: "verdienen", en: "to earn", pt: "ganhar (dinheiro)", art: "v", ex: "Wie viel verdient man dort?", exTr: "How much do you earn there?" },
+      { de: "übernehmen", en: "to take over", pt: "assumir", art: "v", ex: "Sie übernimmt das Projekt.", exTr: "She's taking over the project." },
+      { de: "sich entwickeln", en: "to develop (oneself)", pt: "desenvolver-se", art: "v", ex: "Ich möchte mich beruflich entwickeln.", exTr: "I want to develop professionally." }
+    ],
+    "Meinung & Diskussion": [
+      { de: "Meinung", en: "opinion", pt: "opinião", art: "die", ex: "Meiner Meinung nach ist das falsch.", exTr: "In my opinion, that's wrong." },
+      { de: "Diskussion", en: "discussion", pt: "discussão", art: "die", ex: "Wir hatten eine lange Diskussion.", exTr: "We had a long discussion." },
+      { de: "Vorteil", en: "advantage", pt: "vantagem", art: "der", ex: "Das hat viele Vorteile.", exTr: "That has many advantages." },
+      { de: "Nachteil", en: "disadvantage", pt: "desvantagem", art: "der", ex: "Der Nachteil ist der Preis.", exTr: "The disadvantage is the price." },
+      { de: "Grund", en: "reason", pt: "motivo", art: "der", ex: "Es gibt keinen guten Grund dafür.", exTr: "There's no good reason for it." },
+      { de: "Lösung", en: "solution", pt: "solução", art: "die", ex: "Wir brauchen eine Lösung.", exTr: "We need a solution." },
+      { de: "Zweifel", en: "doubt", pt: "dúvida", art: "der", ex: "Ich habe da meine Zweifel.", exTr: "I have my doubts about that." },
+      { de: "Standpunkt", en: "point of view", pt: "ponto de vista", art: "der", ex: "Ich verstehe deinen Standpunkt.", exTr: "I understand your point of view." },
+      { de: "Tatsache", en: "fact", pt: "fato", art: "die", ex: "Das ist eine Tatsache.", exTr: "That's a fact." },
+      { de: "behaupten", en: "to claim", pt: "afirmar", art: "v", ex: "Er behauptet, dass es stimmt.", exTr: "He claims that it's true." },
+      { de: "zustimmen", en: "to agree", pt: "concordar", art: "v", ex: "Ich stimme dir zu.", exTr: "I agree with you." },
+      { de: "ablehnen", en: "to reject", pt: "rejeitar", art: "v", ex: "Sie lehnt den Vorschlag ab.", exTr: "She rejects the proposal." },
+      { de: "überzeugen", en: "to convince", pt: "convencer", art: "v", ex: "Du hast mich überzeugt.", exTr: "You've convinced me." },
+      { de: "vergleichen", en: "to compare", pt: "comparar", art: "v", ex: "Man kann das nicht vergleichen.", exTr: "You can't compare that." },
+      { de: "Vorschlag", en: "suggestion / proposal", pt: "sugestão / proposta", art: "der", ex: "Das ist ein guter Vorschlag.", exTr: "That's a good suggestion." }
+    ],
+    "Gefühle & Beziehungen": [
+      { de: "Beziehung", en: "relationship", pt: "relacionamento", art: "die", ex: "Sie haben eine gute Beziehung.", exTr: "They have a good relationship." },
+      { de: "Vertrauen", en: "trust", pt: "confiança", art: "das", ex: "Vertrauen ist sehr wichtig.", exTr: "Trust is very important." },
+      { de: "Sehnsucht", en: "longing", pt: "saudade / anseio", art: "die", ex: "Ich habe Sehnsucht nach Brasilien.", exTr: "I long for Brazil." },
+      { de: "Enttäuschung", en: "disappointment", pt: "decepção", art: "die", ex: "Das war eine große Enttäuschung.", exTr: "That was a big disappointment." },
+      { de: "Freundschaft", en: "friendship", pt: "amizade", art: "die", ex: "Unsere Freundschaft ist stark.", exTr: "Our friendship is strong." },
+      { de: "Streit", en: "argument / quarrel", pt: "briga / discussão", art: "der", ex: "Wir hatten einen Streit.", exTr: "We had an argument." },
+      { de: "Stimmung", en: "mood", pt: "humor / clima", art: "die", ex: "Die Stimmung war gut.", exTr: "The mood was good." },
+      { de: "sich verlieben", en: "to fall in love", pt: "apaixonar-se", art: "v", ex: "Ich habe mich verliebt.", exTr: "I've fallen in love." },
+      { de: "sich streiten", en: "to argue", pt: "brigar", art: "v", ex: "Sie streiten sich oft.", exTr: "They argue often." },
+      { de: "vermissen", en: "to miss (someone)", pt: "sentir falta", art: "v", ex: "Ich vermisse meine Familie.", exTr: "I miss my family." },
+      { de: "sich freuen", en: "to be glad / look forward", pt: "alegrar-se", art: "v", ex: "Ich freue mich auf das Wochenende.", exTr: "I'm looking forward to the weekend." },
+      { de: "sich ärgern", en: "to get annoyed", pt: "aborrecer-se", art: "v", ex: "Ich ärgere mich über den Lärm.", exTr: "I'm annoyed about the noise." },
+      { de: "stolz", en: "proud", pt: "orgulhoso", art: "adj", ex: "Ich bin stolz auf dich.", exTr: "I'm proud of you." },
+      { de: "eifersüchtig", en: "jealous", pt: "ciumento", art: "adj", ex: "Er ist eifersüchtig.", exTr: "He is jealous." },
+      { de: "enttäuscht", en: "disappointed", pt: "decepcionado", art: "adj", ex: "Ich bin ein bisschen enttäuscht.", exTr: "I'm a little disappointed." }
+    ],
+    "Gesundheit": [
+      { de: "Gesundheit", en: "health", pt: "saúde", art: "die", ex: "Gesundheit ist das Wichtigste.", exTr: "Health is the most important thing." },
+      { de: "Krankheit", en: "illness", pt: "doença", art: "die", ex: "Er hat eine schwere Krankheit.", exTr: "He has a serious illness." },
+      { de: "Beschwerden", en: "symptoms / complaints", pt: "sintomas / queixas", art: "pl", ex: "Welche Beschwerden haben Sie?", exTr: "What symptoms do you have?" },
+      { de: "Behandlung", en: "treatment", pt: "tratamento", art: "die", ex: "Die Behandlung dauert zwei Wochen.", exTr: "The treatment lasts two weeks." },
+      { de: "Versicherung", en: "insurance", pt: "seguro", art: "die", ex: "Ich habe eine gute Versicherung.", exTr: "I have good insurance." },
+      { de: "Untersuchung", en: "examination / check-up", pt: "exame / consulta", art: "die", ex: "Die Untersuchung war gründlich.", exTr: "The examination was thorough." },
+      { de: "Schmerz", en: "pain", pt: "dor", art: "der", ex: "Ich habe Schmerzen im Rücken.", exTr: "I have pain in my back." },
+      { de: "Ernährung", en: "nutrition / diet", pt: "alimentação", art: "die", ex: "Eine ausgewogene Ernährung ist wichtig.", exTr: "A balanced diet is important." },
+      { de: "sich erholen", en: "to recover / rest", pt: "recuperar-se", art: "v", ex: "Du musst dich erholen.", exTr: "You need to recover." },
+      { de: "behandeln", en: "to treat", pt: "tratar", art: "v", ex: "Der Arzt behandelt mich gut.", exTr: "The doctor treats me well." },
+      { de: "vermeiden", en: "to avoid", pt: "evitar", art: "v", ex: "Du solltest Stress vermeiden.", exTr: "You should avoid stress." },
+      { de: "sich verletzen", en: "to injure oneself", pt: "machucar-se", art: "v", ex: "Er hat sich beim Sport verletzt.", exTr: "He injured himself doing sport." },
+      { de: "erschöpft", en: "exhausted", pt: "exausto", art: "adj", ex: "Nach der Woche bin ich erschöpft.", exTr: "After the week I'm exhausted." },
+      { de: "anstrengend", en: "exhausting / strenuous", pt: "cansativo", art: "adj", ex: "Der Tag war sehr anstrengend.", exTr: "The day was very exhausting." },
+      { de: "Stress", en: "stress", pt: "estresse", art: "der", ex: "Ich habe gerade viel Stress.", exTr: "I have a lot of stress right now." }
+    ],
+    "Umwelt & Natur": [
+      { de: "Umwelt", en: "environment", pt: "meio ambiente", art: "die", ex: "Wir müssen die Umwelt schützen.", exTr: "We have to protect the environment." },
+      { de: "Klimawandel", en: "climate change", pt: "mudança climática", art: "der", ex: "Der Klimawandel ist ein großes Thema.", exTr: "Climate change is a big topic." },
+      { de: "Natur", en: "nature", pt: "natureza", art: "die", ex: "Ich liebe die Natur.", exTr: "I love nature." },
+      { de: "Müll", en: "garbage / waste", pt: "lixo", art: "der", ex: "Wir trennen den Müll.", exTr: "We separate the garbage." },
+      { de: "Energie", en: "energy", pt: "energia", art: "die", ex: "Erneuerbare Energie ist wichtig.", exTr: "Renewable energy is important." },
+      { de: "Umweltverschmutzung", en: "pollution", pt: "poluição", art: "die", ex: "Die Umweltverschmutzung nimmt zu.", exTr: "Pollution is increasing." },
+      { de: "Klima", en: "climate", pt: "clima", art: "das", ex: "Das Klima verändert sich.", exTr: "The climate is changing." },
+      { de: "Mülltrennung", en: "waste separation", pt: "separação de lixo", art: "die", ex: "Mülltrennung ist in Deutschland normal.", exTr: "Waste separation is normal in Germany." },
+      { de: "schützen", en: "to protect", pt: "proteger", art: "v", ex: "Wir müssen die Natur schützen.", exTr: "We have to protect nature." },
+      { de: "recyceln", en: "to recycle", pt: "reciclar", art: "v", ex: "Man kann Plastik recyceln.", exTr: "You can recycle plastic." },
+      { de: "sparen", en: "to save", pt: "economizar", art: "v", ex: "Ich möchte Energie sparen.", exTr: "I want to save energy." },
+      { de: "verschmutzen", en: "to pollute", pt: "poluir", art: "v", ex: "Autos verschmutzen die Luft.", exTr: "Cars pollute the air." },
+      { de: "umweltfreundlich", en: "eco-friendly", pt: "ecológico", art: "adj", ex: "Das ist umweltfreundlich.", exTr: "That's eco-friendly." },
+      { de: "nachhaltig", en: "sustainable", pt: "sustentável", art: "adj", ex: "Wir versuchen, nachhaltig zu leben.", exTr: "We try to live sustainably." },
+      { de: "erneuerbar", en: "renewable", pt: "renovável", art: "adj", ex: "erneuerbare Energien", exTr: "renewable energies" }
+    ],
+    "Medien & Technik": [
+      { de: "Nachricht", en: "message", pt: "mensagem", art: "die", ex: "Ich habe dir eine Nachricht geschickt.", exTr: "I sent you a message." },
+      { de: "Nachrichten", en: "the news", pt: "noticiário", art: "pl", ex: "Ich sehe abends die Nachrichten.", exTr: "I watch the news in the evening." },
+      { de: "Gerät", en: "device", pt: "aparelho", art: "das", ex: "Das Gerät funktioniert nicht.", exTr: "The device doesn't work." },
+      { de: "Werbung", en: "advertising", pt: "publicidade", art: "die", ex: "Die Werbung nervt.", exTr: "The advertising is annoying." },
+      { de: "Bildschirm", en: "screen", pt: "tela", art: "der", ex: "Der Bildschirm ist kaputt.", exTr: "The screen is broken." },
+      { de: "Anwendung", en: "application / app", pt: "aplicativo", art: "die", ex: "Diese Anwendung ist sehr nützlich.", exTr: "This application is very useful." },
+      { de: "Netzwerk", en: "network", pt: "rede", art: "das", ex: "Das Netzwerk ist langsam.", exTr: "The network is slow." },
+      { de: "Datei", en: "file", pt: "arquivo", art: "die", ex: "Ich kann die Datei nicht öffnen.", exTr: "I can't open the file." },
+      { de: "herunterladen", en: "to download", pt: "baixar", art: "v", ex: "Ich lade die Datei herunter.", exTr: "I'm downloading the file." },
+      { de: "speichern", en: "to save (data)", pt: "salvar", art: "v", ex: "Vergiss nicht zu speichern.", exTr: "Don't forget to save." },
+      { de: "löschen", en: "to delete", pt: "apagar / excluir", art: "v", ex: "Ich habe die E-Mail gelöscht.", exTr: "I deleted the email." },
+      { de: "funktionieren", en: "to work / function", pt: "funcionar", art: "v", ex: "Das funktioniert leider nicht.", exTr: "Unfortunately, that doesn't work." },
+      { de: "digital", en: "digital", pt: "digital", art: "adj", ex: "Wir arbeiten fast nur digital.", exTr: "We work almost only digitally." },
+      { de: "praktisch", en: "practical / handy", pt: "prático", art: "adj", ex: "Die App ist sehr praktisch.", exTr: "The app is very practical." },
+      { de: "kaputt", en: "broken", pt: "quebrado", art: "adj", ex: "Mein Handy ist kaputt.", exTr: "My phone is broken." }
+    ],
+    "Wohnen & Stadt": [
+      { de: "Miete", en: "rent", pt: "aluguel", art: "die", ex: "Die Miete ist ziemlich hoch.", exTr: "The rent is quite high." },
+      { de: "Mietvertrag", en: "rental contract", pt: "contrato de aluguel", art: "der", ex: "Ich habe den Mietvertrag unterschrieben.", exTr: "I signed the rental contract." },
+      { de: "Vermieter", en: "landlord", pt: "locador / senhorio", art: "der", ex: "Mein Vermieter ist nett.", exTr: "My landlord is nice." },
+      { de: "Nebenkosten", en: "utilities / extra costs", pt: "custos adicionais", art: "pl", ex: "Die Nebenkosten sind hoch.", exTr: "The utility costs are high." },
+      { de: "Umgebung", en: "surroundings", pt: "arredores", art: "die", ex: "Die Umgebung ist ruhig.", exTr: "The surroundings are quiet." },
+      { de: "Nachbar", en: "neighbor", pt: "vizinho", art: "der", ex: "Mein Nachbar ist sehr laut.", exTr: "My neighbor is very loud." },
+      { de: "Gegend", en: "area / neighborhood", pt: "região / bairro", art: "die", ex: "Das ist eine schöne Gegend.", exTr: "That's a nice area." },
+      { de: "Lage", en: "location", pt: "localização", art: "die", ex: "Die Lage ist perfekt.", exTr: "The location is perfect." },
+      { de: "umziehen", en: "to move (house)", pt: "mudar-se", art: "v", ex: "Wir ziehen nächsten Monat um.", exTr: "We're moving next month." },
+      { de: "mieten", en: "to rent", pt: "alugar", art: "v", ex: "Wir mieten eine kleine Wohnung.", exTr: "We're renting a small apartment." },
+      { de: "teilen", en: "to share", pt: "compartilhar", art: "v", ex: "Wir teilen uns die Küche.", exTr: "We share the kitchen." },
+      { de: "renovieren", en: "to renovate", pt: "reformar", art: "v", ex: "Sie renovieren das Badezimmer.", exTr: "They're renovating the bathroom." },
+      { de: "möbliert", en: "furnished", pt: "mobiliado", art: "adj", ex: "Die Wohnung ist möbliert.", exTr: "The apartment is furnished." },
+      { de: "zentral", en: "central", pt: "central", art: "adj", ex: "Die Wohnung liegt sehr zentral.", exTr: "The apartment is very centrally located." },
+      { de: "ruhig", en: "quiet / calm", pt: "tranquilo", art: "adj", ex: "Die Straße ist ruhig.", exTr: "The street is quiet." }
+    ],
+    "Bildung & Lernen": [
+      { de: "Bildung", en: "education", pt: "educação", art: "die", ex: "Bildung ist sehr wichtig.", exTr: "Education is very important." },
+      { de: "Ausbildung", en: "vocational training", pt: "formação profissional", art: "die", ex: "Er macht eine Ausbildung als Mechaniker.", exTr: "He's doing training as a mechanic." },
+      { de: "Studium", en: "studies / degree program", pt: "curso superior", art: "das", ex: "Mein Studium war sehr schwer.", exTr: "My studies were very hard." },
+      { de: "Prüfung", en: "exam", pt: "prova / exame", art: "die", ex: "Ich habe die Prüfung bestanden.", exTr: "I passed the exam." },
+      { de: "Zeugnis", en: "certificate / report", pt: "certificado / boletim", art: "das", ex: "Mein Zeugnis ist gut.", exTr: "My report is good." },
+      { de: "Wissen", en: "knowledge", pt: "conhecimento", art: "das", ex: "Sein Wissen ist beeindruckend.", exTr: "His knowledge is impressive." },
+      { de: "Note", en: "grade / mark", pt: "nota", art: "die", ex: "Ich habe eine gute Note bekommen.", exTr: "I got a good grade." },
+      { de: "Ergebnis", en: "result", pt: "resultado", art: "das", ex: "Das Ergebnis ist sehr gut.", exTr: "The result is very good." },
+      { de: "bestehen", en: "to pass (an exam)", pt: "passar / ser aprovado", art: "v", ex: "Ich hoffe, ich bestehe die Prüfung.", exTr: "I hope I pass the exam." },
+      { de: "wiederholen", en: "to repeat / review", pt: "repetir / revisar", art: "v", ex: "Ich wiederhole jeden Tag die Vokabeln.", exTr: "I review the vocabulary every day." },
+      { de: "sich konzentrieren", en: "to concentrate", pt: "concentrar-se", art: "v", ex: "Ich kann mich nicht konzentrieren.", exTr: "I can't concentrate." },
+      { de: "teilnehmen", en: "to take part", pt: "participar", art: "v", ex: "Ich nehme an einem Deutschkurs teil.", exTr: "I'm taking part in a German course." },
+      { de: "anspruchsvoll", en: "demanding", pt: "exigente", art: "adj", ex: "Der Kurs ist sehr anspruchsvoll.", exTr: "The course is very demanding." },
+      { de: "neugierig", en: "curious", pt: "curioso", art: "adj", ex: "Ich bin neugierig auf das Ergebnis.", exTr: "I'm curious about the result." },
+      { de: "fließend", en: "fluent", pt: "fluente", art: "adj", ex: "Sie spricht fließend Deutsch.", exTr: "She speaks fluent German." }
+    ],
+    "Konnektoren B1": [
+      { de: "trotzdem", en: "nevertheless", pt: "mesmo assim", art: null, ex: "Es regnet. Trotzdem gehe ich spazieren.", exTr: "It's raining. Nevertheless, I'm going for a walk." },
+      { de: "deshalb", en: "therefore / that's why", pt: "por isso", art: null, ex: "Ich bin müde, deshalb bleibe ich zu Hause.", exTr: "I'm tired, that's why I'm staying home." },
+      { de: "obwohl", en: "although", pt: "embora", art: null, ex: "Obwohl es spät ist, arbeite ich noch.", exTr: "Although it's late, I'm still working." },
+      { de: "während", en: "while / during", pt: "enquanto / durante", art: null, ex: "Während ich koche, höre ich Musik.", exTr: "While I cook, I listen to music." },
+      { de: "trotz", en: "despite", pt: "apesar de", art: null, ex: "Trotz des Regens spielen wir Fußball.", exTr: "Despite the rain, we play football." },
+      { de: "außerdem", en: "besides / moreover", pt: "além disso", art: null, ex: "Es ist teuer. Außerdem ist es weit.", exTr: "It's expensive. Besides, it's far." },
+      { de: "deswegen", en: "for that reason", pt: "por essa razão", art: null, ex: "Ich war krank, deswegen kam ich nicht.", exTr: "I was sick, for that reason I didn't come." },
+      { de: "sobald", en: "as soon as", pt: "assim que", art: null, ex: "Ich rufe an, sobald ich da bin.", exTr: "I'll call as soon as I'm there." },
+      { de: "damit", en: "so that", pt: "para que", art: null, ex: "Ich lerne viel, damit ich B1 schaffe.", exTr: "I study a lot so that I reach B1." },
+      { de: "falls", en: "in case", pt: "caso", art: null, ex: "Falls es regnet, bleiben wir hier.", exTr: "In case it rains, we'll stay here." },
+      { de: "einerseits", en: "on one hand", pt: "por um lado", art: null, ex: "Einerseits ja, andererseits nein.", exTr: "On one hand yes, on the other no." },
+      { de: "andererseits", en: "on the other hand", pt: "por outro lado", art: null, ex: "Andererseits ist es sehr praktisch.", exTr: "On the other hand, it's very practical." },
+      { de: "zwar", en: "admittedly", pt: "de fato / é verdade que", art: null, ex: "Es ist zwar teuer, aber sehr gut.", exTr: "It's admittedly expensive, but very good." },
+      { de: "jedoch", en: "however", pt: "no entanto", art: null, ex: "Ich wollte kommen, jedoch ging es nicht.", exTr: "I wanted to come, however it wasn't possible." },
+      { de: "nämlich", en: "namely / you see", pt: "isto é / pois", art: null, ex: "Ich kann nicht, ich bin nämlich krank.", exTr: "I can't, you see I'm sick." }
+    ],
+    "Abstrakte Begriffe": [
+      { de: "Möglichkeit", en: "possibility", pt: "possibilidade", art: "die", ex: "Es gibt viele Möglichkeiten.", exTr: "There are many possibilities." },
+      { de: "Entscheidung", en: "decision", pt: "decisão", art: "die", ex: "Das war eine schwere Entscheidung.", exTr: "That was a hard decision." },
+      { de: "Gelegenheit", en: "opportunity / occasion", pt: "oportunidade", art: "die", ex: "Das ist eine gute Gelegenheit.", exTr: "That's a good opportunity." },
+      { de: "Bedeutung", en: "meaning / importance", pt: "significado / importância", art: "die", ex: "Das hat eine große Bedeutung.", exTr: "That has great importance." },
+      { de: "Entwicklung", en: "development", pt: "desenvolvimento", art: "die", ex: "Die Entwicklung ist positiv.", exTr: "The development is positive." },
+      { de: "Eindruck", en: "impression", pt: "impressão", art: "der", ex: "Ich habe einen guten Eindruck.", exTr: "I have a good impression." },
+      { de: "Unterschied", en: "difference", pt: "diferença", art: "der", ex: "Es gibt einen großen Unterschied.", exTr: "There's a big difference." },
+      { de: "Ziel", en: "goal", pt: "objetivo / meta", art: "das", ex: "Mein Ziel ist das B1-Niveau.", exTr: "My goal is the B1 level." },
+      { de: "Versuch", en: "attempt", pt: "tentativa", art: "der", ex: "Es war einen Versuch wert.", exTr: "It was worth a try." },
+      { de: "entscheiden", en: "to decide", pt: "decidir", art: "v", ex: "Ich muss mich endlich entscheiden.", exTr: "I finally have to decide." },
+      { de: "erreichen", en: "to reach / achieve", pt: "alcançar", art: "v", ex: "Ich möchte mein Ziel erreichen.", exTr: "I want to reach my goal." },
+      { de: "erlauben", en: "to allow", pt: "permitir", art: "v", ex: "Das ist hier nicht erlaubt.", exTr: "That's not allowed here." },
+      { de: "verändern", en: "to change", pt: "mudar / alterar", art: "v", ex: "Das Leben verändert sich ständig.", exTr: "Life changes constantly." },
+      { de: "erwarten", en: "to expect", pt: "esperar (aguardar)", art: "v", ex: "Ich erwarte viel von mir selbst.", exTr: "I expect a lot from myself." },
+      { de: "vorschlagen", en: "to suggest", pt: "sugerir / propor", art: "v", ex: "Ich schlage vor, wir treffen uns morgen.", exTr: "I suggest we meet tomorrow." }
     ]
   },
   Alltag: {
@@ -2016,12 +2353,391 @@ const TEXTS = [
       ["spazieren gehen", "to go for a walk", "passear"],
       ["die Besprechung", "meeting", "reunião"]
     ]
+  },
+  {
+    id: "gym",
+    title: "Beim Sport im Fitnessstudio",
+    level: "A2",
+    paras: [
+      { de: "Nach der Arbeit gehe ich oft ins Fitnessstudio. Dort muss ich nicht viel reden, und das ist manchmal angenehm.",
+        en: "After work I often go to the gym. There I don't have to talk much, and that is sometimes pleasant.",
+        pt: "Depois do trabalho vou muitas vezes à academia. Lá não preciso falar muito, e isso às vezes é agradável." },
+      { de: "Heute fragt mich ein Mann: \"Entschuldigung, ist das Gerät noch frei?\" Ich verstehe ihn und sage: \"Ja, klar. Ich bin fertig.\"",
+        en: "Today a man asks me: \"Excuse me, is this machine still free?\" I understand him and say: \"Yes, of course. I'm done.\"",
+        pt: "Hoje um homem me pergunta: \"Desculpe, esse aparelho ainda está livre?\" Eu o entendo e digo: \"Sim, claro. Já terminei.\"" },
+      { de: "\"Danke. Machst du noch einen Satz?\", fragt er. \"Nein, mach ruhig\", antworte ich. Es ist ein kurzes Gespräch, aber ich bin zufrieden.",
+        en: "\"Thanks. Are you doing another set?\" he asks. \"No, go ahead,\" I answer. It's a short conversation, but I'm satisfied.",
+        pt: "\"Obrigado. Vai fazer mais uma série?\", pergunta ele. \"Não, pode ir\", respondo. É uma conversa curta, mas estou satisfeito." },
+      { de: "Kleine Gespräche sind auch Erfolge. Jeden Tag verstehe ich ein bisschen mehr. Das gibt mir Mut.",
+        en: "Small conversations are successes too. Every day I understand a little more. That gives me courage.",
+        pt: "Pequenas conversas também são conquistas. Todo dia entendo um pouco mais. Isso me dá coragem." }
+    ],
+    gloss: [
+      ["das Gerät", "machine / equipment", "aparelho"],
+      ["frei", "free / available", "livre"],
+      ["fertig", "done / finished", "pronto / terminado"],
+      ["mach ruhig", "go ahead", "pode ir / fique à vontade"],
+      ["der Erfolg", "success", "sucesso / conquista"],
+      ["der Mut", "courage", "coragem"]
+    ]
+  },
+  {
+    id: "kollegen",
+    title: "Die Kollegen sprechen Deutsch",
+    level: "A2–B1",
+    paras: [
+      { de: "Bei der Arbeit sprechen meine Kollegen oft Deutsch miteinander. Sie reden schnell, und ich verstehe nicht alles.",
+        en: "At work my colleagues often speak German with each other. They talk fast, and I don't understand everything.",
+        pt: "No trabalho meus colegas falam muitas vezes alemão entre si. Eles falam rápido, e eu não entendo tudo." },
+      { de: "Früher hatte ich Angst zu fragen. Jetzt sage ich einfach: \"Entschuldigung, kannst du das bitte wiederholen?\" Das ist kein Problem.",
+        en: "Before, I was afraid to ask. Now I just say: \"Sorry, can you please repeat that?\" That's no problem.",
+        pt: "Antes eu tinha medo de perguntar. Agora simplesmente digo: \"Desculpe, você pode repetir, por favor?\" Isso não é problema." },
+      { de: "Manchmal sage ich auch: \"Kannst du bitte langsamer sprechen? Ich lerne noch Deutsch.\" Die meisten Menschen sind sehr nett und helfen mir gern.",
+        en: "Sometimes I also say: \"Can you please speak more slowly? I'm still learning German.\" Most people are very kind and happy to help me.",
+        pt: "Às vezes também digo: \"Você pode falar mais devagar? Ainda estou aprendendo alemão.\" A maioria das pessoas é muito gentil e me ajuda com prazer." },
+      { de: "Ich muss nicht perfekt sein. Ich muss nur anfangen. Jeder Fehler ist ein Schritt nach vorne.",
+        en: "I don't have to be perfect. I just have to start. Every mistake is a step forward.",
+        pt: "Não preciso ser perfeito. Só preciso começar. Cada erro é um passo à frente." }
+    ],
+    gloss: [
+      ["miteinander", "with each other", "um com o outro"],
+      ["wiederholen", "to repeat", "repetir"],
+      ["langsamer", "more slowly", "mais devagar"],
+      ["die meisten", "most (people)", "a maioria"],
+      ["der Fehler", "mistake", "erro"],
+      ["ein Schritt nach vorne", "a step forward", "um passo à frente"]
+    ]
+  },
+  {
+    id: "termin",
+    title: "Einen Termin machen",
+    level: "B1",
+    paras: [
+      { de: "Heute muss ich beim Bürgeramt anrufen. Ich bin nervös, weil Telefongespräche auf Deutsch schwierig für mich sind.",
+        en: "Today I have to call the citizens' office. I'm nervous because phone calls in German are difficult for me.",
+        pt: "Hoje preciso ligar para o cartório / repartição pública. Estou nervoso porque ligações em alemão são difíceis para mim." },
+      { de: "\"Guten Tag, ich möchte einen Termin machen\", sage ich langsam. Die Frau antwortet: \"Worum geht es denn?\"",
+        en: "\"Hello, I'd like to make an appointment,\" I say slowly. The woman answers: \"What is it regarding?\"",
+        pt: "\"Bom dia, eu gostaria de marcar um horário\", digo devagar. A mulher responde: \"Sobre o que se trata?\"" },
+      { de: "\"Ich muss meine Adresse ummelden\", erkläre ich. \"Alles klar. Hätten Sie am Donnerstag um zehn Uhr Zeit?\" \"Ja, das passt mir gut.\"",
+        en: "\"I need to register my new address,\" I explain. \"Alright. Would you have time on Thursday at ten?\" \"Yes, that suits me well.\"",
+        pt: "\"Preciso atualizar meu endereço\", explico. \"Tudo bem. O senhor teria tempo na quinta às dez?\" \"Sim, isso me convém.\"" },
+      { de: "Nach dem Anruf bin ich erleichtert. Es war nicht perfekt, aber sie hat mich verstanden. Genau das zählt.",
+        en: "After the call I'm relieved. It wasn't perfect, but she understood me. That's exactly what counts.",
+        pt: "Depois da ligação fico aliviado. Não foi perfeito, mas ela me entendeu. É exatamente isso que conta." }
+    ],
+    gloss: [
+      ["der Termin", "appointment", "horário / compromisso"],
+      ["Worum geht es?", "what is it about?", "sobre o que se trata?"],
+      ["ummelden", "to re-register (address)", "atualizar registro de endereço"],
+      ["das passt mir", "that suits me", "isso me convém"],
+      ["erleichtert", "relieved", "aliviado"],
+      ["das zählt", "that counts", "isso conta"]
+    ]
+  },
+  {
+    id: "restaurant",
+    title: "Im Restaurant mit meiner Frau",
+    level: "A2–B1",
+    paras: [
+      { de: "Am Samstag gehen meine Frau und ich in ein Restaurant. Sie lernt auch Deutsch, und wir üben gern zusammen.",
+        en: "On Saturday my wife and I go to a restaurant. She is also learning German, and we like to practice together.",
+        pt: "No sábado minha esposa e eu vamos a um restaurante. Ela também está aprendendo alemão, e gostamos de praticar juntos." },
+      { de: "\"Möchten Sie schon bestellen?\", fragt der Kellner. Ich sage: \"Ja, ich nehme das Schnitzel mit Pommes, bitte. Und für meine Frau einen Salat.\"",
+        en: "\"Would you like to order already?\" asks the waiter. I say: \"Yes, I'll have the schnitzel with fries, please. And a salad for my wife.\"",
+        pt: "\"Já desejam pedir?\", pergunta o garçom. Eu digo: \"Sim, vou querer o schnitzel com batata frita, por favor. E uma salada para a minha esposa.\"" },
+      { de: "Meine Frau lacht und sagt leise auf Portugiesisch: \"Du hast das gut gemacht!\" Wir bestellen zusammen, und es fühlt sich normal an.",
+        en: "My wife laughs and says quietly in Portuguese: \"You did that well!\" We order together, and it feels normal.",
+        pt: "Minha esposa ri e diz baixinho em português: \"Você se saiu bem!\" Pedimos juntos, e parece normal." },
+      { de: "Wir sind ein Team. Wir lernen diese Sprache zusammen, Schritt für Schritt. Eines Tages wird Deutsch nicht mehr fremd sein.",
+        en: "We are a team. We're learning this language together, step by step. One day German won't feel foreign anymore.",
+        pt: "Somos um time. Estamos aprendendo essa língua juntos, passo a passo. Um dia o alemão não será mais estranho." }
+    ],
+    gloss: [
+      ["bestellen", "to order", "pedir"],
+      ["leise", "quietly", "baixinho / em voz baixa"],
+      ["sich normal anfühlen", "to feel normal", "parecer normal"],
+      ["Schritt für Schritt", "step by step", "passo a passo"],
+      ["eines Tages", "one day", "um dia"],
+      ["fremd", "foreign / strange", "estranho / estrangeiro"]
+    ]
   }
 ];
 
 /* =========================================================================
-   STATE
+   REDEMITTEL — ready-made spoken phrases for real situations.
+   Each phrase: { de, en, pt, reply, replyEn, replyPt }
+   "reply" is a likely response you'll hear back, so you can rehearse the
+   whole exchange, not just your line. Grouped by real-life situation.
    ========================================================================= */
+const REDE_ORDER = [
+  "Erste Hilfe: Nachfragen",
+  "Kollegen & Smalltalk",
+  "Gym, Supermarkt & Restaurant",
+  "Ämter, Termine & Telefon",
+  "Arzt, Apotheke & Notfall"
+];
+
+const REDEMITTEL = {
+  "Erste Hilfe: Nachfragen": [
+    { de:"Wie bitte?", en:"Pardon? / Sorry?", pt:"Como? / Perdão?", reply:"Ich sagte, …", replyEn:"I said, …", replyPt:"Eu disse, …" },
+    { de:"Können Sie das bitte wiederholen?", en:"Can you repeat that, please?", pt:"Você pode repetir, por favor?", reply:"Ja, natürlich.", replyEn:"Yes, of course.", replyPt:"Sim, claro." },
+    { de:"Können Sie bitte langsamer sprechen?", en:"Can you speak more slowly, please?", pt:"Você pode falar mais devagar, por favor?", reply:"Kein Problem.", replyEn:"No problem.", replyPt:"Sem problema." },
+    { de:"Entschuldigung, das habe ich nicht verstanden.", en:"Sorry, I didn't understand that.", pt:"Desculpe, não entendi.", reply:"Ich erkläre es noch mal.", replyEn:"I'll explain it again.", replyPt:"Vou explicar de novo." },
+    { de:"Ich lerne noch Deutsch.", en:"I'm still learning German.", pt:"Ainda estou aprendendo alemão.", reply:"Das machen Sie aber gut!", replyEn:"You're doing well, though!", replyPt:"Mas você está indo bem!" },
+    { de:"Was bedeutet das?", en:"What does that mean?", pt:"O que isso significa?", reply:"Das heißt …", replyEn:"That means …", replyPt:"Isso quer dizer …" },
+    { de:"Wie sagt man das auf Deutsch?", en:"How do you say that in German?", pt:"Como se diz isso em alemão?", reply:"Das sagt man …", replyEn:"You say …", replyPt:"Diz-se …" },
+    { de:"Können Sie das bitte aufschreiben?", en:"Can you write that down, please?", pt:"Você pode escrever isso, por favor?", reply:"Ja, gerne.", replyEn:"Yes, gladly.", replyPt:"Sim, com prazer." },
+    { de:"Einen Moment, bitte.", en:"One moment, please.", pt:"Um momento, por favor.", reply:"Lassen Sie sich Zeit.", replyEn:"Take your time.", replyPt:"Sem pressa." },
+    { de:"Meinen Sie …?", en:"Do you mean …?", pt:"Você quer dizer …?", reply:"Genau.", replyEn:"Exactly.", replyPt:"Exatamente." },
+    { de:"Habe ich das richtig verstanden?", en:"Did I understand that correctly?", pt:"Entendi corretamente?", reply:"Ja, genau richtig.", replyEn:"Yes, exactly right.", replyPt:"Sim, exatamente." },
+    { de:"Sprechen Sie Englisch?", en:"Do you speak English?", pt:"Você fala inglês?", reply:"Ein bisschen.", replyEn:"A little.", replyPt:"Um pouco." },
+    { de:"Entschuldigung, können Sie mir helfen?", en:"Excuse me, can you help me?", pt:"Com licença, você pode me ajudar?", reply:"Ja, worum geht es?", replyEn:"Yes, what's it about?", replyPt:"Sim, do que se trata?" },
+    { de:"Können Sie das bitte buchstabieren?", en:"Can you spell that, please?", pt:"Você pode soletrar, por favor?", reply:"Ja: M-Ü-L-L-E-R.", replyEn:"Yes: M-Ü-L-L-E-R.", replyPt:"Sim: M-Ü-L-L-E-R." }
+  ],
+  "Kollegen & Smalltalk": [
+    { de:"Wie war dein Wochenende?", en:"How was your weekend?", pt:"Como foi seu fim de semana?", reply:"Schön, danke. Und deins?", replyEn:"Nice, thanks. And yours?", replyPt:"Bom, obrigado. E o seu?" },
+    { de:"Was machst du am Wochenende?", en:"What are you doing this weekend?", pt:"O que você vai fazer no fim de semana?", reply:"Noch keine Pläne.", replyEn:"No plans yet.", replyPt:"Ainda sem planos." },
+    { de:"Hast du schon Mittag gegessen?", en:"Have you had lunch yet?", pt:"Você já almoçou?", reply:"Noch nicht, ich habe Hunger.", replyEn:"Not yet, I'm hungry.", replyPt:"Ainda não, estou com fome." },
+    { de:"Gehen wir zusammen Mittagessen?", en:"Shall we go to lunch together?", pt:"Vamos almoçar juntos?", reply:"Gerne, gehen wir!", replyEn:"Gladly, let's go!", replyPt:"Com prazer, vamos!" },
+    { de:"Wie läuft's bei dir?", en:"How's it going with you?", pt:"Como vão as coisas com você?", reply:"Ganz gut, danke.", replyEn:"Pretty good, thanks.", replyPt:"Bem, obrigado." },
+    { de:"Ich komme aus Brasilien.", en:"I'm from Brazil.", pt:"Eu sou do Brasil.", reply:"Oh, schön! Wo genau?", replyEn:"Oh, nice! Where exactly?", replyPt:"Ah, que legal! De onde exatamente?" },
+    { de:"Ich wohne seit Juli hier.", en:"I've lived here since July.", pt:"Moro aqui desde julho.", reply:"Und, gefällt es dir?", replyEn:"And, do you like it?", replyPt:"E aí, você gosta?" },
+    { de:"Kannst du mir kurz helfen?", en:"Can you help me for a second?", pt:"Você pode me ajudar rapidinho?", reply:"Klar, was brauchst du?", replyEn:"Sure, what do you need?", replyPt:"Claro, do que você precisa?" },
+    { de:"Ich melde mich später bei dir.", en:"I'll get back to you later.", pt:"Eu te retorno mais tarde.", reply:"Alles klar, bis dann.", replyEn:"Alright, until then.", replyPt:"Tudo bem, até então." },
+    { de:"Können wir das später besprechen?", en:"Can we discuss this later?", pt:"Podemos conversar sobre isso depois?", reply:"Ja, passt.", replyEn:"Yes, works for me.", replyPt:"Sim, tudo bem." },
+    { de:"Entschuldigung für die Verspätung.", en:"Sorry for being late.", pt:"Desculpe pelo atraso.", reply:"Kein Problem.", replyEn:"No problem.", replyPt:"Sem problema." },
+    { de:"Schönes Wochenende!", en:"Have a nice weekend!", pt:"Bom fim de semana!", reply:"Danke, dir auch!", replyEn:"Thanks, you too!", replyPt:"Obrigado, para você também!" },
+    { de:"Bis morgen!", en:"See you tomorrow!", pt:"Até amanhã!", reply:"Bis morgen!", replyEn:"See you tomorrow!", replyPt:"Até amanhã!" }
+  ],
+  "Gym, Supermarkt & Restaurant": [
+    { de:"Ist das Gerät noch frei?", en:"Is this machine still free?", pt:"Esse aparelho ainda está livre?", reply:"Ja, bitte.", replyEn:"Yes, go ahead.", replyPt:"Sim, pode usar." },
+    { de:"Wie viele Sätze machst du noch?", en:"How many sets do you have left?", pt:"Quantas séries faltam para você?", reply:"Noch zwei.", replyEn:"Two more.", replyPt:"Mais duas." },
+    { de:"Kann ich mich kurz dazwischenstellen?", en:"Can I work in (between sets)?", pt:"Posso entrar entre as suas séries?", reply:"Klar, kein Problem.", replyEn:"Sure, no problem.", replyPt:"Claro, sem problema." },
+    { de:"Wo finde ich den Reis?", en:"Where do I find the rice?", pt:"Onde encontro o arroz?", reply:"Gang drei, hinten links.", replyEn:"Aisle three, back left.", replyPt:"Corredor três, ao fundo à esquerda." },
+    { de:"Kann ich mit Karte zahlen?", en:"Can I pay by card?", pt:"Posso pagar com cartão?", reply:"Ja, kontaktlos auch.", replyEn:"Yes, contactless too.", replyPt:"Sim, sem contato também." },
+    { de:"Nein, danke, ich habe eine Tasche.", en:"No thanks, I have a bag.", pt:"Não, obrigado, tenho uma sacola.", reply:"Alles klar.", replyEn:"Alright.", replyPt:"Tudo bem." },
+    { de:"Einen Tisch für zwei, bitte.", en:"A table for two, please.", pt:"Uma mesa para dois, por favor.", reply:"Gerne, kommen Sie mit.", replyEn:"Gladly, come with me.", replyPt:"Com prazer, venha comigo." },
+    { de:"Die Speisekarte, bitte.", en:"The menu, please.", pt:"O cardápio, por favor.", reply:"Hier, bitte schön.", replyEn:"Here you go.", replyPt:"Aqui está." },
+    { de:"Ich hätte gern das Schnitzel.", en:"I'd like the schnitzel.", pt:"Eu queria o schnitzel.", reply:"Und zu trinken?", replyEn:"And to drink?", replyPt:"E para beber?" },
+    { de:"Können wir bitte zahlen?", en:"Can we pay, please?", pt:"Podemos pagar, por favor?", reply:"Zusammen oder getrennt?", replyEn:"Together or separately?", replyPt:"Junto ou separado?" },
+    { de:"Zusammen, bitte. Stimmt so.", en:"Together, please. Keep the change.", pt:"Junto, por favor. Pode ficar com o troco.", reply:"Vielen Dank!", replyEn:"Thank you very much!", replyPt:"Muito obrigado!" },
+    { de:"Es hat sehr gut geschmeckt.", en:"It tasted very good.", pt:"Estava muito gostoso.", reply:"Das freut mich!", replyEn:"I'm glad!", replyPt:"Que bom!" },
+    { de:"Kann ich das anprobieren?", en:"Can I try this on?", pt:"Posso experimentar isso?", reply:"Ja, die Kabine ist dort.", replyEn:"Yes, the fitting room is there.", replyPt:"Sim, o provador é ali." },
+    { de:"Haben Sie das eine Nummer größer?", en:"Do you have this one size bigger?", pt:"Você tem um número maior?", reply:"Ich schaue mal nach.", replyEn:"I'll have a look.", replyPt:"Vou verificar." }
+  ],
+  "Ämter, Termine & Telefon": [
+    { de:"Ich möchte einen Termin machen.", en:"I'd like to make an appointment.", pt:"Eu gostaria de marcar um horário.", reply:"Worum geht es?", replyEn:"What's it regarding?", replyPt:"Sobre o que se trata?" },
+    { de:"Ich rufe wegen eines Termins an.", en:"I'm calling about an appointment.", pt:"Estou ligando por causa de um horário.", reply:"Einen Moment, ich verbinde Sie.", replyEn:"One moment, I'll connect you.", replyPt:"Um momento, vou transferir." },
+    { de:"Ich muss meinen Wohnsitz anmelden.", en:"I need to register my residence.", pt:"Preciso registrar meu endereço.", reply:"Haben Sie alle Unterlagen dabei?", replyEn:"Do you have all the documents with you?", replyPt:"Você tem todos os documentos?" },
+    { de:"Welche Unterlagen brauche ich?", en:"Which documents do I need?", pt:"Quais documentos eu preciso?", reply:"Ihren Pass und den Mietvertrag.", replyEn:"Your passport and the rental contract.", replyPt:"Seu passaporte e o contrato de aluguel." },
+    { de:"Hätten Sie am Donnerstag einen Termin?", en:"Would you have an appointment on Thursday?", pt:"Você teria um horário na quinta?", reply:"Um zehn Uhr ginge es.", replyEn:"Ten o'clock would work.", replyPt:"Às dez horas daria." },
+    { de:"Das passt mir gut.", en:"That suits me well.", pt:"Isso me convém.", reply:"Gut, dann trage ich Sie ein.", replyEn:"Good, I'll book you in.", replyPt:"Ótimo, vou agendar." },
+    { de:"Mein Name ist Lucas, L-U-C-A-S.", en:"My name is Lucas, L-U-C-A-S.", pt:"Meu nome é Lucas, L-U-C-A-S.", reply:"Danke, ich habe es notiert.", replyEn:"Thanks, I've noted it.", replyPt:"Obrigado, anotei." },
+    { de:"Wie lange dauert das ungefähr?", en:"How long does that take, roughly?", pt:"Quanto tempo isso leva, mais ou menos?", reply:"Etwa zwei Wochen.", replyEn:"About two weeks.", replyPt:"Cerca de duas semanas." },
+    { de:"Muss ich noch etwas mitbringen?", en:"Do I need to bring anything else?", pt:"Preciso levar mais alguma coisa?", reply:"Nein, das ist alles.", replyEn:"No, that's all.", replyPt:"Não, é tudo." },
+    { de:"Ich habe eine Frage zu meinem Antrag.", en:"I have a question about my application.", pt:"Tenho uma pergunta sobre meu requerimento.", reply:"Wie ist Ihre Vorgangsnummer?", replyEn:"What's your reference number?", replyPt:"Qual é o seu número de processo?" },
+    { de:"Können Sie mir die Adresse geben?", en:"Can you give me the address?", pt:"Você pode me dar o endereço?", reply:"Ja, schreiben Sie mit?", replyEn:"Yes, are you writing it down?", replyPt:"Sim, está anotando?" },
+    { de:"Entschuldigung, ich habe mich verspätet.", en:"Sorry, I'm late.", pt:"Desculpe, me atrasei.", reply:"Kein Problem, kommen Sie rein.", replyEn:"No problem, come in.", replyPt:"Sem problema, entre." }
+  ],
+  "Arzt, Apotheke & Notfall": [
+    { de:"Ich brauche einen Termin beim Arzt.", en:"I need a doctor's appointment.", pt:"Preciso de uma consulta médica.", reply:"Sind Sie gesetzlich versichert?", replyEn:"Are you on statutory insurance?", replyPt:"Você tem seguro público?" },
+    { de:"Ich fühle mich nicht gut.", en:"I don't feel well.", pt:"Não estou me sentindo bem.", reply:"Was haben Sie für Beschwerden?", replyEn:"What symptoms do you have?", replyPt:"Quais são os seus sintomas?" },
+    { de:"Ich habe Kopfschmerzen.", en:"I have a headache.", pt:"Estou com dor de cabeça.", reply:"Seit wann denn?", replyEn:"Since when?", replyPt:"Desde quando?" },
+    { de:"Ich habe Halsschmerzen und Fieber.", en:"I have a sore throat and a fever.", pt:"Estou com dor de garganta e febre.", reply:"Dann schauen wir mal.", replyEn:"Then let's take a look.", replyPt:"Então vamos ver." },
+    { de:"Es tut hier weh.", en:"It hurts here.", pt:"Dói aqui.", reply:"Seit wann haben Sie die Schmerzen?", replyEn:"Since when have you had the pain?", replyPt:"Desde quando você tem essa dor?" },
+    { de:"Ich bin gegen Penicillin allergisch.", en:"I'm allergic to penicillin.", pt:"Sou alérgico a penicilina.", reply:"Gut, das notiere ich.", replyEn:"Good, I'll note that.", replyPt:"Ótimo, vou anotar." },
+    { de:"Brauche ich ein Rezept?", en:"Do I need a prescription?", pt:"Eu preciso de receita?", reply:"Ja, das stelle ich Ihnen aus.", replyEn:"Yes, I'll issue you one.", replyPt:"Sim, vou emitir uma." },
+    { de:"Haben Sie etwas gegen Erkältung?", en:"Do you have something for a cold?", pt:"Você tem algo para resfriado?", reply:"Ja, probieren Sie das hier.", replyEn:"Yes, try this.", replyPt:"Sim, experimente este." },
+    { de:"Wie oft soll ich das nehmen?", en:"How often should I take this?", pt:"Com que frequência devo tomar isso?", reply:"Dreimal täglich nach dem Essen.", replyEn:"Three times a day after meals.", replyPt:"Três vezes ao dia após as refeições." },
+    { de:"Ich brauche Hilfe.", en:"I need help.", pt:"Preciso de ajuda.", reply:"Was ist passiert?", replyEn:"What happened?", replyPt:"O que aconteceu?" },
+    { de:"Es ist ein Notfall.", en:"It's an emergency.", pt:"É uma emergência.", reply:"Bleiben Sie ruhig, Hilfe kommt.", replyEn:"Stay calm, help is coming.", replyPt:"Fique calmo, a ajuda está a caminho." },
+    { de:"Können Sie einen Krankenwagen rufen?", en:"Can you call an ambulance?", pt:"Você pode chamar uma ambulância?", reply:"Ja, sofort!", replyEn:"Yes, right away!", replyPt:"Sim, imediatamente!" }
+  ]
+};
+
+/* =========================================================================
+   HÖREN — listening comprehension, mirroring the Goethe A1 exam.
+   Teil 1: dialogues → multiple choice (3 options)
+   Teil 2: announcements → true / false
+   Teil 3: messages / monologues → multiple choice
+   Audio is generated by the speech engine; the transcript stays hidden
+   until the learner answers. script = the lines spoken aloud (spk gives a
+   light voice-pitch hint so two speakers feel distinct).
+   ========================================================================= */
+const HOEREN = [
+  // ---------- Teil 1: Dialoge (multiple choice) ----------
+  { id:"d1", teil:1, type:"Dialog", replays:2,
+    script:[
+      {spk:"A", de:"Guten Tag, was möchten Sie?"},
+      {spk:"B", de:"Ich hätte gern einen Kaffee und ein Stück Kuchen."},
+      {spk:"A", de:"Möchten Sie den Kuchen mit Sahne?"},
+      {spk:"B", de:"Nein danke, ohne Sahne."}
+    ],
+    format:"mc",
+    q:"Was möchte die Person?", qEn:"What does the person want?",
+    options:["Kaffee mit Sahne","Kaffee und Kuchen ohne Sahne","nur ein Stück Kuchen"],
+    optionsEn:["coffee with cream","coffee and cake without cream","only a slice of cake"],
+    answer:1 },
+  { id:"d2", teil:1, type:"Dialog", replays:2,
+    script:[
+      {spk:"A", de:"Entschuldigung, wann fährt der nächste Zug nach Berlin?"},
+      {spk:"B", de:"Um vierzehn Uhr dreißig, Gleis fünf."},
+      {spk:"A", de:"Vielen Dank!"}
+    ],
+    format:"mc",
+    q:"Wann fährt der Zug nach Berlin?", qEn:"When does the train to Berlin leave?",
+    options:["um 14:13 Uhr","um 14:30 Uhr","um 4:30 Uhr"],
+    optionsEn:["at 14:13","at 14:30","at 4:30"],
+    answer:1 },
+  { id:"d3", teil:1, type:"Dialog", replays:2,
+    script:[
+      {spk:"A", de:"Hallo Lisa, treffen wir uns morgen um drei?"},
+      {spk:"B", de:"Morgen um drei kann ich leider nicht. Geht es auch um fünf?"},
+      {spk:"A", de:"Ja, fünf Uhr ist gut."}
+    ],
+    format:"mc",
+    q:"Wann treffen sich die zwei Personen?", qEn:"When do the two people meet?",
+    options:["um drei Uhr","um vier Uhr","um fünf Uhr"],
+    optionsEn:["at three","at four","at five"],
+    answer:2 },
+  { id:"d4", teil:1, type:"Dialog", replays:2,
+    script:[
+      {spk:"A", de:"Entschuldigung, haben Sie diese Jacke auch in Blau?"},
+      {spk:"B", de:"In Blau haben wir sie leider nicht, nur in Schwarz und Rot."}
+    ],
+    format:"mc",
+    q:"Welche Farbe gibt es nicht?", qEn:"Which color is not available?",
+    options:["Blau","Schwarz","Rot"],
+    optionsEn:["blue","black","red"],
+    answer:0 },
+  { id:"d5", teil:1, type:"Dialog", replays:2,
+    script:[
+      {spk:"A", de:"Guten Tag, ich möchte einen Termin machen."},
+      {spk:"B", de:"Gern. Können Sie am Montag um zehn Uhr?"},
+      {spk:"A", de:"Montag passt leider nicht. Geht auch Dienstag?"},
+      {spk:"B", de:"Ja, Dienstag um zehn Uhr ist frei."}
+    ],
+    format:"mc",
+    q:"Wann ist der Termin?", qEn:"When is the appointment?",
+    options:["Montag um zehn","Dienstag um zehn","Dienstag um zwei"],
+    optionsEn:["Monday at ten","Tuesday at ten","Tuesday at two"],
+    answer:1 },
+  // ---------- Teil 2: Ansagen (true / false) ----------
+  { id:"a1", teil:2, type:"Ansage", replays:1,
+    script:[{spk:"", de:"Liebe Kunden, unser Supermarkt schließt heute um zwanzig Uhr. Bitte kommen Sie zur Kasse."}],
+    format:"tf",
+    statement:"Der Supermarkt schließt um 20 Uhr.", statementEn:"The supermarket closes at 8 pm.",
+    answer:0 },
+  { id:"a2", teil:2, type:"Ansage", replays:1,
+    script:[{spk:"", de:"Achtung am Gleis drei: Der Zug nach München hat zehn Minuten Verspätung."}],
+    format:"tf",
+    statement:"Der Zug nach München ist pünktlich.", statementEn:"The train to Munich is on time.",
+    answer:1 },
+  { id:"a3", teil:2, type:"Ansage", replays:1,
+    script:[{spk:"", de:"Guten Tag, hier ist die Praxis Doktor Müller. Wir haben heute geschlossen. Bitte rufen Sie morgen wieder an."}],
+    format:"tf",
+    statement:"Die Praxis ist heute geöffnet.", statementEn:"The doctor's office is open today.",
+    answer:1 },
+  { id:"a4", teil:2, type:"Ansage", replays:1,
+    script:[{spk:"", de:"Liebe Mitglieder, der Yoga-Kurs beginnt heute um achtzehn Uhr im Raum zwei."}],
+    format:"tf",
+    statement:"Der Yoga-Kurs beginnt um 18 Uhr.", statementEn:"The yoga class starts at 6 pm.",
+    answer:0 },
+  { id:"a5", teil:2, type:"Ansage", replays:1,
+    script:[{spk:"", de:"Achtung: Die Duschen im Erdgeschoss sind heute leider kaputt. Bitte benutzen Sie die Duschen im ersten Stock."}],
+    format:"tf",
+    statement:"Die Duschen im Erdgeschoss funktionieren heute.", statementEn:"The showers on the ground floor work today.",
+    answer:1 },
+  // ---------- Teil 3: Nachrichten / Monologe (multiple choice) ----------
+  { id:"n1", teil:3, type:"Nachricht", replays:2,
+    script:[{spk:"", de:"Hallo Tom, hier ist Anna. Ich komme heute leider später, so gegen acht Uhr. Bis dann!"}],
+    format:"mc",
+    q:"Wann kommt Anna?", qEn:"When is Anna coming?",
+    options:["um sieben Uhr","um acht Uhr","um neun Uhr"],
+    optionsEn:["at seven","at eight","at nine"],
+    answer:1 },
+  { id:"n2", teil:3, type:"Nachricht", replays:2,
+    script:[{spk:"", de:"Das Wetter morgen: Am Morgen regnet es, aber am Nachmittag scheint die Sonne."}],
+    format:"mc",
+    q:"Wie ist das Wetter am Nachmittag?", qEn:"What's the weather like in the afternoon?",
+    options:["Es regnet.","Die Sonne scheint.","Es schneit."],
+    optionsEn:["It's raining.","The sun is shining.","It's snowing."],
+    answer:1 },
+  { id:"n3", teil:3, type:"Nachricht", replays:2,
+    script:[{spk:"", de:"Hallo, hier ist Herr Wagner vom Büro. Die Besprechung morgen ist nicht um neun, sondern um zehn Uhr."}],
+    format:"mc",
+    q:"Wann ist die Besprechung?", qEn:"When is the meeting?",
+    options:["um neun Uhr","um zehn Uhr","um elf Uhr"],
+    optionsEn:["at nine","at ten","at eleven"],
+    answer:1 },
+  { id:"n4", teil:3, type:"Nachricht", replays:2,
+    script:[{spk:"", de:"Guten Tag, hier ist das Restaurant Adler. Ihr Tisch für vier Personen ist für Samstag um neunzehn Uhr reserviert."}],
+    format:"mc",
+    q:"Für wie viele Personen ist der Tisch?", qEn:"For how many people is the table?",
+    options:["für zwei Personen","für drei Personen","für vier Personen"],
+    optionsEn:["for two","for three","for four"],
+    answer:2 }
+];
+const HOEREN_TEILE = [
+  { key:"teil1", label:"Teil 1 · Dialoge", n:1 },
+  { key:"teil2", label:"Teil 2 · Ansagen", n:2 },
+  { key:"teil3", label:"Teil 3 · Nachrichten", n:3 }
+];
+
+/* =========================================================================
+   ALPHABET — the German alphabet (A–Z + Ä Ö Ü ß), with pronunciation hints
+   and an example word per letter. `say` is what the speech engine reads for
+   the letter name (the letter itself works for most; ß needs the word).
+   ========================================================================= */
+const ALPHABET = [
+  { letter:"A", say:"A", hint:"ah",        word:"Apfel",    wordEn:"apple" },
+  { letter:"B", say:"B", hint:"beh",       word:"Buch",     wordEn:"book" },
+  { letter:"C", say:"C", hint:"tseh",      word:"Computer", wordEn:"computer" },
+  { letter:"D", say:"D", hint:"deh",       word:"Danke",    wordEn:"thank you" },
+  { letter:"E", say:"E", hint:"eh",        word:"Elefant",  wordEn:"elephant" },
+  { letter:"F", say:"F", hint:"eff",       word:"Familie",  wordEn:"family" },
+  { letter:"G", say:"G", hint:"geh",       word:"Garten",   wordEn:"garden" },
+  { letter:"H", say:"H", hint:"hah",       word:"Haus",     wordEn:"house" },
+  { letter:"I", say:"I", hint:"ih",        word:"Insel",    wordEn:"island" },
+  { letter:"J", say:"J", hint:"yot",       word:"Januar",   wordEn:"January" },
+  { letter:"K", say:"K", hint:"kah",       word:"Kaffee",   wordEn:"coffee" },
+  { letter:"L", say:"L", hint:"ell",       word:"Lampe",    wordEn:"lamp" },
+  { letter:"M", say:"M", hint:"emm",       word:"Mutter",   wordEn:"mother" },
+  { letter:"N", say:"N", hint:"enn",       word:"Name",     wordEn:"name" },
+  { letter:"O", say:"O", hint:"oh",        word:"Obst",     wordEn:"fruit" },
+  { letter:"P", say:"P", hint:"peh",       word:"Pizza",    wordEn:"pizza" },
+  { letter:"Q", say:"Q", hint:"kuh",       word:"Quelle",   wordEn:"source / spring" },
+  { letter:"R", say:"R", hint:"err",       word:"Reise",    wordEn:"trip" },
+  { letter:"S", say:"S", hint:"ess",       word:"Sonne",    wordEn:"sun" },
+  { letter:"T", say:"T", hint:"teh",       word:"Tisch",    wordEn:"table" },
+  { letter:"U", say:"U", hint:"uh",        word:"Uhr",      wordEn:"clock" },
+  { letter:"V", say:"V", hint:"fau",       word:"Vater",    wordEn:"father" },
+  { letter:"W", say:"W", hint:"veh",       word:"Wasser",   wordEn:"water" },
+  { letter:"X", say:"X", hint:"iks",       word:"Xylofon",  wordEn:"xylophone" },
+  { letter:"Y", say:"Y", hint:"üpsilon",   word:"Yoga",     wordEn:"yoga" },
+  { letter:"Z", say:"Z", hint:"tsett",     word:"Zug",      wordEn:"train" },
+  { letter:"Ä", say:"Ä", hint:"a-Umlaut",  word:"Äpfel",    wordEn:"apples" },
+  { letter:"Ö", say:"Ö", hint:"o-Umlaut",  word:"Öl",       wordEn:"oil" },
+  { letter:"Ü", say:"Ü", hint:"u-Umlaut",  word:"über",     wordEn:"over / about" },
+  { letter:"ß", say:"Eszett", hint:"Eszett · scharfes S", word:"Straße", wordEn:"street" }
+];
+
+/* German number → words, 0–100. Regular enough to generate. */
+function germanNumber(n) {
+  const ones = ['null','eins','zwei','drei','vier','fünf','sechs','sieben','acht','neun'];
+  const teens = { 10:'zehn',11:'elf',12:'zwölf',13:'dreizehn',14:'vierzehn',15:'fünfzehn',16:'sechzehn',17:'siebzehn',18:'achtzehn',19:'neunzehn' };
+  const tens = { 20:'zwanzig',30:'dreißig',40:'vierzig',50:'fünfzig',60:'sechzig',70:'siebzig',80:'achtzig',90:'neunzig' };
+  if (n === 100) return 'hundert';
+  if (n < 10) return ones[n];
+  if (n < 20) return teens[n];
+  if (n % 10 === 0) return tens[n];
+  const o = n % 10, t = Math.floor(n / 10) * 10;
+  const onesWord = o === 1 ? 'ein' : ones[o];   // einundzwanzig
+  return onesWord + 'und' + tens[t];
+}
+
+
 const state = {
   level: 'A1',
   category: 'all',
@@ -2055,7 +2771,30 @@ const state = {
   drillQ: null,         // current drill question
   drillScore: 0,
   drillCount: 0,
-  drillAnswered: false
+  drillAnswered: false,
+  // Sprechen / shadowing state
+  shadowDeck: [],
+  shadowIdx: 0,
+  shadowRevealed: false,
+  shadowPeeked: false,
+  // Hören / listening state
+  hoerenDeck: [],
+  hoerenIdx: 0,
+  hoerenScore: 0,
+  hoerenAnswered: false,
+  hoerenSelected: null,
+  // ABC drill state
+  abcQ: null,           // { letter, options:[], answer }
+  abcAnswered: false,
+  abcSelected: null,
+  abcScore: 0,
+  abcCount: 0,
+  // Zahlen drill state
+  zahlQ: null,          // current number 0-100
+  zahlAnswered: false,
+  zahlCorrect: false,
+  zahlScore: 0,
+  zahlCount: 0
 };
 
 /* =========================================================================
@@ -2146,7 +2885,7 @@ function speakGerman(text, btnEl) {
     const u = new SpeechSynthesisUtterance(text);
     u.lang = 'de-DE';
     if (deVoice) u.voice = deVoice;
-    u.rate = 0.92;
+    u.rate = 0.78;
     u.pitch = 1.0;
     if (btnEl) {
       btnEl.classList.add('speaking');
@@ -2361,6 +3100,91 @@ function renderSidebar() {
         if (state.category === '__drill__') {
           state.drillQ = null; state.drillScore = 0; state.drillCount = 0; state.drillAnswered = false;
         }
+        renderSidebar();
+        renderMain();
+      });
+    });
+    return;
+  }
+
+  // Sprechen sidebar
+  if (state.level === 'Sprechen') {
+    let html = `<div class="sidebar-title">Sprechen · Redemittel</div>`;
+    html += `<button class="cat-btn all ${state.category === '__shadow__' ? 'active' : ''}" data-cat="__shadow__">
+      <span>🎤 Nachsprechen üben</span>
+    </button>`;
+    REDE_ORDER.forEach(cat => {
+      html += `<button class="cat-btn ${state.category === cat ? 'active' : ''}" data-cat="${escapeHtml(cat)}">
+        <span>${escapeHtml(cat)}</span><span class="count">${REDEMITTEL[cat].length}</span>
+      </button>`;
+    });
+    sb.innerHTML = html;
+    sb.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (SPEECH_OK) window.speechSynthesis.cancel();
+        state.category = btn.dataset.cat;
+        if (state.category === '__shadow__') {
+          state.shadowDeck = []; state.shadowIdx = 0; state.shadowRevealed = false; state.shadowPeeked = false;
+        }
+        renderSidebar();
+        renderMain();
+      });
+    });
+    return;
+  }
+
+  // ABC sidebar
+  if (state.level === 'ABC') {
+    let html = `<div class="sidebar-title">ABC · Alphabet</div>`;
+    html += `<button class="cat-btn ${state.category === 'browse' ? 'active' : ''}" data-cat="browse"><span>🔤 Buchstaben</span><span class="count">${ALPHABET.length}</span></button>`;
+    html += `<button class="cat-btn all ${state.category === '__drill__' ? 'active' : ''}" data-cat="__drill__"><span>🎧 Hören-Übung</span></button>`;
+    sb.innerHTML = html;
+    sb.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (SPEECH_OK) window.speechSynthesis.cancel();
+        state.category = btn.dataset.cat;
+        if (state.category === '__drill__') { state.abcQ = null; state.abcScore = 0; state.abcCount = 0; state.abcAnswered = false; }
+        renderSidebar(); renderMain();
+      });
+    });
+    return;
+  }
+
+  // Zahlen sidebar
+  if (state.level === 'Zahlen') {
+    let html = `<div class="sidebar-title">Zahlen · 0–100</div>`;
+    html += `<button class="cat-btn ${state.category === 'browse' ? 'active' : ''}" data-cat="browse"><span>🔢 Zahlen 0–100</span></button>`;
+    html += `<button class="cat-btn all ${state.category === '__drill__' ? 'active' : ''}" data-cat="__drill__"><span>🎧 Hören-Übung</span></button>`;
+    sb.innerHTML = html;
+    sb.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (SPEECH_OK) window.speechSynthesis.cancel();
+        state.category = btn.dataset.cat;
+        if (state.category === '__drill__') { state.zahlQ = null; state.zahlScore = 0; state.zahlCount = 0; state.zahlAnswered = false; }
+        renderSidebar(); renderMain();
+      });
+    });
+    return;
+  }
+
+  // Hören sidebar
+  if (state.level === 'Hören') {
+    let html = `<div class="sidebar-title">Hören · A1-Prüfung</div>`;
+    html += `<button class="cat-btn all ${state.category === '__all__' ? 'active' : ''}" data-cat="__all__">
+      <span>▶ Alle Übungen</span><span class="count">${HOEREN.length}</span>
+    </button>`;
+    HOEREN_TEILE.forEach(t => {
+      const cnt = HOEREN.filter(h => h.teil === t.n).length;
+      html += `<button class="cat-btn ${state.category === t.key ? 'active' : ''}" data-cat="${t.key}">
+        <span>${escapeHtml(t.label)}</span><span class="count">${cnt}</span>
+      </button>`;
+    });
+    sb.innerHTML = html;
+    sb.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (SPEECH_OK) window.speechSynthesis.cancel();
+        state.category = btn.dataset.cat;
+        initHoerenDeck();
         renderSidebar();
         renderMain();
       });
@@ -3131,6 +3955,606 @@ function renderGrammarIrregular() {
 }
 
 /* =========================================================================
+   ABC RENDERING — alphabet browse + listening drill
+   ========================================================================= */
+function renderAlphabetBrowse() {
+  const main = document.getElementById('main');
+  let cards = '';
+  ALPHABET.forEach((L, i) => {
+    cards += `<div class="letter-card" data-i="${i}">
+      <div class="letter-row">
+        <span class="letter-big">${escapeHtml(L.letter)}</span>
+        <span class="letter-hint">[${escapeHtml(L.hint)}]</span>
+        <span class="letter-speak">${speakerBtnHTML()}</span>
+      </div>
+      <div class="letter-word" data-word="${i}">
+        <span class="lw-de">${escapeHtml(L.letter)} wie ${escapeHtml(L.word)}</span>
+        <span class="lw-en">${escapeHtml(L.wordEn)}</span>
+        ${speakerBtnHTML()}
+      </div>
+    </div>`;
+  });
+  main.innerHTML = `
+    <div class="section-head"><h2>Das Alphabet</h2><span class="meta">A–Z · Ä Ö Ü ß · 🔊 zum Anhören</span></div>
+    <div class="abc-intro">
+      <strong>Hör dir jeden Buchstaben an.</strong> Das obere Lautsymbol zeigt, wie man den Buchstaben <em>nennt</em> (z. B. „beh" für B). Darunter steht ein Beispielwort — wie beim Buchstabieren am Telefon: „B wie Buch". Tipp: Übe damit deinen Namen und deine Adresse zu buchstabieren.
+    </div>
+    <div class="letter-grid">${cards}</div>
+  `;
+  main.querySelectorAll('.letter-card').forEach((card, i) => {
+    const L = ALPHABET[i];
+    const nameRow = card.querySelector('.letter-row');
+    const wordRow = card.querySelector('.letter-word');
+    wireSpeaker(nameRow, L.say);
+    wireSpeaker(wordRow, L.word);
+  });
+}
+
+function newAbcQuestion() {
+  const target = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
+  const opts = [target];
+  while (opts.length < 3) {
+    const c = ALPHABET[Math.floor(Math.random() * ALPHABET.length)];
+    if (!opts.includes(c)) opts.push(c);
+  }
+  shuffle(opts);
+  state.abcQ = { letter: target.letter, say: target.say, word: target.word, wordEn: target.wordEn,
+                 options: opts, answer: opts.indexOf(target) };
+  state.abcAnswered = false;
+  state.abcSelected = null;
+}
+
+function renderAbcDrill() {
+  if (!state.abcQ) newAbcQuestion();
+  const q = state.abcQ;
+  const main = document.getElementById('main');
+  const optsHTML = q.options.map((o, i) =>
+    `<button class="quiz-option" data-opt="${i}" style="justify-content:center;font-size:22px;font-family:'Fraunces',serif;font-weight:700">${escapeHtml(o.letter)}</button>`
+  ).join('');
+  main.innerHTML = `
+    <div class="section-head"><h2>Buchstaben hören</h2><span class="meta">ABC · Listening</span></div>
+    <div class="hoeren-stage">
+      <div class="hoeren-card">
+        <div class="hoeren-top">
+          <span>Hör gut zu</span>
+          <span class="score">${state.abcScore} / ${state.abcCount} richtig</span>
+        </div>
+        <div class="hoeren-q">Welchen Buchstaben hörst du?</div>
+        <div class="hoeren-q-en">Which letter do you hear?</div>
+        <div class="hoeren-playbar">${hoerenPlayBtnHTML('Buchstabe hören')}</div>
+        <div class="quiz-options" style="margin-top:14px">${optsHTML}</div>
+        <div id="abcAfter"></div>
+      </div>
+    </div>
+  `;
+  const playBtn = document.getElementById('hoerenPlay');
+  const playIt = () => speakGerman(q.say, playBtn);
+  playBtn.addEventListener('click', playIt);
+  if (SPEECH_OK) setTimeout(playIt, 250);   // auto-play once on load
+
+  const opts = main.querySelectorAll('.quiz-option');
+  opts.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (state.abcAnswered) return;
+      state.abcAnswered = true;
+      state.abcCount++;
+      const chosen = parseInt(btn.dataset.opt, 10);
+      state.abcSelected = chosen;
+      if (chosen === q.answer) state.abcScore++;
+      opts.forEach(b => {
+        const idx = parseInt(b.dataset.opt, 10);
+        b.disabled = true;
+        if (idx === q.answer) b.classList.add('correct');
+        else if (idx === chosen) b.classList.add('wrong');
+      });
+      const after = document.getElementById('abcAfter');
+      after.innerHTML = `
+        <div class="hoeren-feedback ${chosen === q.answer ? 'right' : 'wrong'}">${chosen === q.answer ? '✓ Richtig!' : '✗ Leider falsch'}</div>
+        <div class="hoeren-transcript"><span class="tag">Lösung</span>
+          <div class="hoeren-line"><span class="spk">${escapeHtml(q.letter)}</span> wie ${escapeHtml(q.word)} <span class="lw-en" style="color:var(--gray);font-size:12px">(${escapeHtml(q.wordEn)})</span> ${speakerBtnHTML()}</div>
+        </div>
+        <div class="shadow-controls" style="margin-top:18px"><button class="flash-btn primary" id="abcNext">Weiter →</button></div>
+      `;
+      wireSpeaker(after.querySelector('.hoeren-line'), q.word);
+      document.getElementById('abcNext').addEventListener('click', () => {
+        if (SPEECH_OK) window.speechSynthesis.cancel();
+        newAbcQuestion(); renderAbcDrill();
+      });
+    });
+  });
+}
+
+function renderAlphabet() {
+  if (state.category === '__drill__') renderAbcDrill();
+  else renderAlphabetBrowse();
+}
+
+/* =========================================================================
+   ZAHLEN RENDERING — numbers 0–100 browse + listening drill
+   ========================================================================= */
+function renderZahlenBrowse() {
+  const main = document.getElementById('main');
+  let chips = '';
+  for (let n = 0; n <= 100; n++) {
+    const isTen = n > 0 && n % 10 === 0;
+    chips += `<div class="num-chip ${isTen ? 'ten' : ''}" data-n="${n}">
+      <span class="num-figure">${n}</span><span class="num-word">${escapeHtml(germanNumber(n))}</span>
+    </div>`;
+  }
+  main.innerHTML = `
+    <div class="section-head"><h2>Zahlen 0–100</h2><span class="meta">Numbers · 🔊 tippen zum Anhören</span></div>
+    <div class="num-intro">
+      <strong>Tippe auf eine Zahl, um sie zu hören.</strong> Achtung auf die Reihenfolge: Bei 21–99 sagt man zuerst die Einer, dann „und", dann die Zehner — <em>einundzwanzig</em> ist „eins-und-zwanzig". Das ist für viele am Anfang verwirrend, besonders beim Hören von Preisen und Uhrzeiten.
+    </div>
+    <div class="num-grid">${chips}</div>
+  `;
+  main.querySelectorAll('.num-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const n = parseInt(chip.dataset.n, 10);
+      speakGerman(germanNumber(n), null);
+    });
+  });
+}
+
+function newZahlQuestion() {
+  state.zahlQ = Math.floor(Math.random() * 101);   // 0–100
+  state.zahlAnswered = false;
+  state.zahlCorrect = false;
+}
+
+function renderZahlDrill() {
+  if (state.zahlQ === null || typeof state.zahlQ === 'undefined') newZahlQuestion();
+  const n = state.zahlQ;
+  const main = document.getElementById('main');
+  main.innerHTML = `
+    <div class="section-head"><h2>Zahlen hören</h2><span class="meta">Numbers · Listening</span></div>
+    <div class="hoeren-stage">
+      <div class="hoeren-card">
+        <div class="hoeren-top">
+          <span>Hör gut zu</span>
+          <span class="score">${state.zahlScore} / ${state.zahlCount} richtig</span>
+        </div>
+        <div class="hoeren-q">Welche Zahl hörst du?</div>
+        <div class="hoeren-q-en">Type the number you hear (0–100)</div>
+        <div class="hoeren-playbar">${hoerenPlayBtnHTML('Zahl hören')}</div>
+        <div style="text-align:center">
+          <input class="drill-num-input" id="zahlInput" type="text" inputmode="numeric" autocomplete="off" placeholder="?" ${state.zahlAnswered ? 'disabled' : ''}>
+        </div>
+        <div style="text-align:center"><button class="flash-btn primary" id="zahlCheck">Prüfen</button></div>
+        <div id="zahlAfter"></div>
+      </div>
+    </div>
+  `;
+  const playBtn = document.getElementById('hoerenPlay');
+  const playIt = () => speakGerman(germanNumber(n), playBtn);
+  playBtn.addEventListener('click', playIt);
+  if (SPEECH_OK) setTimeout(playIt, 250);
+
+  const input = document.getElementById('zahlInput');
+  const checkBtn = document.getElementById('zahlCheck');
+  if (input && !state.zahlAnswered) input.focus();
+
+  function doCheck() {
+    if (state.zahlAnswered) return;
+    const val = (input.value || '').trim();
+    if (val === '') return;
+    state.zahlAnswered = true;
+    state.zahlCount++;
+    const correct = parseInt(val, 10) === n;
+    state.zahlCorrect = correct;
+    if (correct) state.zahlScore++;
+    input.disabled = true;
+    const after = document.getElementById('zahlAfter');
+    after.innerHTML = `
+      <div class="hoeren-feedback ${correct ? 'right' : 'wrong'}">${correct ? '✓ Richtig!' : '✗ Leider falsch — es war ' + n}</div>
+      <div class="hoeren-transcript"><span class="tag">Lösung</span>
+        <div class="hoeren-line"><span class="spk">${n}</span> = ${escapeHtml(germanNumber(n))} ${speakerBtnHTML()}</div>
+      </div>
+      <div class="shadow-controls" style="margin-top:18px"><button class="flash-btn primary" id="zahlNext">Weiter →</button></div>
+    `;
+    wireSpeaker(after.querySelector('.hoeren-line'), germanNumber(n));
+    document.getElementById('zahlNext').addEventListener('click', () => {
+      if (SPEECH_OK) window.speechSynthesis.cancel();
+      newZahlQuestion(); renderZahlDrill();
+    });
+  }
+  checkBtn.addEventListener('click', doCheck);
+  if (input) input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { state.zahlAnswered ? null : doCheck(); } });
+}
+
+function renderZahlen() {
+  if (state.category === '__drill__') renderZahlDrill();
+  else renderZahlenBrowse();
+}
+
+/* =========================================================================
+   HÖREN RENDERING — listening comprehension exercise
+   ========================================================================= */
+// Plays a multi-line script as a sequence of utterances. Two speakers get a
+// light pitch difference so a dialogue feels like two people.
+function playHoeren(item, btnEl) {
+  if (!SPEECH_OK) return;
+  try {
+    window.speechSynthesis.cancel();
+    const lines = item.script;
+    if (btnEl) btnEl.classList.add('speaking');
+    lines.forEach((line, i) => {
+      const u = new SpeechSynthesisUtterance(line.de);
+      u.lang = 'de-DE';
+      if (deVoice) u.voice = deVoice;
+      u.rate = 0.82;
+      u.pitch = line.spk === 'B' ? 0.8 : (line.spk === 'A' ? 1.08 : 1.0);
+      if (i === lines.length - 1 && btnEl) {
+        u.onend = u.onerror = () => btnEl.classList.remove('speaking');
+      }
+      window.speechSynthesis.speak(u);
+    });
+  } catch (e) { /* silently ignore */ }
+}
+
+function hoerenPlayBtnHTML(label) {
+  return `<button class="shadow-listen" id="hoerenPlay">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 8a5 5 0 0 1 0 8"></path><path d="M17.7 5a9 9 0 0 1 0 14"></path>
+      <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"></path>
+    </svg>
+    ${label}
+  </button>`;
+}
+
+function initHoerenDeck() {
+  let items;
+  if (state.category === '__all__' || !state.category) items = HOEREN.slice();
+  else { const t = HOEREN_TEILE.find(x => x.key === state.category); items = t ? HOEREN.filter(h => h.teil === t.n) : HOEREN.slice(); }
+  state.hoerenDeck = items;
+  state.hoerenIdx = 0;
+  state.hoerenScore = 0;
+  state.hoerenAnswered = false;
+  state.hoerenSelected = null;
+}
+
+function renderHoeren() {
+  if (!state.hoerenDeck.length) initHoerenDeck();
+  const deck = state.hoerenDeck;
+  const main = document.getElementById('main');
+
+  // completion summary
+  if (state.hoerenIdx >= deck.length) {
+    main.innerHTML = `
+      <div class="section-head"><h2>Geschafft!</h2><span class="meta">Hören · A1</span></div>
+      <div class="quiz-summary">
+        <div class="big-num">${state.hoerenScore} / ${deck.length}</div>
+        <div class="label">richtig beantwortet</div>
+        <button class="flash-btn primary" id="hoerenRestart">Nochmal hören</button>
+      </div>
+    `;
+    document.getElementById('hoerenRestart').addEventListener('click', () => {
+      initHoerenDeck(); renderHoeren();
+    });
+    return;
+  }
+
+  const item = deck[state.hoerenIdx];
+  const replayNote = item.replays === 1 ? 'Im Test: 1× hören' : 'Im Test: 2× hören';
+  const isTF = item.format === 'tf';
+
+  // build options markup
+  let optsHTML = '';
+  if (isTF) {
+    optsHTML = `
+      <button class="quiz-option" data-opt="0"><span class="key">R</span> Richtig <span class="hoeren-opt-en">true</span></button>
+      <button class="quiz-option" data-opt="1"><span class="key">F</span> Falsch <span class="hoeren-opt-en">false</span></button>`;
+  } else {
+    const keys = ['A', 'B', 'C', 'D'];
+    optsHTML = item.options.map((o, i) =>
+      `<button class="quiz-option" data-opt="${i}"><span class="key">${keys[i]}</span> ${escapeHtml(o)}<span class="hoeren-opt-en">${escapeHtml(item.optionsEn[i])}</span></button>`
+    ).join('');
+  }
+
+  const questionBlock = isTF
+    ? `<div class="hoeren-q">Richtig oder falsch?</div>
+       <div class="hoeren-q-en" style="margin-bottom:10px">true or false?</div>
+       <div class="hoeren-q" style="font-size:17px">„${escapeHtml(item.statement)}"</div>
+       <div class="hoeren-q-en">${escapeHtml(item.statementEn)}</div>`
+    : `<div class="hoeren-q">${escapeHtml(item.q)}</div>
+       <div class="hoeren-q-en">${escapeHtml(item.qEn)}</div>`;
+
+  main.innerHTML = `
+    <div class="section-head">
+      <h2>Hören</h2>
+      <span class="meta">A1-Prüfung · Listening</span>
+    </div>
+    <div class="hoeren-note">
+      <strong>So funktioniert's:</strong> Tippe auf <strong>Abspielen</strong> und hör gut zu — der Text bleibt zuerst verborgen, genau wie in der Prüfung. Beantworte dann die Frage. Üben kannst du so oft wiederholen, wie du willst; im echten Test hörst du jeden Text nur ein- oder zweimal.
+    </div>
+    <div class="hoeren-stage">
+      <div class="hoeren-card">
+        <div class="hoeren-top">
+          <span>Aufgabe ${state.hoerenIdx + 1} / ${deck.length}</span>
+          <span class="score">${state.hoerenScore} richtig</span>
+        </div>
+        <div class="hoeren-badges">
+          <span class="hoeren-badge">${escapeHtml(item.type)}</span>
+          <span class="hoeren-badge replay">${replayNote}</span>
+        </div>
+        <div class="hoeren-playbar">${hoerenPlayBtnHTML('Abspielen')}</div>
+        ${questionBlock}
+        <div class="quiz-options" id="hoerenOpts" style="margin-top:18px">${optsHTML}</div>
+        <div id="hoerenAfter"></div>
+      </div>
+    </div>
+  `;
+
+  const playBtn = document.getElementById('hoerenPlay');
+  playBtn.addEventListener('click', () => playHoeren(item, playBtn));
+
+  // If speech isn't available, listening is impossible — degrade to reading:
+  // reveal the transcript immediately and note it.
+  if (!SPEECH_OK) {
+    const after = document.getElementById('hoerenAfter');
+    after.innerHTML = `<div class="hoeren-transcript" style="margin-top:14px">
+      <span class="tag">Audio nicht verfügbar — Text lesen</span>
+      ${item.script.map(l => `<div class="hoeren-line">${l.spk ? `<span class="spk">${l.spk}:</span>` : ''}${escapeHtml(l.de)}</div>`).join('')}
+    </div>`;
+  }
+
+  const opts = main.querySelectorAll('.quiz-option');
+  opts.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (state.hoerenAnswered) return;
+      state.hoerenAnswered = true;
+      const chosen = parseInt(btn.dataset.opt, 10);
+      state.hoerenSelected = chosen;
+      const correct = item.answer;
+      if (chosen === correct) state.hoerenScore++;
+      opts.forEach(b => {
+        const idx = parseInt(b.dataset.opt, 10);
+        b.disabled = true;
+        if (idx === correct) b.classList.add('correct');
+        else if (idx === chosen) b.classList.add('wrong');
+      });
+      if (SPEECH_OK) window.speechSynthesis.cancel();
+      renderHoerenAfter(item, chosen === correct);
+    });
+  });
+}
+
+function renderHoerenAfter(item, wasRight) {
+  const after = document.getElementById('hoerenAfter');
+  const transcript = `<div class="hoeren-transcript">
+    <span class="tag">Text${item.script.length > 1 ? ' · Dialog' : ''}</span>
+    ${item.script.map(l => `<div class="hoeren-line">${l.spk ? `<span class="spk">${l.spk}:</span>` : ''}${escapeHtml(l.de)} ${speakerBtnHTML()}</div>`).join('')}
+  </div>`;
+  after.innerHTML = `
+    <div class="hoeren-feedback ${wasRight ? 'right' : 'wrong'}">${wasRight ? '✓ Richtig!' : '✗ Leider falsch'}</div>
+    ${transcript}
+    <div class="shadow-controls" style="margin-top:18px">
+      <button class="flash-btn primary" id="hoerenNext">Weiter →</button>
+    </div>
+  `;
+  // wire a speaker on each transcript line
+  after.querySelectorAll('.hoeren-line').forEach((lineEl, i) => {
+    wireSpeaker(lineEl, item.script[i].de);
+  });
+  document.getElementById('hoerenNext').addEventListener('click', () => {
+    if (SPEECH_OK) window.speechSynthesis.cancel();
+    state.hoerenIdx++;
+    state.hoerenAnswered = false;
+    state.hoerenSelected = null;
+    renderHoeren();
+  });
+}
+
+/* =========================================================================
+   SPRECHEN RENDERING — phrasebook + shadowing drill
+   ========================================================================= */
+function flattenRede() {
+  // all phrases with their category, for the shadowing deck
+  const out = [];
+  REDE_ORDER.forEach(cat => REDEMITTEL[cat].forEach(p => out.push({ ...p, cat })));
+  return out;
+}
+
+function renderSprechenBook() {
+  let cat = REDE_ORDER.includes(state.category) ? state.category : REDE_ORDER[0];
+  state.category = cat;
+  const phrases = REDEMITTEL[cat];
+
+  let cards = '';
+  phrases.forEach((p, i) => {
+    cards += `<div class="rede-card" data-idx="${i}">
+      <div class="rede-you">
+        <span class="tag">Du sagst</span>
+        <div class="de-row">
+          <span class="de">${escapeHtml(p.de)}</span>
+          ${speakerBtnHTML()}
+        </div>
+        <div class="tr">${escapeHtml(p.en)}<span class="pt">${escapeHtml(p.pt)}</span></div>
+      </div>
+      <div class="rede-reply" data-reply="${i}">
+        <span class="tag">Du hörst vielleicht</span>
+        <div class="de-row">
+          <span class="de">${escapeHtml(p.reply)}</span>
+          ${speakerBtnHTML()}
+        </div>
+        <div class="tr">${escapeHtml(p.replyEn)}<span class="pt">${escapeHtml(p.replyPt)}</span></div>
+      </div>
+    </div>`;
+  });
+
+  document.getElementById('main').innerHTML = `
+    <div class="section-head">
+      <h2>${escapeHtml(cat)}</h2>
+      <span class="meta">Sprechen · ${phrases.length} Redemittel · 🔊 zum Anhören</span>
+    </div>
+    <div class="rede-intro">
+      <strong>So benutzt du das:</strong> Lies jede Zeile laut. Höre sie an (🔊, langsam). Sprich sie nach, bis sie automatisch kommt. Dann nimmst du den Satz mit ins echte Leben. Die zweite Zeile ist eine <strong>mögliche Antwort</strong>, die du hören könntest — so kennst du das ganze Gespräch.
+    </div>
+    <div class="rede-list">${cards}</div>
+  `;
+
+  document.querySelectorAll('.rede-card').forEach((card, i) => {
+    const p = phrases[i];
+    const youBlock = card.querySelector('.rede-you');
+    const replyBlock = card.querySelector('.rede-reply');
+    wireSpeaker(youBlock, p.de);
+    wireSpeaker(replyBlock, p.reply);
+  });
+}
+
+function renderShadow() {
+  // build / rebuild deck (SRS-ordered so weak phrases come first)
+  if (!state.shadowDeck.length) {
+    const all = flattenRede();
+    state.shadowDeck = state.srsEnabled ? srsOrder(all) : shuffle(all);
+    state.shadowIdx = 0;
+    state.shadowRevealed = false;
+  }
+  const deck = state.shadowDeck;
+
+  if (state.shadowIdx >= deck.length) {
+    srsSessionCounter++; srsSave();
+    document.getElementById('main').innerHTML = `
+      <div class="section-head"><h2>Geschafft!</h2><span class="meta">Sprechen · Nachsprechen</span></div>
+      <div class="quiz-summary">
+        <div class="big-num">${deck.length}</div>
+        <div class="label">Sätze geübt · weak ones return sooner</div>
+        <button class="flash-btn primary" id="shadowRestart">Nochmal</button>
+      </div>
+    `;
+    document.getElementById('shadowRestart').addEventListener('click', () => {
+      state.shadowDeck = []; state.shadowIdx = 0; state.shadowRevealed = false; state.shadowPeeked = false; renderShadow();
+    });
+    return;
+  }
+
+  const p = deck[state.shadowIdx];
+  const pct = (state.shadowIdx / deck.length) * 100;
+
+  document.getElementById('main').innerHTML = `
+    <div class="section-head">
+      <h2>Nachsprechen</h2>
+      <span class="meta">Sprechen · Shadowing</span>
+    </div>
+    <div class="shadow-stage">
+      <div class="shadow-card">
+        <div class="shadow-progress">
+          <span>Satz ${state.shadowIdx + 1} / ${deck.length}</span>
+          <div class="bar"><div class="bar-fill" style="width:${pct}%"></div></div>
+        </div>
+        <div class="shadow-cat">${escapeHtml(p.cat)}</div>
+        <div class="shadow-meaning">Sag das auf Deutsch:</div>
+        <div class="shadow-prompt">${escapeHtml(p.en)}</div>
+        <div class="shadow-prompt-pt">${escapeHtml(p.pt)}</div>
+
+        <div class="shadow-actions">
+          <button class="shadow-listen" id="shadowListen">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 8a5 5 0 0 1 0 8"></path><path d="M17.7 5a9 9 0 0 1 0 14"></path>
+              <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"></path>
+            </svg>
+            Anhören
+          </button>
+          <button class="shadow-peek-btn ${state.shadowPeeked ? 'on' : ''}" id="shadowPeek">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0"></path>
+              <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6"></path>
+            </svg>
+            <span id="shadowPeekLabel">${state.shadowPeeked ? 'Deutsch verbergen' : 'Deutsch zeigen'}</span>
+          </button>
+        </div>
+
+        <div id="shadowPeekLine"></div>
+        <div class="shadow-instruction">Hör zu · sprich laut nach · dann prüfen</div>
+
+        <div id="shadowReveal"></div>
+      </div>
+    </div>
+  `;
+
+  const listenBtn = document.getElementById('shadowListen');
+  listenBtn.addEventListener('click', () => speakGerman(p.de, listenBtn));
+
+  const peekLine = document.getElementById('shadowPeekLine');
+  function renderPeek() {
+    if (state.shadowPeeked) {
+      peekLine.innerHTML = `<div class="shadow-peek-line">
+        <span class="pk-de">${escapeHtml(p.de)}</span> ${speakerBtnHTML()}
+      </div>`;
+      wireSpeaker(peekLine, p.de);
+    } else {
+      peekLine.innerHTML = '';
+    }
+  }
+  renderPeek();
+  document.getElementById('shadowPeek').addEventListener('click', () => {
+    state.shadowPeeked = !state.shadowPeeked;
+    const btn = document.getElementById('shadowPeek');
+    btn.classList.toggle('on', state.shadowPeeked);
+    const lbl = document.getElementById('shadowPeekLabel');
+    if (lbl) lbl.textContent = state.shadowPeeked ? 'Deutsch verbergen' : 'Deutsch zeigen';
+    renderPeek();
+  });
+
+  const revealArea = document.getElementById('shadowReveal');
+
+  function showReveal() {
+    state.shadowRevealed = true;
+    // once fully revealed, the standalone peek line is redundant
+    state.shadowPeeked = false;
+    peekLine.innerHTML = '';
+    const peekBtn = document.getElementById('shadowPeek');
+    if (peekBtn) peekBtn.style.display = 'none';
+    revealArea.innerHTML = `
+      <div class="shadow-answer">
+        <div class="shadow-de">${escapeHtml(p.de)} ${speakerBtnHTML()}</div>
+        <div class="shadow-reply-block">
+          <span class="tag">Mögliche Antwort</span>
+          <div class="de-row" style="display:flex;align-items:flex-start;gap:8px">
+            <span class="r-de">${escapeHtml(p.reply)}</span> ${speakerBtnHTML()}
+          </div>
+          <div class="r-tr">${escapeHtml(p.replyEn)} · ${escapeHtml(p.replyPt)}</div>
+        </div>
+        <div class="shadow-controls">
+          <button class="flash-btn dont" id="shadowAgain">Nochmal üben ✗</button>
+          <button class="flash-btn know" id="shadowGot">Kann ich ✓</button>
+        </div>
+      </div>
+    `;
+    const deEl = revealArea.querySelector('.shadow-de');
+    const replyEl = revealArea.querySelector('.shadow-reply-block');
+    wireSpeaker(deEl, p.de);
+    wireSpeaker(replyEl, p.reply);
+
+    document.getElementById('shadowGot').addEventListener('click', () => {
+      if (state.srsEnabled) srsUpdate(p, true);
+      state.shadowIdx++; state.shadowRevealed = false; state.shadowPeeked = false; renderShadow();
+    });
+    document.getElementById('shadowAgain').addEventListener('click', () => {
+      if (state.srsEnabled) srsUpdate(p, false);
+      state.shadowIdx++; state.shadowRevealed = false; state.shadowPeeked = false; renderShadow();
+    });
+  }
+
+  // reveal button (shown until revealed)
+  if (!state.shadowRevealed) {
+    const btn = document.createElement('button');
+    btn.className = 'flash-btn primary';
+    btn.style.marginTop = '4px';
+    btn.textContent = 'Auflösen & bewerten →';
+    btn.addEventListener('click', showReveal);
+    revealArea.appendChild(btn);
+  } else {
+    showReveal();
+  }
+}
+
+function renderSprechen() {
+  if (state.category === '__shadow__') renderShadow();
+  else renderSprechenBook();
+}
+
+/* =========================================================================
    VERBEN RENDERING — full conjugation tables + drill
    ========================================================================= */
 function renderVerbTable() {
@@ -3383,7 +4807,7 @@ function renderTexte() {
         const u = new SpeechSynthesisUtterance(p.de);
         u.lang = 'de-DE';
         if (deVoice) u.voice = deVoice;
-        u.rate = 0.92;
+        u.rate = 0.78;
         window.speechSynthesis.speak(u);
       });
     });
@@ -3410,6 +4834,26 @@ function renderMain() {
   if (state.level === 'Verben') {
     modeBar.style.display = 'none';
     renderVerben();
+    return;
+  }
+  if (state.level === 'Sprechen') {
+    modeBar.style.display = 'none';
+    renderSprechen();
+    return;
+  }
+  if (state.level === 'Hören') {
+    modeBar.style.display = 'none';
+    renderHoeren();
+    return;
+  }
+  if (state.level === 'ABC') {
+    modeBar.style.display = 'none';
+    renderAlphabet();
+    return;
+  }
+  if (state.level === 'Zahlen') {
+    modeBar.style.display = 'none';
+    renderZahlen();
     return;
   }
 
@@ -3445,6 +4889,10 @@ document.querySelectorAll('#levelToggle button').forEach(btn => {
     if (state.level === 'Grammatik') state.category = GRAMMAR_ORDER[0];
     else if (state.level === 'Texte') state.category = TEXTS[0].id;
     else if (state.level === 'Verben') { state.category = VERBS[0].inf; state.drillQ = null; state.drillScore = 0; state.drillCount = 0; state.drillAnswered = false; }
+    else if (state.level === 'Sprechen') { state.category = REDE_ORDER[0]; state.shadowDeck = []; state.shadowIdx = 0; state.shadowRevealed = false; state.shadowPeeked = false; }
+    else if (state.level === 'Hören') { state.category = '__all__'; initHoerenDeck(); }
+    else if (state.level === 'ABC') { state.category = 'browse'; state.abcQ = null; state.abcScore = 0; state.abcCount = 0; state.abcAnswered = false; }
+    else if (state.level === 'Zahlen') { state.category = 'browse'; state.zahlQ = null; state.zahlScore = 0; state.zahlCount = 0; state.zahlAnswered = false; }
     else state.category = 'all';
     renderSidebar();
     renderMain();
@@ -3463,7 +4911,7 @@ document.querySelectorAll('.mode-tab').forEach(tab => {
 
 document.getElementById('search').addEventListener('input', (e) => {
   state.search = e.target.value;
-  if ((state.level === 'A1' || state.level === 'A2' || state.level === 'Alltag') && state.mode === 'browse') {
+  if ((state.level === 'A1' || state.level === 'A2' || state.level === 'B1' || state.level === 'Alltag') && state.mode === 'browse') {
     renderBrowse();
   }
 });
