@@ -1011,6 +1011,96 @@
   .flash-srs-tag.learning { color: var(--mustard); border-color: var(--mustard); }
   .flash-srs-tag.known { color: var(--green); border-color: var(--green); }
 
+  /* ============ VERBEN — CONJUGATION ============ */
+  .verb-head-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-left: 6px solid var(--mustard);
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .verb-head-card .vh-inf { font-family: 'Fraunces', serif; font-weight: 800; font-size: 30px; letter-spacing: -0.01em; }
+  .verb-head-card .vh-en { font-size: 15px; color: var(--gray); }
+  .verb-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase;
+    letter-spacing: 0.1em; padding: 2px 8px; border: 1.5px solid;
+  }
+  .verb-tag.stark { color: var(--red); border-color: var(--red); background: var(--red-soft); }
+  .verb-tag.schwach { color: var(--green); border-color: var(--green); background: var(--green-soft); }
+  .verb-tag.gemischt { color: var(--mustard); border-color: var(--mustard); background: #F2DDAE; }
+  .verb-tag.modal { color: var(--blue); border-color: var(--blue); background: var(--blue-soft); }
+  .verb-aux {
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--ink-soft);
+    border: 1px dashed var(--gray); padding: 2px 8px;
+  }
+  .verb-aux b { color: var(--ink); }
+  .verb-pp { font-family: 'Fraunces', serif; font-weight: 600; color: var(--ink); }
+
+  .conj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .conj-block { background: var(--paper); border: 2px solid var(--ink); box-shadow: var(--shadow); }
+  .conj-block .cb-head {
+    background: var(--ink); color: var(--cream);
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.12em;
+    padding: 9px 14px; display: flex; justify-content: space-between; align-items: center;
+  }
+  .conj-block .cb-head .speak-btn { width: 22px; height: 22px; border-color: var(--cream); color: var(--cream); background: transparent; }
+  .conj-block .cb-head .speak-btn:hover { background: var(--mustard); border-color: var(--mustard); color: var(--ink); }
+  .conj-block .cb-head .speak-btn svg { width: 12px; height: 12px; }
+  .conj-row { display: flex; justify-content: space-between; padding: 7px 14px; border-bottom: 1px solid var(--gray-soft); font-size: 14px; }
+  .conj-row:last-child { border-bottom: none; }
+  .conj-row .pron { color: var(--gray); font-family: 'JetBrains Mono', monospace; font-size: 12px; }
+  .conj-row .form { font-family: 'Fraunces', serif; font-weight: 600; color: var(--ink); }
+  .conj-row.alt { background: var(--cream); }
+
+  /* ---- conjugation drill ---- */
+  .drill-stage { max-width: 560px; margin: 0 auto; }
+  .drill-card { background: var(--paper); border: 2px solid var(--ink); padding: 32px; box-shadow: var(--shadow-deep); }
+  .drill-header {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray);
+    text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 20px; padding-bottom: 16px;
+    border-bottom: 1px dashed var(--gray-soft);
+  }
+  .drill-header .sc { color: var(--red); font-weight: 600; }
+  .drill-task { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 0.18em; margin-bottom: 12px; }
+  .drill-cue { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .drill-verb { font-family: 'Fraunces', serif; font-weight: 700; font-size: 30px; color: var(--ink); }
+  .drill-verb-en { font-size: 14px; color: var(--gray); }
+  .drill-spec { margin: 14px 0 20px; font-size: 15px; color: var(--ink-soft); }
+  .drill-spec .chip {
+    display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 12px;
+    border: 1.5px solid var(--ink); padding: 3px 10px; margin-right: 8px; background: var(--cream-dark);
+  }
+  .drill-spec .pron-chip { font-family: 'Fraunces', serif; font-weight: 700; font-size: 20px; color: var(--ink); }
+  .drill-input-row { display: flex; gap: 10px; }
+  .drill-input {
+    flex: 1; border: 2px solid var(--ink); background: var(--cream); padding: 14px 16px;
+    font-family: 'Fraunces', serif; font-size: 22px; color: var(--ink); box-shadow: var(--shadow);
+  }
+  .drill-input:focus { outline: none; background: var(--paper); }
+  .drill-input.correct { background: var(--green-soft); border-color: var(--green); }
+  .drill-input.wrong { background: var(--red-soft); border-color: var(--red); }
+  .drill-input.close { background: #F7EDD3; border-color: var(--mustard); }
+  .drill-feedback { margin-top: 20px; padding-top: 18px; border-top: 1px dashed var(--gray-soft); }
+  .drill-verdict { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+  .drill-verdict.ok { color: var(--green); }
+  .drill-verdict.no { color: var(--red); }
+  .drill-verdict.partly { color: var(--mustard); }
+  .drill-answer { font-size: 16px; color: var(--ink-soft); }
+  .drill-answer .ans { font-family: 'Fraunces', serif; font-weight: 600; color: var(--ink); font-size: 19px; }
+  .drill-fullrow { margin-top: 12px; font-size: 13px; color: var(--gray); font-family: 'JetBrains Mono', monospace; line-height: 1.7; }
+  .drill-fullrow b { color: var(--ink-soft); font-weight: 600; }
+
+  .verb-cat-tag {
+    font-family: 'JetBrains Mono', monospace; font-size: 9px; text-transform: uppercase;
+    letter-spacing: 0.08em; padding: 1px 5px; border: 1px solid var(--gray-soft); color: var(--gray);
+  }
+
   /* ============ EMPTY / RESPONSIVE ============ */
   .empty {
     text-align: center;
@@ -1046,6 +1136,10 @@
     .write-input { font-size: 18px; }
     .srs-bar { font-size: 10px; gap: 10px; }
     .srs-reset { margin-left: 0; }
+    .conj-grid { grid-template-columns: 1fr; }
+    .drill-card { padding: 20px; }
+    .drill-verb { font-size: 26px; }
+    .drill-input { font-size: 18px; }
   }
 </style>
 </head>
@@ -1055,13 +1149,14 @@
   <div class="brand">
     <span class="brand-mark"></span>
     <h1>Deutsch<span class="accent"> lernen</span></h1>
-    <span class="subtitle">A1 · A2 · Alltag · Grammatik</span>
+    <span class="subtitle">A1 · A2 · Alltag · Verben · Grammatik</span>
   </div>
   <div class="header-controls">
     <div class="level-toggle" id="levelToggle">
       <button data-level="A1" class="active">A1</button>
       <button data-level="A2">A2</button>
       <button data-level="Alltag">Alltag</button>
+      <button data-level="Verben">Verben</button>
       <button data-level="Grammatik">Grammatik</button>
       <button data-level="Texte">Texte</button>
     </div>
@@ -1601,6 +1696,187 @@ const IRREG = [
 ];
 
 /* =========================================================================
+   VERBS — full conjugation dataset + engine.
+   Per verb we store ONLY the unpredictable parts; the engine derives the rest.
+   Fields:
+     inf   infinitive
+     en    English meaning
+     aux   'h' (haben) | 's' (sein)
+     pp    Partizip II
+     prat  Präteritum 1st/3rd singular stem (e.g. "ging", "machte", "war")
+     type  'strong' (prat is bare: ich ging) | 'weak' (prat ends -e: ich machte)
+     cls   display class: 'stark' | 'schwach' | 'gemischt' | 'modal'
+     du2   present du form, only if vowel-changing (else derived)
+     er3   present er/sie/es form, only if vowel-changing (else derived)
+     praes [ich,du,er,wir,ihr,sie] full present override for fully-irregular verbs
+     k2    Konjunktiv II simple stem ending in -e (else würde + infinitive)
+   ========================================================================= */
+const VERBS = [
+  // ---- Hilfsverben (auxiliaries) ----
+  { inf:"sein", en:"to be", aux:"s", pp:"gewesen", prat:"war", type:"strong", cls:"stark", praes:["bin","bist","ist","sind","seid","sind"], k2:"wäre" },
+  { inf:"haben", en:"to have", aux:"h", pp:"gehabt", prat:"hatte", type:"weak", cls:"stark", du2:"hast", er3:"hat", k2:"hätte" },
+  { inf:"werden", en:"to become", aux:"s", pp:"geworden", prat:"wurde", type:"weak", cls:"stark", du2:"wirst", er3:"wird", k2:"würde" },
+  // ---- Modalverben ----
+  { inf:"können", en:"can / to be able to", aux:"h", pp:"gekonnt", prat:"konnte", type:"weak", cls:"modal", praes:["kann","kannst","kann","können","könnt","können"], k2:"könnte" },
+  { inf:"müssen", en:"must / to have to", aux:"h", pp:"gemusst", prat:"musste", type:"weak", cls:"modal", praes:["muss","musst","muss","müssen","müsst","müssen"], k2:"müsste" },
+  { inf:"wollen", en:"to want", aux:"h", pp:"gewollt", prat:"wollte", type:"weak", cls:"modal", praes:["will","willst","will","wollen","wollt","wollen"], k2:"wollte" },
+  { inf:"sollen", en:"should / ought to", aux:"h", pp:"gesollt", prat:"sollte", type:"weak", cls:"modal", praes:["soll","sollst","soll","sollen","sollt","sollen"], k2:"sollte" },
+  { inf:"dürfen", en:"may / to be allowed", aux:"h", pp:"gedurft", prat:"durfte", type:"weak", cls:"modal", praes:["darf","darfst","darf","dürfen","dürft","dürfen"], k2:"dürfte" },
+  { inf:"mögen", en:"to like", aux:"h", pp:"gemocht", prat:"mochte", type:"weak", cls:"modal", praes:["mag","magst","mag","mögen","mögt","mögen"], k2:"möchte" },
+  // ---- Starke Verben (strong) ----
+  { inf:"gehen", en:"to go", aux:"s", pp:"gegangen", prat:"ging", type:"strong", cls:"stark", k2:"ginge" },
+  { inf:"kommen", en:"to come", aux:"s", pp:"gekommen", prat:"kam", type:"strong", cls:"stark", k2:"käme" },
+  { inf:"fahren", en:"to drive / go", aux:"s", pp:"gefahren", prat:"fuhr", type:"strong", cls:"stark", du2:"fährst", er3:"fährt", k2:"führe" },
+  { inf:"laufen", en:"to run / walk", aux:"s", pp:"gelaufen", prat:"lief", type:"strong", cls:"stark", du2:"läufst", er3:"läuft", k2:"liefe" },
+  { inf:"fliegen", en:"to fly", aux:"s", pp:"geflogen", prat:"flog", type:"strong", cls:"stark", k2:"flöge" },
+  { inf:"bleiben", en:"to stay", aux:"s", pp:"geblieben", prat:"blieb", type:"strong", cls:"stark", k2:"bliebe" },
+  { inf:"fallen", en:"to fall", aux:"s", pp:"gefallen", prat:"fiel", type:"strong", cls:"stark", du2:"fällst", er3:"fällt", k2:"fiele" },
+  { inf:"essen", en:"to eat", aux:"h", pp:"gegessen", prat:"aß", type:"strong", cls:"stark", du2:"isst", er3:"isst", k2:"äße" },
+  { inf:"geben", en:"to give", aux:"h", pp:"gegeben", prat:"gab", type:"strong", cls:"stark", du2:"gibst", er3:"gibt", k2:"gäbe" },
+  { inf:"nehmen", en:"to take", aux:"h", pp:"genommen", prat:"nahm", type:"strong", cls:"stark", du2:"nimmst", er3:"nimmt", k2:"nähme" },
+  { inf:"sehen", en:"to see", aux:"h", pp:"gesehen", prat:"sah", type:"strong", cls:"stark", du2:"siehst", er3:"sieht", k2:"sähe" },
+  { inf:"lesen", en:"to read", aux:"h", pp:"gelesen", prat:"las", type:"strong", cls:"stark", du2:"liest", er3:"liest", k2:"läse" },
+  { inf:"sprechen", en:"to speak", aux:"h", pp:"gesprochen", prat:"sprach", type:"strong", cls:"stark", du2:"sprichst", er3:"spricht", k2:"spräche" },
+  { inf:"treffen", en:"to meet", aux:"h", pp:"getroffen", prat:"traf", type:"strong", cls:"stark", du2:"triffst", er3:"trifft", k2:"träfe" },
+  { inf:"helfen", en:"to help", aux:"h", pp:"geholfen", prat:"half", type:"strong", cls:"stark", du2:"hilfst", er3:"hilft", k2:"hülfe" },
+  { inf:"finden", en:"to find", aux:"h", pp:"gefunden", prat:"fand", type:"strong", cls:"stark", k2:"fände" },
+  { inf:"trinken", en:"to drink", aux:"h", pp:"getrunken", prat:"trank", type:"strong", cls:"stark", k2:"tränke" },
+  { inf:"singen", en:"to sing", aux:"h", pp:"gesungen", prat:"sang", type:"strong", cls:"stark", k2:"sänge" },
+  { inf:"schreiben", en:"to write", aux:"h", pp:"geschrieben", prat:"schrieb", type:"strong", cls:"stark", k2:"schriebe" },
+  { inf:"schlafen", en:"to sleep", aux:"h", pp:"geschlafen", prat:"schlief", type:"strong", cls:"stark", du2:"schläfst", er3:"schläft", k2:"schliefe" },
+  { inf:"tragen", en:"to carry / wear", aux:"h", pp:"getragen", prat:"trug", type:"strong", cls:"stark", du2:"trägst", er3:"trägt", k2:"trüge" },
+  { inf:"waschen", en:"to wash", aux:"h", pp:"gewaschen", prat:"wusch", type:"strong", cls:"stark", du2:"wäschst", er3:"wäscht", k2:"wüsche" },
+  { inf:"halten", en:"to hold / stop", aux:"h", pp:"gehalten", prat:"hielt", type:"strong", cls:"stark", du2:"hältst", er3:"hält", k2:"hielte" },
+  { inf:"lassen", en:"to let / leave", aux:"h", pp:"gelassen", prat:"ließ", type:"strong", cls:"stark", du2:"lässt", er3:"lässt", k2:"ließe" },
+  { inf:"rufen", en:"to call", aux:"h", pp:"gerufen", prat:"rief", type:"strong", cls:"stark", k2:"riefe" },
+  { inf:"stehen", en:"to stand", aux:"h", pp:"gestanden", prat:"stand", type:"strong", cls:"stark", k2:"stünde" },
+  { inf:"verstehen", en:"to understand", aux:"h", pp:"verstanden", prat:"verstand", type:"strong", cls:"stark", k2:"verstünde" },
+  { inf:"tun", en:"to do", aux:"h", pp:"getan", prat:"tat", type:"strong", cls:"stark", praes:["tue","tust","tut","tun","tut","tun"], k2:"täte" },
+  // ---- Gemischte Verben (mixed) ----
+  { inf:"bringen", en:"to bring", aux:"h", pp:"gebracht", prat:"brachte", type:"weak", cls:"gemischt", k2:"brächte" },
+  { inf:"denken", en:"to think", aux:"h", pp:"gedacht", prat:"dachte", type:"weak", cls:"gemischt", k2:"dächte" },
+  { inf:"wissen", en:"to know (facts)", aux:"h", pp:"gewusst", prat:"wusste", type:"weak", cls:"gemischt", praes:["weiß","weißt","weiß","wissen","wisst","wissen"], k2:"wüsste" },
+  { inf:"kennen", en:"to know (people/places)", aux:"h", pp:"gekannt", prat:"kannte", type:"weak", cls:"gemischt", k2:"kennte" },
+  { inf:"nennen", en:"to name / call", aux:"h", pp:"genannt", prat:"nannte", type:"weak", cls:"gemischt", k2:"nennte" },
+  { inf:"rennen", en:"to run / race", aux:"s", pp:"gerannt", prat:"rannte", type:"weak", cls:"gemischt", k2:"rennte" },
+  // ---- Schwache Verben (weak / regular) ----
+  { inf:"machen", en:"to make / do", aux:"h", pp:"gemacht", prat:"machte", type:"weak", cls:"schwach" },
+  { inf:"lernen", en:"to learn", aux:"h", pp:"gelernt", prat:"lernte", type:"weak", cls:"schwach" },
+  { inf:"arbeiten", en:"to work", aux:"h", pp:"gearbeitet", prat:"arbeitete", type:"weak", cls:"schwach" },
+  { inf:"wohnen", en:"to live / reside", aux:"h", pp:"gewohnt", prat:"wohnte", type:"weak", cls:"schwach" },
+  { inf:"spielen", en:"to play", aux:"h", pp:"gespielt", prat:"spielte", type:"weak", cls:"schwach" },
+  { inf:"kaufen", en:"to buy", aux:"h", pp:"gekauft", prat:"kaufte", type:"weak", cls:"schwach" },
+  { inf:"sagen", en:"to say", aux:"h", pp:"gesagt", prat:"sagte", type:"weak", cls:"schwach" },
+  { inf:"fragen", en:"to ask", aux:"h", pp:"gefragt", prat:"fragte", type:"weak", cls:"schwach" },
+  { inf:"lieben", en:"to love", aux:"h", pp:"geliebt", prat:"liebte", type:"weak", cls:"schwach" },
+  { inf:"brauchen", en:"to need", aux:"h", pp:"gebraucht", prat:"brauchte", type:"weak", cls:"schwach" },
+  { inf:"suchen", en:"to search / look for", aux:"h", pp:"gesucht", prat:"suchte", type:"weak", cls:"schwach" },
+  { inf:"hören", en:"to hear / listen", aux:"h", pp:"gehört", prat:"hörte", type:"weak", cls:"schwach" },
+  { inf:"warten", en:"to wait", aux:"h", pp:"gewartet", prat:"wartete", type:"weak", cls:"schwach" },
+  { inf:"kochen", en:"to cook", aux:"h", pp:"gekocht", prat:"kochte", type:"weak", cls:"schwach" },
+  { inf:"lachen", en:"to laugh", aux:"h", pp:"gelacht", prat:"lachte", type:"weak", cls:"schwach" },
+  { inf:"reisen", en:"to travel", aux:"s", pp:"gereist", prat:"reiste", type:"weak", cls:"schwach" },
+  { inf:"bezahlen", en:"to pay", aux:"h", pp:"bezahlt", prat:"bezahlte", type:"weak", cls:"schwach" },
+  { inf:"studieren", en:"to study", aux:"h", pp:"studiert", prat:"studierte", type:"weak", cls:"schwach" }
+];
+
+const PRONOUNS = ["ich", "du", "er/sie/es", "wir", "ihr", "sie/Sie"];
+const TENSES = ["Präsens", "Präteritum", "Perfekt", "Plusquamperfekt", "Futur I", "Konjunktiv II"];
+const VERB_CLASS_LABEL = { stark: "stark", schwach: "schwach", gemischt: "gemischt", modal: "Modalverb" };
+
+// Helper: present-tense forms of an auxiliary by infinitive
+function auxPraesByInf(inf) {
+  const v = VERBS.find(x => x.inf === inf);
+  return conjPraesens(v);
+}
+
+function stemOf(inf) {
+  if (inf.endsWith("en")) return inf.slice(0, -2);
+  if (inf.endsWith("n")) return inf.slice(0, -1); // (not used by current set except tun, which overrides)
+  return inf;
+}
+function endsTDcluster(s) {
+  return /[td]$/.test(s) || /(ffn|chn|tm|gn)$/.test(s);
+}
+function endsSibilant(s) {
+  return /(s|ss|ß|z|x)$/.test(s);
+}
+
+// PRÄSENS
+function conjPraesens(v) {
+  if (v.praes) return v.praes.slice();
+  const stem = stemOf(v.inf);
+  const ich = stem + "e";
+  let du;
+  if (v.du2) du = v.du2;
+  else if (endsSibilant(stem)) du = stem + "t";
+  else if (endsTDcluster(stem)) du = stem + "est";
+  else du = stem + "st";
+  let er;
+  if (v.er3) er = v.er3;
+  else if (endsTDcluster(stem)) er = stem + "et";
+  else er = stem + "t";
+  const wir = v.inf;
+  const ihr = endsTDcluster(stem) ? stem + "et" : stem + "t";
+  const sie = v.inf;
+  return [ich, du, er, wir, ihr, sie];
+}
+
+// PRÄTERITUM
+function conjPraeteritum(v) {
+  const p = v.prat;
+  if (v.type === "weak") {
+    // prat ends in -e (machte, hatte, konnte, dachte)
+    return [p, p + "st", p, p + "n", p + "t", p + "n"];
+  }
+  // strong: bare stem
+  const du = (endsTDcluster(p) || endsSibilant(p)) ? p + "est" : p + "st";
+  const ihr = endsTDcluster(p) ? p + "et" : p + "t";
+  return [p, du, p, p + "en", ihr, p + "en"];
+}
+
+// PERFEKT  (aux präsens + Partizip II)
+function conjPerfekt(v) {
+  const a = auxPraesByInf(v.aux === "s" ? "sein" : "haben");
+  return a.map(f => f + " " + v.pp);
+}
+// PLUSQUAMPERFEKT (aux präteritum + Partizip II)
+function conjPlusquam(v) {
+  const a = v.aux === "s"
+    ? ["war", "warst", "war", "waren", "wart", "waren"]
+    : ["hatte", "hattest", "hatte", "hatten", "hattet", "hatten"];
+  return a.map(f => f + " " + v.pp);
+}
+// FUTUR I  (werden präsens + Infinitiv)
+function conjFutur(v) {
+  const w = ["werde", "wirst", "wird", "werden", "werdet", "werden"];
+  return w.map(f => f + " " + v.inf);
+}
+// KONJUNKTIV II  (simple stem if available, else würde + Infinitiv)
+function conjKonjunktiv(v) {
+  if (v.k2) {
+    const k = v.k2; // ends in -e
+    return [k, k + "st", k, k + "n", k + "t", k + "n"];
+  }
+  const w = ["würde", "würdest", "würde", "würden", "würdet", "würden"];
+  return w.map(f => f + " " + v.inf);
+}
+
+function conjugateAll(v) {
+  return {
+    "Präsens": conjPraesens(v),
+    "Präteritum": conjPraeteritum(v),
+    "Perfekt": conjPerfekt(v),
+    "Plusquamperfekt": conjPlusquam(v),
+    "Futur I": conjFutur(v),
+    "Konjunktiv II": conjKonjunktiv(v)
+  };
+}
+function conjFormFor(v, tense, personIdx) {
+  return conjugateAll(v)[tense][personIdx];
+}
+
+/* =========================================================================
    TEXTE — reading passages recycling vocabulary from the app.
    Each paragraph: { de, en, pt }. Glossary: [de, en, pt].
    ========================================================================= */
@@ -1773,7 +2049,13 @@ const state = {
   writeScore: 0,
   writeAnswered: false,
   // spaced repetition toggle for flashcards
-  srsEnabled: true
+  srsEnabled: true,
+  // verb section state
+  verbSel: null,        // selected verb infinitive for the conjugation table
+  drillQ: null,         // current drill question
+  drillScore: 0,
+  drillCount: 0,
+  drillAnswered: false
 };
 
 /* =========================================================================
@@ -2042,6 +2324,43 @@ function renderSidebar() {
     sb.querySelectorAll('.cat-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         state.category = btn.dataset.cat;
+        renderSidebar();
+        renderMain();
+      });
+    });
+    return;
+  }
+
+  // Verben sidebar
+  if (state.level === 'Verben') {
+    let html = `<div class="sidebar-title">Verben · Konjugation</div>`;
+    html += `<button class="cat-btn all ${state.category === '__drill__' ? 'active' : ''}" data-cat="__drill__">
+      <span>✏️ Konjugieren üben</span>
+    </button>`;
+    const groups = [
+      ["stark", "Stark / Hilfsverben"],
+      ["modal", "Modalverben"],
+      ["gemischt", "Gemischt"],
+      ["schwach", "Schwach"]
+    ];
+    groups.forEach(([cls, label]) => {
+      const list = VERBS.filter(v => v.cls === cls);
+      if (!list.length) return;
+      html += `<div class="sidebar-title" style="padding-top:14px;border-top:1px dashed var(--gray-soft);border-bottom:none">${label}</div>`;
+      list.forEach(v => {
+        html += `<button class="cat-btn ${state.category === v.inf ? 'active' : ''}" data-cat="${escapeHtml(v.inf)}">
+          <span>${escapeHtml(v.inf)}</span><span class="verb-cat-tag">${VERB_CLASS_LABEL[v.cls]}</span>
+        </button>`;
+      });
+    });
+    sb.innerHTML = html;
+    sb.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (SPEECH_OK) window.speechSynthesis.cancel();
+        state.category = btn.dataset.cat;
+        if (state.category === '__drill__') {
+          state.drillQ = null; state.drillScore = 0; state.drillCount = 0; state.drillAnswered = false;
+        }
         renderSidebar();
         renderMain();
       });
@@ -2811,6 +3130,168 @@ function renderGrammarIrregular() {
   return h;
 }
 
+/* =========================================================================
+   VERBEN RENDERING — full conjugation tables + drill
+   ========================================================================= */
+function renderVerbTable() {
+  // default to first verb if none / invalid selected
+  let v = VERBS.find(x => x.inf === state.category);
+  if (!v) { v = VERBS[0]; state.category = v.inf; }
+
+  const all = conjugateAll(v);
+  const auxName = v.aux === 's' ? 'sein' : 'haben';
+
+  let blocks = '';
+  TENSES.forEach(tense => {
+    const forms = all[tense];
+    let rows = '';
+    forms.forEach((f, i) => {
+      rows += `<div class="conj-row ${i % 2 ? 'alt' : ''}">
+        <span class="pron">${escapeHtml(PRONOUNS[i])}</span>
+        <span class="form">${escapeHtml(f)}</span>
+      </div>`;
+    });
+    // speak the full tense as a short phrase list (ich…, du…) — concatenated with pauses
+    const spoken = forms.map((f, i) => PRONOUNS[i].split('/')[0] + ' ' + f).join(', ');
+    blocks += `<div class="conj-block" data-spoken="${escapeHtml(spoken)}">
+      <div class="cb-head"><span>${escapeHtml(tense)}</span>${speakerBtnHTML()}</div>
+      ${rows}
+    </div>`;
+  });
+
+  document.getElementById('main').innerHTML = `
+    <div class="section-head">
+      <h2>Konjugation</h2>
+      <span class="meta">Verben · ${VERBS.length} Verben</span>
+    </div>
+    <div class="verb-head-card">
+      <span class="vh-inf">${escapeHtml(v.inf)}</span>
+      ${speakerBtnHTML('lg')}
+      <span class="vh-en">${escapeHtml(v.en)}</span>
+      <span class="verb-tag ${v.cls}">${VERB_CLASS_LABEL[v.cls]}</span>
+      <span class="verb-aux">Perfekt mit <b>${auxName}</b></span>
+      <span class="verb-aux">Partizip II: <span class="verb-pp">${escapeHtml(v.pp)}</span></span>
+    </div>
+    <div class="conj-grid">${blocks}</div>
+  `;
+
+  // wire the header speaker (reads infinitive)
+  const headCard = document.querySelector('.verb-head-card');
+  wireSpeaker(headCard, v.inf);
+  // wire each tense block speaker
+  document.querySelectorAll('.conj-block').forEach(block => {
+    wireSpeaker(block, block.dataset.spoken);
+  });
+}
+
+function newDrillQuestion() {
+  const v = VERBS[Math.floor(Math.random() * VERBS.length)];
+  const tense = TENSES[Math.floor(Math.random() * TENSES.length)];
+  const personIdx = Math.floor(Math.random() * 6);
+  const answer = conjFormFor(v, tense, personIdx);
+  return { v, tense, personIdx, answer };
+}
+
+function checkConjugation(input, answer) {
+  const norm = s => normalizeAnswer(s).replace(/ß/g, 'ss');
+  const g = norm(input);
+  const a = norm(answer);
+  if (!g) return 'no';
+  if (g === a) return 'ok';
+  // forgiving: ignore a leading pronoun the user might prepend (e.g. "du fährst")
+  const gStripped = g.replace(/^(ich|du|er|sie|es|wir|ihr)\s+/, '');
+  if (gStripped === a) return 'ok';
+  // small typo tolerance on single-word answers
+  if (!a.includes(' ') && a.length >= 4 && editDistance(gStripped, a) <= 1) return 'partly';
+  return 'no';
+}
+
+function renderVerbDrill() {
+  if (!state.drillQ) state.drillQ = newDrillQuestion();
+  const { v, tense, personIdx, answer } = state.drillQ;
+  const pron = PRONOUNS[personIdx];
+
+  document.getElementById('main').innerHTML = `
+    <div class="section-head">
+      <h2>Konjugieren üben</h2>
+      <span class="meta">Verben · Fill in the blank</span>
+    </div>
+    <div class="drill-stage">
+      <div class="drill-card">
+        <div class="drill-header">
+          <span>Aufgabe ${state.drillCount + 1}</span>
+          <span class="sc">Punkte: ${state.drillScore} / ${state.drillCount}</span>
+        </div>
+        <div class="drill-task">Konjugiere das Verb</div>
+        <div class="drill-cue">
+          <span class="drill-verb">${escapeHtml(v.inf)}</span>
+          <span class="drill-verb-en">${escapeHtml(v.en)}</span>
+        </div>
+        <div class="drill-spec">
+          <span class="chip">${escapeHtml(tense)}</span>
+          <span class="pron-chip">${escapeHtml(pron)}</span>
+          <span style="color:var(--gray)"> → ?</span>
+        </div>
+        <div class="drill-input-row">
+          <input class="drill-input" id="drillInput" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="…" />
+          ${speakerBtnHTML('lg')}
+        </div>
+        <div id="drillFeedback"></div>
+      </div>
+    </div>
+  `;
+
+  const input = document.getElementById('drillInput');
+  const feedback = document.getElementById('drillFeedback');
+  wireSpeaker(document.querySelector('.drill-input-row'), answer);
+
+  function submit() {
+    if (state.drillAnswered) { advance(); return; }
+    const verdict = checkConjugation(input.value, answer);
+    state.drillAnswered = true;
+    state.drillCount++;
+    const correct = verdict === 'ok';
+    if (correct) state.drillScore++;
+
+    input.disabled = true;
+    input.classList.add(verdict === 'ok' ? 'correct' : verdict === 'partly' ? 'close' : 'wrong');
+
+    let vt, vc;
+    if (verdict === 'ok') { vt = 'Richtig! ✓'; vc = 'ok'; }
+    else if (verdict === 'partly') { vt = 'Fast — kleiner Tippfehler'; vc = 'partly'; }
+    else { vt = 'Nicht ganz ✗'; vc = 'no'; }
+
+    // full row for context
+    const allForms = conjugateAll(v)[tense];
+    const fullRow = PRONOUNS.map((p, i) =>
+      `<b>${escapeHtml(p.split('/')[0])}</b> ${escapeHtml(allForms[i])}`).join(' · ');
+
+    feedback.innerHTML = `
+      <div class="drill-feedback">
+        <div class="drill-verdict ${vc}">${vt}</div>
+        <div class="drill-answer">${escapeHtml(pron)}: <span class="ans">${escapeHtml(answer)}</span></div>
+        <div class="drill-fullrow">${tense}: ${fullRow}</div>
+        <div style="margin-top:16px"><button class="flash-btn primary" id="drillNext">Weiter →</button></div>
+      </div>
+    `;
+    document.getElementById('drillNext').addEventListener('click', advance);
+  }
+
+  function advance() {
+    state.drillQ = newDrillQuestion();
+    state.drillAnswered = false;
+    renderVerbDrill();
+  }
+
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
+  input.focus();
+}
+
+function renderVerben() {
+  if (state.category === '__drill__') renderVerbDrill();
+  else renderVerbTable();
+}
+
 function renderGrammar() {
   if (!GRAMMAR_ORDER.includes(state.category)) state.category = GRAMMAR_ORDER[0];
   let body = '';
@@ -2926,6 +3407,11 @@ function renderMain() {
     renderTexte();
     return;
   }
+  if (state.level === 'Verben') {
+    modeBar.style.display = 'none';
+    renderVerben();
+    return;
+  }
 
   modeBar.style.display = '';
   if (state.mode === 'browse') {
@@ -2958,6 +3444,7 @@ document.querySelectorAll('#levelToggle button').forEach(btn => {
     // Set a sensible default selection for the section
     if (state.level === 'Grammatik') state.category = GRAMMAR_ORDER[0];
     else if (state.level === 'Texte') state.category = TEXTS[0].id;
+    else if (state.level === 'Verben') { state.category = VERBS[0].inf; state.drillQ = null; state.drillScore = 0; state.drillCount = 0; state.drillAnswered = false; }
     else state.category = 'all';
     renderSidebar();
     renderMain();
