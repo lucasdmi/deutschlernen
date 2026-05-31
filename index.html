@@ -1257,6 +1257,72 @@
   }
   .drill-num-input:focus { outline: none; border-color: var(--mustard); }
 
+  /* ============ ZEIT — days, months, clock ============ */
+  .zeit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+  .zeit-card { background: var(--paper); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 14px 16px; }
+  .zeit-card .zc-top { display: flex; align-items: center; gap: 10px; }
+  .zeit-card .zc-abbr { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--mustard); border: 1.5px solid var(--mustard); padding: 1px 6px; }
+  .zeit-card .zc-num { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray); }
+  .zeit-card .zc-de { font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; color: var(--ink); }
+  .zeit-card .zc-speak { margin-left: auto; }
+  .zeit-card .zc-tr { font-size: 13px; color: var(--ink-soft); margin-top: 5px; }
+  .zeit-card .zc-tr .pt { color: var(--green); margin-left: 6px; }
+  .zeit-card .zc-ex { font-size: 12.5px; color: var(--gray); margin-top: 9px; padding-top: 8px; border-top: 1px dashed var(--gray-soft); font-style: italic; display: flex; gap: 6px; align-items: center; line-height: 1.4; }
+  .zeit-card .zc-ex .speak-btn { width: 20px; height: 20px; flex-shrink: 0; }
+  .zeit-card .zc-ex .speak-btn svg { width: 11px; height: 11px; }
+  .clock-wrap { text-align: center; margin: 6px 0 4px; }
+  .clock-svg { width: 168px; height: 168px; }
+  .clock-digital { font-family: 'JetBrains Mono', monospace; font-size: 24px; font-weight: 600; color: var(--ink); margin-top: 8px; letter-spacing: 0.05em; }
+
+  /* ============ PLAN — weekly study hub ============ */
+  .plan-intro {
+    background: var(--paper); border: 2px solid var(--ink); border-left: 6px solid var(--mustard);
+    padding: 14px 18px; margin-bottom: 20px; font-size: 13px; line-height: 1.55; color: var(--ink-soft); box-shadow: var(--shadow);
+  }
+  .plan-intro strong { color: var(--ink); }
+  .plan-focus { background: var(--ink); color: var(--cream); border: 2px solid var(--ink); box-shadow: var(--shadow-deep); padding: 16px 18px; margin-bottom: 18px; }
+  .plan-focus .pf-head { display: flex; align-items: center; gap: 12px; }
+  .plan-focus .pf-nav { background: var(--cream); color: var(--ink); border: 2px solid var(--cream); width: 34px; height: 34px; font-size: 20px; line-height: 1; cursor: pointer; flex-shrink: 0; }
+  .plan-focus .pf-nav:disabled { opacity: 0.3; cursor: default; }
+  .plan-focus .pf-mid { flex: 1; text-align: center; }
+  .plan-focus .pf-week { display: block; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--mustard); }
+  .plan-focus .pf-cat { display: block; font-family: 'Fraunces', serif; font-weight: 700; font-size: 19px; margin-top: 3px; line-height: 1.2; }
+  .plan-focus .pf-actions { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 14px; }
+  .plan-open {
+    background: var(--mustard); color: var(--ink); border: 2px solid var(--mustard); padding: 8px 14px;
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 13px; cursor: pointer; transition: transform 0.1s;
+  }
+  .plan-open:hover { transform: translateY(-1px); }
+  .plan-quick { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .pq-btn {
+    background: var(--paper); color: var(--ink); border: 2px solid var(--ink); padding: 9px 13px; box-shadow: var(--shadow);
+    font-family: 'Fraunces', serif; font-weight: 600; font-size: 13px; cursor: pointer; transition: all 0.1s;
+  }
+  .pq-btn:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+  .plan-progress { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .plan-progress .pp-bar { flex: 1; height: 10px; background: var(--cream-dark); border: 2px solid var(--ink); overflow: hidden; }
+  .plan-progress .pp-fill { height: 100%; background: var(--green); transition: width 0.25s; }
+  .plan-progress .pp-text { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray); white-space: nowrap; }
+  .plan-section-title { font-family: 'JetBrains Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--mustard); margin: 22px 0 10px; }
+  .plan-group { margin-bottom: 12px; }
+  .plan-day { font-family: 'Fraunces', serif; font-weight: 700; font-size: 14px; color: var(--ink); margin-bottom: 5px; }
+  .plan-row { display: flex; align-items: center; gap: 10px; padding: 8px 10px; background: var(--paper); border: 1.5px solid var(--gray-soft); margin-bottom: 5px; }
+  .plan-check {
+    width: 22px; height: 22px; flex-shrink: 0; border: 2px solid var(--ink); background: var(--cream); cursor: pointer;
+    display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700; color: var(--cream);
+  }
+  .plan-check.on { background: var(--green); color: var(--cream); border-color: var(--green); }
+  .plan-task { flex: 1; font-size: 13.5px; line-height: 1.4; color: var(--ink); }
+  .plan-row .plan-open { flex-shrink: 0; font-size: 12px; padding: 5px 10px; }
+  .plan-ref { background: var(--paper); border: 2px solid var(--ink); box-shadow: var(--shadow); padding: 16px 18px; margin-top: 22px; }
+  .plan-ref .pr-title { font-family: 'Fraunces', serif; font-weight: 700; font-size: 15px; margin-bottom: 10px; color: var(--ink); }
+  .plan-ref .pr-seq { margin: 0 0 12px; padding-left: 22px; font-size: 13px; line-height: 1.7; color: var(--ink-soft); }
+  .plan-ref .pr-seq li.cur { color: var(--ink); font-weight: 700; }
+  .plan-ref .pr-seq li.cur::marker { color: var(--mustard); }
+  .plan-ref .pr-note { font-size: 12.5px; line-height: 1.55; color: var(--ink-soft); margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--gray-soft); }
+  .plan-ref .pr-note strong { color: var(--ink); }
+  .plan-ref a { color: var(--blue); text-decoration: underline; }
+
   /* ============ EMPTY / RESPONSIVE ============ */
   .empty {
     text-align: center;
@@ -1313,12 +1379,14 @@
   </div>
   <div class="header-controls">
     <div class="level-toggle" id="levelToggle">
+      <button data-level="Plan">📋 Plan</button>
       <button data-level="A1" class="active">A1</button>
       <button data-level="A2">A2</button>
       <button data-level="B1">B1</button>
       <button data-level="Alltag">Alltag</button>
       <button data-level="ABC">ABC</button>
       <button data-level="Zahlen">Zahlen</button>
+      <button data-level="Zeit">Zeit</button>
       <button data-level="Sprechen">Sprechen</button>
       <button data-level="Hören">Hören</button>
       <button data-level="Verben">Verben</button>
@@ -2737,6 +2805,68 @@ function germanNumber(n) {
   return onesWord + 'und' + tens[t];
 }
 
+/* =========================================================================
+   ZEIT — days, months, and telling the time.
+   All days and months are masculine (der Montag, der Januar).
+   ========================================================================= */
+const WOCHENTAGE = [
+  { de:"Montag",     en:"Monday",    pt:"segunda-feira", abbr:"Mo", ex:"Am Montag fängt die Woche an.",        exTr:"The week starts on Monday." },
+  { de:"Dienstag",   en:"Tuesday",   pt:"terça-feira",   abbr:"Di", ex:"Am Dienstag habe ich einen Termin.",   exTr:"On Tuesday I have an appointment." },
+  { de:"Mittwoch",   en:"Wednesday", pt:"quarta-feira",  abbr:"Mi", ex:"Mittwoch ist die Mitte der Woche.",     exTr:"Wednesday is the middle of the week." },
+  { de:"Donnerstag", en:"Thursday",  pt:"quinta-feira",  abbr:"Do", ex:"Donnerstags gehe ich ins Fitnessstudio.", exTr:"On Thursdays I go to the gym." },
+  { de:"Freitag",    en:"Friday",    pt:"sexta-feira",   abbr:"Fr", ex:"Endlich Freitag!",                      exTr:"Finally Friday!" },
+  { de:"Samstag",    en:"Saturday",  pt:"sábado",        abbr:"Sa", ex:"Am Samstag gehe ich einkaufen.",        exTr:"On Saturday I go shopping." },
+  { de:"Sonntag",    en:"Sunday",    pt:"domingo",       abbr:"So", ex:"Am Sonntag sind die Geschäfte zu.",     exTr:"On Sunday the shops are closed." }
+];
+const MONATE = [
+  { de:"Januar",    en:"January",   pt:"janeiro",   num:1 },
+  { de:"Februar",   en:"February",  pt:"fevereiro", num:2 },
+  { de:"März",      en:"March",     pt:"março",     num:3 },
+  { de:"April",     en:"April",     pt:"abril",     num:4 },
+  { de:"Mai",       en:"May",       pt:"maio",      num:5 },
+  { de:"Juni",      en:"June",      pt:"junho",     num:6 },
+  { de:"Juli",      en:"July",      pt:"julho",     num:7 },
+  { de:"August",    en:"August",    pt:"agosto",    num:8 },
+  { de:"September", en:"September", pt:"setembro",  num:9 },
+  { de:"Oktober",   en:"October",   pt:"outubro",   num:10 },
+  { de:"November",  en:"November",  pt:"novembro",  num:11 },
+  { de:"Dezember",  en:"December",  pt:"dezembro",  num:12 }
+];
+
+// Colloquial time (nach / vor / halb), minutes restricted to 0/15/30/45.
+function germanTimeColloquial(h12, m) {
+  const next = (h12 % 12) + 1;
+  if (m === 0) return (h12 === 1 ? 'ein' : germanNumber(h12)) + ' Uhr';
+  if (m === 15) return 'Viertel nach ' + germanNumber(h12);
+  if (m === 30) return 'halb ' + germanNumber(next);
+  if (m === 45) return 'Viertel vor ' + germanNumber(next);
+  return germanNumber(h12) + ' Uhr ' + germanNumber(m);
+}
+// Official / 24h-style reading using the displayed 12h number.
+function officialTime(h12, m) {
+  const hw = (h12 === 1 ? 'ein' : germanNumber(h12)) + ' Uhr';
+  return m === 0 ? hw : hw + ' ' + germanNumber(m);
+}
+// Minimal analog clock as inline SVG (uses theme CSS variables).
+function clockSVG(h12, m) {
+  const cx = 60, cy = 60;
+  const minA = m * 6, hourA = (h12 % 12) * 30 + m * 0.5;
+  const pt = (a, L) => [(cx + L * Math.sin(a * Math.PI / 180)).toFixed(1), (cy - L * Math.cos(a * Math.PI / 180)).toFixed(1)];
+  let ticks = '';
+  for (let i = 0; i < 12; i++) {
+    const a = i * 30, o = pt(a, 54), inn = pt(a, i % 3 === 0 ? 44 : 49);
+    ticks += `<line x1="${o[0]}" y1="${o[1]}" x2="${inn[0]}" y2="${inn[1]}" stroke="var(--ink)" stroke-width="${i % 3 === 0 ? 2.5 : 1.2}"/>`;
+  }
+  const mh = pt(minA, 42), hh = pt(hourA, 28);
+  return `<svg viewBox="0 0 120 120" class="clock-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <circle cx="60" cy="60" r="56" fill="var(--paper)" stroke="var(--ink)" stroke-width="2.5"/>
+    ${ticks}
+    <line x1="60" y1="60" x2="${hh[0]}" y2="${hh[1]}" stroke="var(--ink)" stroke-width="4" stroke-linecap="round"/>
+    <line x1="60" y1="60" x2="${mh[0]}" y2="${mh[1]}" stroke="var(--mustard)" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="60" cy="60" r="3.5" fill="var(--ink)"/>
+  </svg>`;
+}
+
 
 const state = {
   level: 'A1',
@@ -2794,7 +2924,13 @@ const state = {
   zahlAnswered: false,
   zahlCorrect: false,
   zahlScore: 0,
-  zahlCount: 0
+  zahlCount: 0,
+  // Uhrzeit (clock) drill state
+  clockQ: null,         // { h12, m, options:[], answer, official }
+  clockAnswered: false,
+  clockSelected: null,
+  clockScore: 0,
+  clockCount: 0
 };
 
 /* =========================================================================
@@ -3046,6 +3182,69 @@ function editDistance(a, b) {
 }
 
 /* =========================================================================
+   PLAN — weekly study plan: a checklist that resets each ISO week, a
+   selectable 12-week vocabulary focus, and quick-launch links. Persists to
+   localStorage when available, otherwise in-memory (same as SRS).
+   ========================================================================= */
+const PLAN_FOCUS = [
+  { label:"Konnektoren B1 — sofortiges Satz-Upgrade", level:"B1", cat:"Konnektoren B1", spr:null },
+  { label:"Arbeit & Beruf",            level:"B1", cat:"Arbeit & Beruf",          spr:"Kollegen & Smalltalk" },
+  { label:"Medien & Technik",          level:"B1", cat:"Medien & Technik",        spr:null },
+  { label:"Meinung & Diskussion",      level:"B1", cat:"Meinung & Diskussion",    spr:null },
+  { label:"Wohnen & Stadt",            level:"B1", cat:"Wohnen & Stadt",          spr:"Ämter, Termine & Telefon" },
+  { label:"Gefühle & Beziehungen",     level:"B1", cat:"Gefühle & Beziehungen",   spr:"Kollegen & Smalltalk" },
+  { label:"Gesundheit",                level:"B1", cat:"Gesundheit",              spr:"Arzt, Apotheke & Notfall" },
+  { label:"Bildung & Lernen",          level:"B1", cat:"Bildung & Lernen",        spr:null },
+  { label:"Umwelt & Natur",            level:"B1", cat:"Umwelt & Natur",          spr:null },
+  { label:"Abstrakte Begriffe",        level:"B1", cat:"Abstrakte Begriffe",      spr:null },
+  { label:"Alltag: Restaurant & Supermarkt", level:"Alltag", cat:"Restaurant",   spr:"Gym, Supermarkt & Restaurant" },
+  { label:"Wiederholung: schwächste Wörter (SRS)", level:"B1", cat:"__review__", spr:null }
+];
+const PLAN_DAYS = [
+  { de:"Montag",     tasks:[ {id:"mo1", t:"Tägliche Routine (15 Min): Aufwärmen · Vokabeln · Shadowing"}, {id:"mo2", t:"Wochenfokus starten — neue Vokabeln browsen", go:"focusVocab"} ] },
+  { de:"Dienstag",   tasks:[ {id:"di1", t:"Tägliche Routine (15 Min)"}, {id:"di2", t:"Verben üben (Konjugation)", go:["Verben","__drill__"]} ] },
+  { de:"Mittwoch",   tasks:[ {id:"mi1", t:"Tägliche Routine (15 Min)"}, {id:"mi2", t:"Hören-Übung", go:["Hören","__all__"]} ] },
+  { de:"Donnerstag", tasks:[ {id:"do1", t:"Tägliche Routine (15 Min)"}, {id:"do2", t:"Einen Text laut lesen", go:["Texte",null]} ] },
+  { de:"Freitag",    tasks:[ {id:"fr1", t:"Tägliche Routine (15 Min)"}, {id:"fr2", t:"Sprechen wiederholen (Shadowing)", go:["Sprechen","__shadow__"]} ] },
+  { de:"Samstag",    tasks:[ {id:"sa1", t:"Echte Situation auf Deutsch nutzen (Supermarkt, Restaurant …)"}, {id:"sa2", t:"Kurze Wiederholung: Zahlen & Uhrzeit", go:["Zahlen","__drill__"]} ] },
+  { de:"Sonntag",    tasks:[ {id:"so1", t:"Woche wiederholen — Karteikarten (SRS)", go:"focusReview"}, {id:"so2", t:"Nächste Woche planen"} ] }
+];
+const PLAN_WEEKLY = [
+  { id:"wk_tutor",   t:"Tutor-Gespräch — 30 Min, nur sprechen (iTalki / Preply)" },
+  { id:"wk_partner", t:"2× Deutsch beim Abendessen mit deiner Frau" },
+  { id:"wk_reps",    t:"Jeden Tag eine echte Mini-Situation auf Deutsch" },
+  { id:"wk_podcast", t:"Podcast im Alltag (Easy German / Coffee Break German)" }
+];
+
+function isoWeek(dt) {
+  const d = new Date(Date.UTC(dt.getFullYear(), dt.getMonth(), dt.getDate()));
+  const day = d.getUTCDay() || 7;
+  d.setUTCDate(d.getUTCDate() + 4 - day);
+  const yearStart = new Date(Date.UTC(d.getUTCFullYear(), 0, 1));
+  const wk = Math.ceil((((d - yearStart) / 86400000) + 1) / 7);
+  return d.getUTCFullYear() + '-W' + String(wk).padStart(2, '0');
+}
+
+const PLAN_KEY = 'deutsch_plan_v1';
+let planData = { week: '', focus: 0, checks: {} };
+let planPersist = false;
+(function initPlanStore() {
+  try {
+    const raw = window.localStorage.getItem(PLAN_KEY);
+    if (raw) { const p = JSON.parse(raw) || {}; planData.week = p.week || ''; planData.focus = p.focus || 0; planData.checks = p.checks || {}; }
+    window.localStorage.setItem(PLAN_KEY + '_probe', '1');
+    window.localStorage.removeItem(PLAN_KEY + '_probe');
+    planPersist = true;
+  } catch (e) { planPersist = false; }
+})();
+function planSave() { if (!planPersist) return; try { window.localStorage.setItem(PLAN_KEY, JSON.stringify(planData)); } catch (e) { /* ignore */ } }
+function planEnsureWeek() {
+  const w = isoWeek(new Date());
+  if (planData.week !== w) { planData.week = w; planData.checks = {}; planSave(); }
+}
+function planAllIds() { return [].concat.apply([], PLAN_DAYS.map(d => d.tasks.map(t => t.id))).concat(PLAN_WEEKLY.map(t => t.id)); }
+
+/* =========================================================================
    SIDEBAR
    ========================================================================= */
 function renderSidebar() {
@@ -3133,6 +3332,21 @@ function renderSidebar() {
     return;
   }
 
+  // Plan sidebar (quick launch)
+  if (state.level === 'Plan') {
+    sb.innerHTML = `<div class="sidebar-title">Wochenplan</div>
+      <button class="cat-btn all" data-go='"focusVocab"'><span>📖 Wochenfokus</span></button>
+      <button class="cat-btn" data-go='["Sprechen","__shadow__"]'><span>🎤 Shadowing</span></button>
+      <button class="cat-btn" data-go='["Hören","__all__"]'><span>🎧 Hören</span></button>
+      <button class="cat-btn" data-go='["Verben","__drill__"]'><span>✏️ Verben</span></button>
+      <button class="cat-btn" data-go='["Zahlen","__drill__"]'><span>🔢 Zahlen</span></button>
+      <button class="cat-btn" data-go='["Zeit","__clock__"]'><span>🕐 Uhrzeit</span></button>`;
+    sb.querySelectorAll('[data-go]').forEach(btn => {
+      btn.addEventListener('click', () => { try { planGoto(JSON.parse(btn.dataset.go)); } catch (e) { /* ignore */ } });
+    });
+    return;
+  }
+
   // ABC sidebar
   if (state.level === 'ABC') {
     let html = `<div class="sidebar-title">ABC · Alphabet</div>`;
@@ -3144,6 +3358,24 @@ function renderSidebar() {
         if (SPEECH_OK) window.speechSynthesis.cancel();
         state.category = btn.dataset.cat;
         if (state.category === '__drill__') { state.abcQ = null; state.abcScore = 0; state.abcCount = 0; state.abcAnswered = false; }
+        renderSidebar(); renderMain();
+      });
+    });
+    return;
+  }
+
+  // Zeit sidebar
+  if (state.level === 'Zeit') {
+    let html = `<div class="sidebar-title">Zeit · Datum & Uhr</div>`;
+    html += `<button class="cat-btn ${state.category === 'tage' ? 'active' : ''}" data-cat="tage"><span>📅 Wochentage</span><span class="count">${WOCHENTAGE.length}</span></button>`;
+    html += `<button class="cat-btn ${state.category === 'monate' ? 'active' : ''}" data-cat="monate"><span>🗓️ Monate</span><span class="count">${MONATE.length}</span></button>`;
+    html += `<button class="cat-btn all ${state.category === '__clock__' ? 'active' : ''}" data-cat="__clock__"><span>🕐 Uhrzeit üben</span></button>`;
+    sb.innerHTML = html;
+    sb.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        if (SPEECH_OK) window.speechSynthesis.cancel();
+        state.category = btn.dataset.cat;
+        if (state.category === '__clock__') { state.clockQ = null; state.clockScore = 0; state.clockCount = 0; state.clockAnswered = false; }
         renderSidebar(); renderMain();
       });
     });
@@ -3955,6 +4187,148 @@ function renderGrammarIrregular() {
 }
 
 /* =========================================================================
+   NAVIGATION — selectLevel switches sections (shared by tabs + Plan links)
+   ========================================================================= */
+function selectLevel(level, categoryOverride) {
+  if (SPEECH_OK) window.speechSynthesis.cancel();
+  document.querySelectorAll('#levelToggle button').forEach(b => b.classList.toggle('active', b.dataset.level === level));
+  state.level = level;
+  if (level === 'Grammatik') state.category = GRAMMAR_ORDER[0];
+  else if (level === 'Texte') state.category = TEXTS[0].id;
+  else if (level === 'Verben') { state.category = VERBS[0].inf; state.drillQ = null; state.drillScore = 0; state.drillCount = 0; state.drillAnswered = false; }
+  else if (level === 'Sprechen') { state.category = REDE_ORDER[0]; state.shadowDeck = []; state.shadowIdx = 0; state.shadowRevealed = false; state.shadowPeeked = false; }
+  else if (level === 'Hören') { state.category = '__all__'; initHoerenDeck(); }
+  else if (level === 'ABC') { state.category = 'browse'; state.abcQ = null; state.abcScore = 0; state.abcCount = 0; state.abcAnswered = false; }
+  else if (level === 'Zahlen') { state.category = 'browse'; state.zahlQ = null; state.zahlScore = 0; state.zahlCount = 0; state.zahlAnswered = false; }
+  else if (level === 'Zeit') { state.category = 'tage'; state.clockQ = null; state.clockScore = 0; state.clockCount = 0; state.clockAnswered = false; }
+  else if (level === 'Plan') { state.category = 'plan'; }
+  else state.category = 'all';
+  // optional override to land on a specific drill / category
+  if (typeof categoryOverride !== 'undefined' && categoryOverride !== null) {
+    state.category = categoryOverride;
+    if (level === 'Verben' && categoryOverride === '__drill__') { state.drillQ = null; state.drillScore = 0; state.drillCount = 0; state.drillAnswered = false; }
+    if (level === 'Sprechen' && categoryOverride === '__shadow__') { state.shadowDeck = []; state.shadowIdx = 0; state.shadowRevealed = false; state.shadowPeeked = false; }
+    if (level === 'ABC' && categoryOverride === '__drill__') { state.abcQ = null; state.abcScore = 0; state.abcCount = 0; state.abcAnswered = false; }
+    if (level === 'Zahlen' && categoryOverride === '__drill__') { state.zahlQ = null; state.zahlScore = 0; state.zahlCount = 0; state.zahlAnswered = false; }
+    if (level === 'Zeit' && categoryOverride === '__clock__') { state.clockQ = null; state.clockScore = 0; state.clockCount = 0; state.clockAnswered = false; }
+  }
+  renderSidebar();
+  renderMain();
+}
+function syncModeTabs() { document.querySelectorAll('.mode-tab').forEach(t => t.classList.toggle('active', t.dataset.mode === state.mode)); }
+
+// Open the current week's vocabulary focus (browse), or B1 flashcards for review weeks.
+function openFocusVocab() {
+  const f = PLAN_FOCUS[planData.focus];
+  if (f.cat === '__review__') { selectLevel('B1'); state.category = 'all'; state.mode = 'flash'; renderSidebar(); renderMain(); syncModeTabs(); return; }
+  selectLevel(f.level); state.category = f.cat; state.mode = 'browse'; renderSidebar(); renderMain(); syncModeTabs();
+}
+function openFocusSpr() {
+  const f = PLAN_FOCUS[planData.focus];
+  if (!f.spr) return;
+  selectLevel('Sprechen'); state.category = f.spr; renderSidebar(); renderMain();
+}
+function planGoto(go) {
+  if (go === 'focusVocab') { openFocusVocab(); return; }
+  if (go === 'focusReview') { selectLevel('B1'); state.category = 'all'; state.mode = 'flash'; renderSidebar(); renderMain(); syncModeTabs(); return; }
+  if (Array.isArray(go)) { selectLevel(go[0], go[1]); }
+}
+
+/* =========================================================================
+   PLAN RENDERING — weekly study hub
+   ========================================================================= */
+function renderPlan() {
+  planEnsureWeek();
+  const main = document.getElementById('main');
+  const f = PLAN_FOCUS[planData.focus];
+  const allIds = planAllIds();
+  const done = allIds.filter(id => planData.checks[id]).length;
+  const pct = Math.round(done / allIds.length * 100);
+
+  const focusSpr = f.spr ? `<button class="plan-open" id="planOpenSpr">Redemittel: ${escapeHtml(f.spr)} ▸</button>` : '';
+  const focusHTML = `<div class="plan-focus">
+    <div class="pf-head">
+      <button class="pf-nav" id="planPrev" ${planData.focus === 0 ? 'disabled' : ''} aria-label="zurück">‹</button>
+      <div class="pf-mid"><span class="pf-week">Wochenfokus · Woche ${planData.focus + 1} / ${PLAN_FOCUS.length}</span><span class="pf-cat">${escapeHtml(f.label)}</span></div>
+      <button class="pf-nav" id="planNext" ${planData.focus === PLAN_FOCUS.length - 1 ? 'disabled' : ''} aria-label="weiter">›</button>
+    </div>
+    <div class="pf-actions"><button class="plan-open" id="planOpenVocab">Vokabeln öffnen ▸</button>${focusSpr}</div>
+  </div>`;
+
+  const quickHTML = `<div class="plan-quick">
+    <button class="pq-btn" data-go='["Zahlen","__drill__"]'>🔢 Zahlen hören</button>
+    <button class="pq-btn" data-go='["Zeit","__clock__"]'>🕐 Uhrzeit</button>
+    <button class="pq-btn" data-go='["ABC","__drill__"]'>🔤 Buchstaben</button>
+    <button class="pq-btn" data-go='["Sprechen","__shadow__"]'>🎤 Shadowing</button>
+    <button class="pq-btn" data-go='["Hören","__all__"]'>🎧 Hören</button>
+  </div>`;
+
+  const progressHTML = `<div class="plan-progress"><div class="pp-bar"><div class="pp-fill" id="planFill" style="width:${pct}%"></div></div><span class="pp-text" id="planText">${done} / ${allIds.length} erledigt</span></div>`;
+
+  const rowHTML = (t) => {
+    const checked = !!planData.checks[t.id];
+    const openBtn = t.go ? `<button class="plan-open" data-go='${JSON.stringify(t.go)}'>üben ▸</button>` : '';
+    return `<div class="plan-row">
+      <span class="plan-check ${checked ? 'on' : ''}" data-check="${t.id}" role="checkbox" aria-checked="${checked}">${checked ? '✓' : ''}</span>
+      <span class="plan-task">${escapeHtml(t.t)}</span>${openBtn}
+    </div>`;
+  };
+  const daysHTML = PLAN_DAYS.map(d => `<div class="plan-group"><div class="plan-day">${escapeHtml(d.de)}</div>${d.tasks.map(rowHTML).join('')}</div>`).join('');
+  const weeklyHTML = PLAN_WEEKLY.map(rowHTML).join('');
+
+  const seqHTML = PLAN_FOCUS.map((x, i) => `<li class="${i === planData.focus ? 'cur' : ''}">${escapeHtml(x.label)}</li>`).join('');
+  const refHTML = `<div class="plan-ref">
+    <div class="pr-title">12-Wochen-Vokabelplan</div>
+    <ol class="pr-seq">${seqHTML}</ol>
+    <div class="pr-note"><strong>Außerhalb der App — am wichtigsten:</strong> ein Tutor 30 Min/Woche (nur sprechen), Deutsch beim Abendessen, und jeden Tag eine echte Mini-Situation. Die App lädt die Sätze vor — sprechen musst du draußen.</div>
+    <div class="pr-note"><strong>Einmal im Monat:</strong> einen Teil des offiziellen Goethe-Modellsatzes machen, um das Prüfungsformat zu fühlen.<br>
+      <a href="https://www.goethe.de/pro/relaunch/prf/materialien/A1_sd1/sd_1_modellsatz.pdf" target="_blank" rel="noopener">Goethe A1 Modellsatz (PDF)</a> · <a href="https://www.italki.com" target="_blank" rel="noopener">iTalki</a></div>
+  </div>`;
+
+  main.innerHTML = `
+    <div class="section-head"><h2>Wochenplan</h2><span class="meta">dein Studienplan · ~15 Min/Tag</span></div>
+    <div class="plan-intro"><strong>So bleibst du dran:</strong> eine kleine tägliche Routine (~15 Min), die du auch an einem vollen Tag schaffst, plus jeden Tag eine echte Situation auf Deutsch. Hak ab, was du gemacht hast — die Liste startet jede Woche neu. Konstanz schlägt Intensität.</div>
+    ${focusHTML}
+    <div class="plan-section-title">Schnellstart — tägliche Übungen</div>
+    ${quickHTML}
+    ${progressHTML}
+    <div class="plan-section-title">Diese Woche</div>
+    ${daysHTML}
+    <div class="plan-section-title">Jede Woche (außerhalb der App)</div>
+    ${weeklyHTML}
+    ${refHTML}
+  `;
+
+  // focus nav
+  const prev = document.getElementById('planPrev'), next = document.getElementById('planNext');
+  if (prev) prev.addEventListener('click', () => { if (planData.focus > 0) { planData.focus--; planSave(); renderPlan(); } });
+  if (next) next.addEventListener('click', () => { if (planData.focus < PLAN_FOCUS.length - 1) { planData.focus++; planSave(); renderPlan(); } });
+  const ov = document.getElementById('planOpenVocab'); if (ov) ov.addEventListener('click', openFocusVocab);
+  const os = document.getElementById('planOpenSpr'); if (os) os.addEventListener('click', openFocusSpr);
+
+  // quick-launch + per-task open buttons
+  main.querySelectorAll('[data-go]').forEach(btn => {
+    btn.addEventListener('click', () => { try { planGoto(JSON.parse(btn.dataset.go)); } catch (e) { /* ignore */ } });
+  });
+
+  // checkboxes — toggle in place + update progress bar
+  main.querySelectorAll('.plan-check').forEach(el => {
+    el.addEventListener('click', () => {
+      const id = el.dataset.check;
+      planData.checks[id] = !planData.checks[id];
+      planSave();
+      const on = planData.checks[id];
+      el.classList.toggle('on', on);
+      el.textContent = on ? '✓' : '';
+      el.setAttribute('aria-checked', on);
+      const d2 = allIds.filter(x => planData.checks[x]).length;
+      const fill = document.getElementById('planFill'); if (fill) fill.style.width = Math.round(d2 / allIds.length * 100) + '%';
+      const txt = document.getElementById('planText'); if (txt) txt.textContent = d2 + ' / ' + allIds.length + ' erledigt';
+    });
+  });
+}
+
+/* =========================================================================
    ABC RENDERING — alphabet browse + listening drill
    ========================================================================= */
 function renderAlphabetBrowse() {
@@ -4067,6 +4441,139 @@ function renderAbcDrill() {
 function renderAlphabet() {
   if (state.category === '__drill__') renderAbcDrill();
   else renderAlphabetBrowse();
+}
+
+/* =========================================================================
+   ZEIT RENDERING — days, months, and the clock drill
+   ========================================================================= */
+function renderWochentage() {
+  const main = document.getElementById('main');
+  let cards = '';
+  WOCHENTAGE.forEach((d, i) => {
+    cards += `<div class="zeit-card" data-i="${i}">
+      <div class="zc-top">
+        <span class="zc-abbr">${escapeHtml(d.abbr)}</span>
+        <span class="zc-de">${escapeHtml(d.de)}</span>
+        <span class="zc-speak">${speakerBtnHTML()}</span>
+      </div>
+      <div class="zc-tr">${escapeHtml(d.en)}<span class="pt">${escapeHtml(d.pt)}</span></div>
+      <div class="zc-ex" data-ex="${i}">${speakerBtnHTML()} ${escapeHtml(d.ex)}</div>
+    </div>`;
+  });
+  main.innerHTML = `
+    <div class="section-head"><h2>Wochentage</h2><span class="meta">Days · 🔊 zum Anhören</span></div>
+    <div class="num-intro"><strong>Die Wochentage</strong> sind alle maskulin: <em>der</em> Montag, <em>der</em> Dienstag … Mit „am" sagst du, wann etwas passiert: <em>am Montag, am Wochenende</em>. Tipp für Deutschland: sonntags sind fast alle Geschäfte geschlossen.</div>
+    <div class="zeit-grid">${cards}</div>
+  `;
+  main.querySelectorAll('.zeit-card').forEach((card, i) => {
+    const d = WOCHENTAGE[i];
+    wireSpeaker(card.querySelector('.zc-top'), d.de);
+    wireSpeaker(card.querySelector('.zc-ex'), d.ex);
+  });
+}
+
+function renderMonate() {
+  const main = document.getElementById('main');
+  let cards = '';
+  MONATE.forEach((mo, i) => {
+    cards += `<div class="zeit-card" data-i="${i}">
+      <div class="zc-top">
+        <span class="zc-num">${mo.num}.</span>
+        <span class="zc-de">${escapeHtml(mo.de)}</span>
+        <span class="zc-speak">${speakerBtnHTML()}</span>
+      </div>
+      <div class="zc-tr">${escapeHtml(mo.en)}<span class="pt">${escapeHtml(mo.pt)}</span></div>
+    </div>`;
+  });
+  main.innerHTML = `
+    <div class="section-head"><h2>Monate</h2><span class="meta">Months · 🔊 zum Anhören</span></div>
+    <div class="num-intro"><strong>Die Monate</strong> sind alle maskulin: <em>der</em> Januar, <em>der</em> Februar … Mit „im" sagst du den Monat: <em>im März, im Juli</em>. Achte auf das ä in <em>März</em>.</div>
+    <div class="zeit-grid">${cards}</div>
+  `;
+  main.querySelectorAll('.zeit-card').forEach((card, i) => {
+    wireSpeaker(card.querySelector('.zc-top'), MONATE[i].de);
+  });
+}
+
+function newClockQuestion() {
+  const quarters = [0, 15, 30, 45];
+  const h12 = 1 + Math.floor(Math.random() * 12);
+  const m = quarters[Math.floor(Math.random() * 4)];
+  const correct = germanTimeColloquial(h12, m);
+  // distractors: other real phrases from this hour, the next hour, and the previous hour
+  const pool = new Set();
+  [h12, (h12 % 12) + 1, ((h12 + 10) % 12) + 1].forEach(hh => quarters.forEach(mm => pool.add(germanTimeColloquial(hh, mm))));
+  pool.delete(correct);
+  const distract = shuffle([...pool]).slice(0, 2);
+  const options = shuffle([correct, ...distract]);
+  state.clockQ = { h12, m, correct, official: officialTime(h12, m), options, answer: options.indexOf(correct) };
+  state.clockAnswered = false;
+  state.clockSelected = null;
+}
+
+function renderClockDrill() {
+  if (!state.clockQ) newClockQuestion();
+  const q = state.clockQ;
+  const digital = `${q.h12}:${String(q.m).padStart(2, '0')}`;
+  const main = document.getElementById('main');
+  const optsHTML = q.options.map((o, i) =>
+    `<button class="quiz-option" data-opt="${i}" style="justify-content:center;font-family:'Fraunces',serif;font-weight:600;font-size:17px">${escapeHtml(o)}</button>`
+  ).join('');
+  main.innerHTML = `
+    <div class="section-head"><h2>Wie spät ist es?</h2><span class="meta">Zeit · Uhrzeit</span></div>
+    <div class="num-intro">
+      <strong>Uhrzeit im Alltag:</strong> man benutzt „nach", „vor" und „halb". <strong>Achtung — die große Falle:</strong> <em>halb vier</em> heißt <strong>3:30</strong> (halb bis vier!), nicht 4:30. Weiter: <em>Viertel nach drei</em> = 3:15, <em>Viertel vor vier</em> = 3:45.
+    </div>
+    <div class="hoeren-stage">
+      <div class="hoeren-card">
+        <div class="hoeren-top"><span>Lies die Uhr</span><span class="score">${state.clockScore} / ${state.clockCount} richtig</span></div>
+        <div class="clock-wrap">${clockSVG(q.h12, q.m)}<div class="clock-digital">${digital}</div></div>
+        <div class="hoeren-q" style="margin-top:10px">Wie sagt man das?</div>
+        <div class="hoeren-q-en">pick the everyday (colloquial) way to say it</div>
+        <div class="quiz-options" style="margin-top:14px">${optsHTML}</div>
+        <div id="clockAfter"></div>
+      </div>
+    </div>
+  `;
+  const opts = main.querySelectorAll('.quiz-option');
+  opts.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (state.clockAnswered) return;
+      state.clockAnswered = true;
+      state.clockCount++;
+      const chosen = parseInt(btn.dataset.opt, 10);
+      state.clockSelected = chosen;
+      if (chosen === q.answer) state.clockScore++;
+      opts.forEach(b => {
+        const idx = parseInt(b.dataset.opt, 10);
+        b.disabled = true;
+        if (idx === q.answer) b.classList.add('correct');
+        else if (idx === chosen) b.classList.add('wrong');
+      });
+      const after = document.getElementById('clockAfter');
+      after.innerHTML = `
+        <div class="hoeren-feedback ${chosen === q.answer ? 'right' : 'wrong'}">${chosen === q.answer ? '✓ Richtig!' : '✗ Leider falsch'}</div>
+        <div class="hoeren-transcript"><span class="tag">${digital} Uhr</span>
+          <div class="hoeren-line"><span class="spk">≈</span> ${escapeHtml(q.correct)} <span style="color:var(--gray);font-size:12px">(umgangssprachlich)</span> ${speakerBtnHTML()}</div>
+          <div class="hoeren-line"><span class="spk">🕐</span> ${escapeHtml(q.official)} <span style="color:var(--gray);font-size:12px">(offiziell)</span> ${speakerBtnHTML()}</div>
+        </div>
+        <div class="shadow-controls" style="margin-top:18px"><button class="flash-btn primary" id="clockNext">Weiter →</button></div>
+      `;
+      const lines = after.querySelectorAll('.hoeren-line');
+      wireSpeaker(lines[0], q.correct);
+      wireSpeaker(lines[1], q.official);
+      document.getElementById('clockNext').addEventListener('click', () => {
+        if (SPEECH_OK) window.speechSynthesis.cancel();
+        newClockQuestion(); renderClockDrill();
+      });
+    });
+  });
+}
+
+function renderZeit() {
+  if (state.category === '__clock__') renderClockDrill();
+  else if (state.category === 'monate') renderMonate();
+  else renderWochentage();
 }
 
 /* =========================================================================
@@ -4841,6 +5348,11 @@ function renderMain() {
     renderSprechen();
     return;
   }
+  if (state.level === 'Plan') {
+    modeBar.style.display = 'none';
+    renderPlan();
+    return;
+  }
   if (state.level === 'Hören') {
     modeBar.style.display = 'none';
     renderHoeren();
@@ -4854,6 +5366,11 @@ function renderMain() {
   if (state.level === 'Zahlen') {
     modeBar.style.display = 'none';
     renderZahlen();
+    return;
+  }
+  if (state.level === 'Zeit') {
+    modeBar.style.display = 'none';
+    renderZeit();
     return;
   }
 
@@ -4880,23 +5397,7 @@ function renderMain() {
    INIT
    ========================================================================= */
 document.querySelectorAll('#levelToggle button').forEach(btn => {
-  btn.addEventListener('click', () => {
-    if (SPEECH_OK) window.speechSynthesis.cancel();
-    document.querySelectorAll('#levelToggle button').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    state.level = btn.dataset.level;
-    // Set a sensible default selection for the section
-    if (state.level === 'Grammatik') state.category = GRAMMAR_ORDER[0];
-    else if (state.level === 'Texte') state.category = TEXTS[0].id;
-    else if (state.level === 'Verben') { state.category = VERBS[0].inf; state.drillQ = null; state.drillScore = 0; state.drillCount = 0; state.drillAnswered = false; }
-    else if (state.level === 'Sprechen') { state.category = REDE_ORDER[0]; state.shadowDeck = []; state.shadowIdx = 0; state.shadowRevealed = false; state.shadowPeeked = false; }
-    else if (state.level === 'Hören') { state.category = '__all__'; initHoerenDeck(); }
-    else if (state.level === 'ABC') { state.category = 'browse'; state.abcQ = null; state.abcScore = 0; state.abcCount = 0; state.abcAnswered = false; }
-    else if (state.level === 'Zahlen') { state.category = 'browse'; state.zahlQ = null; state.zahlScore = 0; state.zahlCount = 0; state.zahlAnswered = false; }
-    else state.category = 'all';
-    renderSidebar();
-    renderMain();
-  });
+  btn.addEventListener('click', () => selectLevel(btn.dataset.level));
 });
 
 document.querySelectorAll('.mode-tab').forEach(tab => {
