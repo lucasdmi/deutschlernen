@@ -1,0 +1,2988 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch Lernen — A1 & A2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=DM+Sans:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F2EBDC;
+    --cream-dark: #E8DFCB;
+    --ink: #1A1612;
+    --ink-soft: #3C342B;
+    --paper: #FBF7EE;
+    --red: #C8362A;
+    --red-soft: #E5A89F;
+    --blue: #2B4A7A;
+    --blue-soft: #A6BCDA;
+    --green: #4F6B3A;
+    --green-soft: #B5C9A0;
+    --mustard: #C49B3E;
+    --gray: #6E665C;
+    --gray-soft: #C9C1B3;
+    --shadow: 0 2px 0 var(--ink);
+    --shadow-deep: 4px 4px 0 var(--ink);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  body {
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(26,22,18,0.06) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  /* ============ HEADER ============ */
+  header {
+    border-bottom: 2px solid var(--ink);
+    background: var(--paper);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+  }
+  .brand-mark {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: var(--red);
+    border: 2px solid var(--ink);
+    transform: rotate(-3deg);
+    position: relative;
+    flex-shrink: 0;
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    background: var(--ink);
+    clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%, 0 66%, 100% 66%, 100% 100%, 0 100%);
+  }
+  .brand h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .brand h1 .accent { color: var(--red); font-style: italic; }
+  .brand .subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-left: 8px;
+  }
+
+  .header-controls {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .level-toggle {
+    display: flex;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+  .level-toggle button {
+    background: transparent;
+    border: none;
+    padding: 8px 20px;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--ink);
+    border-right: 2px solid var(--ink);
+    transition: background 0.15s;
+  }
+  .level-toggle button:last-child { border-right: none; }
+  .level-toggle button.active {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .level-toggle button:hover:not(.active) { background: var(--cream-dark); }
+
+  .search-box {
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    padding: 8px 14px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    width: 200px;
+    box-shadow: var(--shadow);
+    color: var(--ink);
+  }
+  .search-box:focus {
+    outline: none;
+    background: var(--paper);
+  }
+  .search-box::placeholder { color: var(--gray); }
+
+  /* ============ MODE TABS ============ */
+  .mode-bar {
+    border-bottom: 2px solid var(--ink);
+    background: var(--cream-dark);
+    padding: 0 32px;
+    display: flex;
+    gap: 0;
+    overflow-x: auto;
+  }
+  .mode-tab {
+    background: transparent;
+    border: none;
+    border-right: 2px solid var(--ink);
+    padding: 14px 24px;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--ink-soft);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    white-space: nowrap;
+    transition: all 0.15s;
+  }
+  .mode-tab:first-child { border-left: 2px solid var(--ink); }
+  .mode-tab .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    padding: 1px 6px;
+  }
+  .mode-tab.active {
+    background: var(--paper);
+    color: var(--ink);
+    border-bottom: 2px solid var(--paper);
+    margin-bottom: -2px;
+    position: relative;
+  }
+  .mode-tab.active::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    height: 4px;
+    background: var(--red);
+  }
+  .mode-tab:hover:not(.active) { background: var(--cream); }
+
+  /* ============ MAIN LAYOUT ============ */
+  .layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: calc(100vh - 140px);
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    border-right: 2px solid var(--ink);
+    background: var(--paper);
+    padding: 24px 0;
+    overflow-y: auto;
+  }
+  .sidebar-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    padding: 0 24px 12px;
+    border-bottom: 1px solid var(--gray-soft);
+    margin-bottom: 8px;
+  }
+  .cat-btn {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 10px 24px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.15s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .cat-btn:hover { background: var(--cream); }
+  .cat-btn.active {
+    background: var(--cream-dark);
+    border-left-color: var(--red);
+    font-weight: 700;
+  }
+  .cat-btn .count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+  }
+  .cat-btn.all { font-weight: 700; border-bottom: 1px dashed var(--gray-soft); }
+
+  /* MAIN */
+  main {
+    padding: 32px;
+    overflow-y: auto;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    border-bottom: 2px solid var(--ink);
+    padding-bottom: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .section-head h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .section-head .meta {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+  }
+
+  /* ============ BROWSE MODE ============ */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .word-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 18px 18px 16px;
+    box-shadow: var(--shadow);
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: pointer;
+    position: relative;
+  }
+  .word-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-deep);
+  }
+  .word-card .article {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 8px;
+    border: 1.5px solid;
+    margin-bottom: 8px;
+  }
+  .article-der { color: var(--blue); border-color: var(--blue); background: var(--blue-soft); }
+  .article-die { color: var(--red); border-color: var(--red); background: var(--red-soft); }
+  .article-das { color: var(--green); border-color: var(--green); background: var(--green-soft); }
+  .article-pl { color: var(--gray); border-color: var(--gray); background: var(--gray-soft); }
+  .article-v { color: var(--mustard); border-color: var(--mustard); background: #F2DDAE; }
+  .article-adj { color: var(--ink); border-color: var(--ink); background: var(--cream-dark); }
+
+  .word-card .de {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.2;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .word-card .translations {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.4;
+  }
+  .word-card .translations .lang {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-right: 4px;
+  }
+  .word-card .example {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--gray-soft);
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    display: none;
+  }
+  .word-card.expanded .example { display: block; }
+  .word-card .example .ex-trans { display: block; font-style: normal; color: var(--gray); font-size: 12px; margin-top: 4px; }
+
+  /* ============ FLASHCARD MODE ============ */
+  .flash-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 0;
+  }
+  .flash-progress {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .flash-progress .bar {
+    width: 200px;
+    height: 6px;
+    background: var(--cream-dark);
+    border: 1.5px solid var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .flash-progress .bar-fill {
+    height: 100%;
+    background: var(--red);
+    transition: width 0.3s;
+  }
+
+  .flashcard {
+    width: 100%;
+    max-width: 520px;
+    aspect-ratio: 3/2;
+    perspective: 1200px;
+    cursor: pointer;
+  }
+  .flashcard-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .flashcard.flipped .flashcard-inner { transform: rotateY(180deg); }
+  .flash-side {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    box-shadow: var(--shadow-deep);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px;
+    text-align: center;
+  }
+  .flash-side.back { transform: rotateY(180deg); }
+  .flash-side .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+  .flash-side .article {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border: 1.5px solid;
+    margin-bottom: 12px;
+  }
+  .flash-side .main-word {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .flash-side .secondary {
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+  .flash-side .ex {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px dashed var(--gray-soft);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    max-width: 90%;
+  }
+  .flash-hint {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+  }
+
+  .flash-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .flash-btn {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 10px 22px;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.1s;
+    color: var(--ink);
+  }
+  .flash-btn:hover { transform: translate(-1px, -1px); box-shadow: 3px 3px 0 var(--ink); }
+  .flash-btn:active { transform: translate(0, 0); box-shadow: var(--shadow); }
+  .flash-btn.primary { background: var(--ink); color: var(--cream); }
+  .flash-btn.know { background: var(--green-soft); }
+  .flash-btn.dont { background: var(--red-soft); }
+
+  /* ============ QUIZ MODE ============ */
+  .quiz-stage {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .quiz-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 32px;
+    box-shadow: var(--shadow-deep);
+  }
+  .quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--gray-soft);
+  }
+  .quiz-score { color: var(--red); font-weight: 600; }
+
+  .quiz-prompt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 10px;
+  }
+  .quiz-word {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 1.1;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+  .quiz-word .article-tag {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    vertical-align: middle;
+    padding: 3px 8px;
+    border: 1.5px solid;
+    margin-right: 10px;
+    transform: translateY(-6px);
+  }
+
+  .quiz-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .quiz-option {
+    background: var(--cream);
+    border: 2px solid var(--ink);
+    padding: 14px 18px;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.1s;
+    color: var(--ink);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .quiz-option:hover:not(:disabled) {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 var(--ink);
+    background: var(--paper);
+  }
+  .quiz-option .key {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    border: 1px solid var(--gray);
+    padding: 1px 5px;
+    flex-shrink: 0;
+  }
+  .quiz-option.correct {
+    background: var(--green-soft);
+    border-color: var(--green);
+  }
+  .quiz-option.wrong {
+    background: var(--red-soft);
+    border-color: var(--red);
+  }
+  .quiz-option:disabled { cursor: default; }
+
+  .quiz-next {
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .quiz-summary {
+    text-align: center;
+    padding: 40px 20px;
+  }
+  .quiz-summary .big-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 72px;
+    line-height: 1;
+    color: var(--red);
+    margin-bottom: 8px;
+  }
+  .quiz-summary .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 24px;
+  }
+
+  /* ============ MATCH MODE ============ */
+  .match-stage { max-width: 720px; margin: 0 auto; }
+  .match-header {
+    text-align: center;
+    margin-bottom: 24px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .match-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .match-tile {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 14px 16px;
+    cursor: pointer;
+    transition: all 0.1s;
+    font-size: 15px;
+    color: var(--ink);
+    box-shadow: var(--shadow);
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+  }
+  .match-tile.de { font-family: 'Fraunces', serif; font-weight: 600; font-size: 17px; }
+  .match-tile:hover:not(.matched):not(.selected) {
+    transform: translate(-1px, -1px);
+    box-shadow: 3px 3px 0 var(--ink);
+  }
+  .match-tile.selected {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .match-tile.matched {
+    opacity: 0.35;
+    cursor: default;
+    background: var(--green-soft);
+    box-shadow: none;
+  }
+  .match-tile.wrong-shake { animation: shake 0.3s; }
+  @keyframes shake {
+    0%, 100% { transform: translate(0,0); }
+    25% { transform: translate(-6px,0); }
+    75% { transform: translate(6px,0); }
+  }
+
+  /* ============ GRAMMATIK ============ */
+  .gram-intro {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    border-left: 6px solid var(--mustard);
+    padding: 18px 22px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ink-soft);
+  }
+  .gram-intro strong { color: var(--ink); }
+  .gram-block { margin-bottom: 36px; }
+  .gram-block h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 800;
+    font-size: 22px;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+  }
+  .gram-block .sub {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 14px;
+  }
+  .gram-table-wrap { overflow-x: auto; border: 2px solid var(--ink); box-shadow: var(--shadow); background: var(--paper); }
+  table.gram {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    min-width: 480px;
+  }
+  table.gram th, table.gram td {
+    border: 1px solid var(--gray-soft);
+    padding: 10px 14px;
+    text-align: left;
+  }
+  table.gram thead th {
+    background: var(--ink);
+    color: var(--cream);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-color: var(--ink);
+  }
+  table.gram thead th.col-m { background: var(--blue); }
+  table.gram thead th.col-f { background: var(--red); }
+  table.gram thead th.col-n { background: var(--green); }
+  table.gram thead th.col-pl { background: var(--gray); }
+  table.gram tbody th {
+    background: var(--cream-dark);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  table.gram tbody tr.highlight th { background: var(--mustard); color: var(--ink); }
+  table.gram tbody tr.highlight td { background: #F7EDD3; font-weight: 600; }
+  table.gram td .form { font-family: 'Fraunces', serif; font-weight: 600; font-size: 16px; }
+  table.gram td .hint { display: block; font-size: 11px; color: var(--gray); font-style: italic; margin-top: 2px; }
+  table.gram td.de-cell { font-family: 'Fraunces', serif; font-weight: 600; font-size: 15px; }
+  table.gram td.aux-sein { color: var(--red); font-weight: 600; }
+  table.gram td.aux-haben { color: var(--blue); font-weight: 600; }
+
+  .gram-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px,1fr)); gap: 12px; }
+  .gram-item {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 12px 16px;
+    box-shadow: var(--shadow);
+  }
+  .gram-item .head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; }
+  .gram-item .word { font-family: 'Fraunces', serif; font-weight: 600; font-size: 18px; }
+  .gram-item .gloss { font-size: 13px; color: var(--gray); }
+  .gram-item .ex { font-size: 13px; font-style: italic; color: var(--ink-soft); margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--gray-soft); }
+  .gram-item .ex .tr { display: block; font-style: normal; color: var(--gray); font-size: 12px; margin-top: 2px; }
+  .gram-item .ex b { color: var(--mustard); font-style: normal; }
+  .gram-note {
+    background: var(--cream-dark);
+    border: 1.5px dashed var(--gray);
+    padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .gram-note strong { color: var(--ink); }
+  .legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 10px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--gray); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend .dot { width: 12px; height: 12px; border: 1.5px solid var(--ink); display: inline-block; }
+  .legend .dot.sein { background: var(--red-soft); }
+  .legend .dot.haben { background: var(--blue-soft); }
+
+  /* ============ TEXTE ============ */
+  .text-stage { max-width: 760px; }
+  .text-meta-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .text-level-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 10px;
+    border: 1.5px solid var(--ink);
+    background: var(--mustard);
+  }
+  .text-toggle-btn {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 6px 16px;
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    color: var(--ink);
+  }
+  .text-toggle-btn:hover { transform: translate(-1px,-1px); box-shadow: 3px 3px 0 var(--ink); }
+  .text-toggle-btn.on { background: var(--ink); color: var(--cream); }
+  .text-body {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 28px 32px;
+    box-shadow: var(--shadow-deep);
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--ink);
+  }
+  .text-body p { margin-bottom: 14px; }
+  .text-body p:last-child { margin-bottom: 0; }
+  .text-body .vw {
+    border-bottom: 2px solid var(--mustard);
+    cursor: help;
+    position: relative;
+  }
+  .text-body .trans {
+    display: none;
+    margin-top: 6px;
+    padding-left: 16px;
+    border-left: 3px solid var(--blue-soft);
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--gray);
+    font-style: italic;
+  }
+  .text-body.show-trans .trans { display: block; }
+  .text-body .trans .pt-line { display: block; color: var(--green); margin-top: 3px; }
+
+  .text-glossary {
+    margin-top: 24px;
+    border: 2px solid var(--ink);
+    background: var(--paper);
+    box-shadow: var(--shadow);
+  }
+  .text-glossary .gloss-head {
+    background: var(--cream-dark);
+    border-bottom: 2px solid var(--ink);
+    padding: 10px 18px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+  }
+  .gloss-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); }
+  .gloss-row {
+    padding: 9px 18px;
+    border-bottom: 1px solid var(--gray-soft);
+    border-right: 1px solid var(--gray-soft);
+    font-size: 14px;
+  }
+  .gloss-row .g-de { font-family: 'Fraunces', serif; font-weight: 600; color: var(--ink); }
+  .gloss-row .g-en { color: var(--ink-soft); }
+  .gloss-row .g-pt { color: var(--green); font-size: 12px; }
+
+  /* ============ AUDIO / SPEAKER BUTTON ============ */
+  .speak-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: 1.5px solid var(--ink);
+    background: var(--paper);
+    cursor: pointer;
+    padding: 0;
+    color: var(--ink);
+    transition: all 0.12s;
+    flex-shrink: 0;
+    line-height: 1;
+    vertical-align: middle;
+  }
+  .speak-btn:hover { background: var(--mustard); transform: translate(-1px,-1px); box-shadow: 2px 2px 0 var(--ink); }
+  .speak-btn:active { transform: translate(0,0); box-shadow: none; }
+  .speak-btn svg { width: 15px; height: 15px; display: block; }
+  .speak-btn.speaking { background: var(--mustard); animation: pulseSpk 0.8s ease-in-out infinite; }
+  @keyframes pulseSpk { 0%,100% { opacity: 1; } 50% { opacity: 0.55; } }
+  .speak-btn.lg { width: 38px; height: 38px; border-width: 2px; }
+  .speak-btn.lg svg { width: 20px; height: 20px; }
+  .speak-unavailable { display: none !important; }
+
+  .word-card .de-row { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+  .word-card .de-row .de { margin-bottom: 0; }
+  .flash-side .speak-btn { margin-top: 14px; }
+  .text-body .vw-speak { margin-left: 2px; }
+
+  /* ============ WRITE / SCHREIBEN MODE ============ */
+  .write-stage { max-width: 580px; margin: 0 auto; }
+  .write-card {
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    padding: 32px;
+    box-shadow: var(--shadow-deep);
+  }
+  .write-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px dashed var(--gray-soft);
+  }
+  .write-score { color: var(--red); font-weight: 600; }
+  .write-prompt-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 10px;
+  }
+  .write-cue {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.15;
+    color: var(--ink);
+    margin-bottom: 6px;
+  }
+  .write-cue-sub { font-size: 15px; color: var(--gray); margin-bottom: 22px; }
+  .write-hint-art {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gray);
+    border: 1px dashed var(--gray);
+    padding: 2px 8px;
+    margin-bottom: 14px;
+  }
+  .write-input-row { display: flex; gap: 10px; align-items: stretch; }
+  .write-input {
+    flex: 1;
+    border: 2px solid var(--ink);
+    background: var(--cream);
+    padding: 14px 16px;
+    font-family: 'Fraunces', serif;
+    font-size: 22px;
+    color: var(--ink);
+    box-shadow: var(--shadow);
+  }
+  .write-input:focus { outline: none; background: var(--paper); }
+  .write-input.correct { background: var(--green-soft); border-color: var(--green); }
+  .write-input.wrong { background: var(--red-soft); border-color: var(--red); }
+  .write-input.close { background: #F7EDD3; border-color: var(--mustard); }
+  .write-feedback {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px dashed var(--gray-soft);
+  }
+  .write-verdict { font-family: 'Fraunces', serif; font-weight: 700; font-size: 18px; margin-bottom: 8px; }
+  .write-verdict.ok { color: var(--green); }
+  .write-verdict.no { color: var(--red); }
+  .write-verdict.partly { color: var(--mustard); }
+  .write-answer { font-size: 16px; color: var(--ink-soft); margin-bottom: 4px; }
+  .write-answer .ans-de { font-family: 'Fraunces', serif; font-weight: 600; color: var(--ink); font-size: 19px; }
+  .write-ex { font-style: italic; font-size: 14px; color: var(--ink-soft); margin-top: 10px; }
+  .write-ex .tr { display: block; font-style: normal; color: var(--gray); font-size: 12px; margin-top: 2px; }
+
+  /* ============ SRS BADGES ============ */
+  .srs-bar {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: var(--paper);
+    border: 2px solid var(--ink);
+    box-shadow: var(--shadow);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+  }
+  .srs-bar .srs-stat { display: inline-flex; align-items: center; gap: 6px; }
+  .srs-bar .srs-dot { width: 10px; height: 10px; border: 1.5px solid var(--ink); display: inline-block; }
+  .srs-bar .srs-dot.due { background: var(--red-soft); }
+  .srs-bar .srs-dot.learning { background: #F7EDD3; }
+  .srs-bar .srs-dot.known { background: var(--green-soft); }
+  .srs-bar .srs-note { color: var(--ink-soft); text-transform: none; letter-spacing: 0; font-family: 'DM Sans', sans-serif; font-style: italic; }
+  .srs-reset {
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid var(--gray);
+    color: var(--gray);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    cursor: pointer;
+  }
+  .srs-reset:hover { border-color: var(--red); color: var(--red); }
+  .flash-srs-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 2px 7px;
+    border: 1px solid;
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+  .flash-srs-tag.due { color: var(--red); border-color: var(--red); }
+  .flash-srs-tag.learning { color: var(--mustard); border-color: var(--mustard); }
+  .flash-srs-tag.known { color: var(--green); border-color: var(--green); }
+
+  /* ============ EMPTY / RESPONSIVE ============ */
+  .empty {
+    text-align: center;
+    padding: 60px 20px;
+    color: var(--gray);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    header { padding: 16px; }
+    .brand h1 { font-size: 22px; }
+    .brand .subtitle { display: none; }
+    .mode-bar { padding: 0 16px; }
+    .mode-tab { padding: 12px 14px; font-size: 13px; }
+    .mode-tab .num { display: none; }
+    .layout { grid-template-columns: 1fr; }
+    .sidebar {
+      border-right: none;
+      border-bottom: 2px solid var(--ink);
+      padding: 16px 0;
+      max-height: 200px;
+    }
+    main { padding: 20px 16px; }
+    .section-head h2 { font-size: 26px; }
+    .grid { grid-template-columns: 1fr; }
+    .search-box { width: 140px; }
+    .quiz-options { grid-template-columns: 1fr; }
+    .quiz-card { padding: 20px; }
+    .quiz-word { font-size: 32px; }
+    .flash-side .main-word { font-size: 32px; }
+    .write-card { padding: 20px; }
+    .write-cue { font-size: 26px; }
+    .write-input { font-size: 18px; }
+    .srs-bar { font-size: 10px; gap: 10px; }
+    .srs-reset { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <span class="brand-mark"></span>
+    <h1>Deutsch<span class="accent"> lernen</span></h1>
+    <span class="subtitle">A1 · A2 · Alltag · Grammatik</span>
+  </div>
+  <div class="header-controls">
+    <div class="level-toggle" id="levelToggle">
+      <button data-level="A1" class="active">A1</button>
+      <button data-level="A2">A2</button>
+      <button data-level="Alltag">Alltag</button>
+      <button data-level="Grammatik">Grammatik</button>
+      <button data-level="Texte">Texte</button>
+    </div>
+    <input class="search-box" id="search" placeholder="Suchen / Search…" type="text">
+  </div>
+</header>
+
+<nav class="mode-bar" id="modeBar">
+  <button class="mode-tab active" data-mode="browse"><span class="num">01</span> Browse</button>
+  <button class="mode-tab" data-mode="flash"><span class="num">02</span> Flashcards</button>
+  <button class="mode-tab" data-mode="write"><span class="num">03</span> Schreiben</button>
+  <button class="mode-tab" data-mode="quiz"><span class="num">04</span> Quiz</button>
+  <button class="mode-tab" data-mode="match"><span class="num">05</span> Match</button>
+</nav>
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar"></aside>
+  <main id="main"></main>
+</div>
+
+<script>
+/* =========================================================================
+   VOCABULARY DATABASE — German A1 & A2
+   Article codes: der (m), die (f), das (n), pl (plural), v (verb), adj
+   ========================================================================= */
+const VOCAB = {
+  A1: {
+    "Begrüßungen": [
+      { de: "Hallo", en: "Hello", pt: "Olá", art: null, ex: "Hallo, wie geht's?", exTr: "Hello, how are you?" },
+      { de: "Guten Morgen", en: "Good morning", pt: "Bom dia", art: null, ex: "Guten Morgen, Frau Müller!", exTr: "Good morning, Mrs. Müller!" },
+      { de: "Guten Tag", en: "Good day", pt: "Bom dia / Boa tarde", art: null, ex: "Guten Tag, ich heiße Lucas.", exTr: "Good day, my name is Lucas." },
+      { de: "Guten Abend", en: "Good evening", pt: "Boa noite", art: null, ex: "Guten Abend, willkommen!", exTr: "Good evening, welcome!" },
+      { de: "Gute Nacht", en: "Good night", pt: "Boa noite (ao dormir)", art: null, ex: "Gute Nacht, schlaf gut.", exTr: "Good night, sleep well." },
+      { de: "Tschüss", en: "Bye", pt: "Tchau", art: null, ex: "Tschüss, bis morgen!", exTr: "Bye, see you tomorrow!" },
+      { de: "Auf Wiedersehen", en: "Goodbye", pt: "Adeus / Até a próxima", art: null, ex: "Auf Wiedersehen, Herr Schmidt.", exTr: "Goodbye, Mr. Schmidt." },
+      { de: "Bis bald", en: "See you soon", pt: "Até logo", art: null, ex: "Bis bald!", exTr: "See you soon!" },
+      { de: "Bis morgen", en: "See you tomorrow", pt: "Até amanhã", art: null, ex: "Bis morgen im Büro.", exTr: "See you tomorrow at the office." },
+      { de: "Danke", en: "Thank you", pt: "Obrigado/Obrigada", art: null, ex: "Danke schön!", exTr: "Thank you very much!" },
+      { de: "Bitte", en: "Please / You're welcome", pt: "Por favor / De nada", art: null, ex: "Bitte, kommen Sie herein.", exTr: "Please, come in." },
+      { de: "Entschuldigung", en: "Excuse me / Sorry", pt: "Desculpe", art: null, ex: "Entschuldigung, wo ist der Bahnhof?", exTr: "Excuse me, where is the station?" },
+      { de: "Ja", en: "Yes", pt: "Sim", art: null, ex: "Ja, das stimmt.", exTr: "Yes, that's right." },
+      { de: "Nein", en: "No", pt: "Não", art: null, ex: "Nein, danke.", exTr: "No, thank you." },
+      { de: "Wie geht's?", en: "How are you?", pt: "Como vai?", art: null, ex: "Hallo, wie geht's dir?", exTr: "Hi, how are you?" }
+    ],
+    "Pronomen": [
+      { de: "ich", en: "I", pt: "eu", art: null, ex: "Ich bin Lucas.", exTr: "I am Lucas." },
+      { de: "du", en: "you (informal)", pt: "tu / você", art: null, ex: "Wie heißt du?", exTr: "What is your name?" },
+      { de: "er", en: "he", pt: "ele", art: null, ex: "Er kommt aus Berlin.", exTr: "He comes from Berlin." },
+      { de: "sie", en: "she / they", pt: "ela / eles", art: null, ex: "Sie ist Lehrerin.", exTr: "She is a teacher." },
+      { de: "es", en: "it", pt: "isso (neutro)", art: null, ex: "Es regnet.", exTr: "It is raining." },
+      { de: "wir", en: "we", pt: "nós", art: null, ex: "Wir wohnen in Frankfurt.", exTr: "We live in Frankfurt." },
+      { de: "ihr", en: "you (plural)", pt: "vocês", art: null, ex: "Wo seid ihr?", exTr: "Where are you (plural)?" },
+      { de: "Sie", en: "you (formal)", pt: "o(a) senhor(a)", art: null, ex: "Sind Sie Herr Schmidt?", exTr: "Are you Mr. Schmidt?" }
+    ],
+    "Zahlen": [
+      { de: "null", en: "zero", pt: "zero", art: null, ex: "Null Komma fünf.", exTr: "Zero point five." },
+      { de: "eins", en: "one", pt: "um", art: null, ex: "Ich habe eins.", exTr: "I have one." },
+      { de: "zwei", en: "two", pt: "dois", art: null, ex: "Zwei Kaffee, bitte.", exTr: "Two coffees, please." },
+      { de: "drei", en: "three", pt: "três", art: null, ex: "Drei Kinder.", exTr: "Three children." },
+      { de: "vier", en: "four", pt: "quatro", art: null, ex: "Vier Uhr.", exTr: "Four o'clock." },
+      { de: "fünf", en: "five", pt: "cinco", art: null, ex: "Fünf Euro.", exTr: "Five Euros." },
+      { de: "sechs", en: "six", pt: "seis", art: null, ex: "Sechs Tage die Woche.", exTr: "Six days a week." },
+      { de: "sieben", en: "seven", pt: "sete", art: null, ex: "Sieben Uhr.", exTr: "Seven o'clock." },
+      { de: "acht", en: "eight", pt: "oito", art: null, ex: "Acht Stunden.", exTr: "Eight hours." },
+      { de: "neun", en: "nine", pt: "nove", art: null, ex: "Neun Personen.", exTr: "Nine people." },
+      { de: "zehn", en: "ten", pt: "dez", art: null, ex: "Zehn Minuten.", exTr: "Ten minutes." },
+      { de: "zwanzig", en: "twenty", pt: "vinte", art: null, ex: "Zwanzig Jahre alt.", exTr: "Twenty years old." },
+      { de: "dreißig", en: "thirty", pt: "trinta", art: null, ex: "Dreißig Grad.", exTr: "Thirty degrees." },
+      { de: "hundert", en: "hundred", pt: "cem", art: null, ex: "Hundert Euro.", exTr: "One hundred Euros." },
+      { de: "tausend", en: "thousand", pt: "mil", art: null, ex: "Tausend Möglichkeiten.", exTr: "A thousand possibilities." }
+    ],
+    "Familie": [
+      { de: "Familie", en: "family", pt: "família", art: "die", ex: "Meine Familie wohnt in Brasilien.", exTr: "My family lives in Brazil." },
+      { de: "Vater", en: "father", pt: "pai", art: "der", ex: "Mein Vater ist Ingenieur.", exTr: "My father is an engineer." },
+      { de: "Mutter", en: "mother", pt: "mãe", art: "die", ex: "Meine Mutter kocht gut.", exTr: "My mother cooks well." },
+      { de: "Eltern", en: "parents", pt: "pais", art: "pl", ex: "Meine Eltern kommen morgen.", exTr: "My parents are coming tomorrow." },
+      { de: "Sohn", en: "son", pt: "filho", art: "der", ex: "Sein Sohn ist sechs Jahre alt.", exTr: "His son is six years old." },
+      { de: "Tochter", en: "daughter", pt: "filha", art: "die", ex: "Ihre Tochter heißt Anna.", exTr: "Her daughter is called Anna." },
+      { de: "Bruder", en: "brother", pt: "irmão", art: "der", ex: "Ich habe einen Bruder.", exTr: "I have a brother." },
+      { de: "Schwester", en: "sister", pt: "irmã", art: "die", ex: "Meine Schwester wohnt in São Paulo.", exTr: "My sister lives in São Paulo." },
+      { de: "Großvater", en: "grandfather", pt: "avô", art: "der", ex: "Mein Großvater ist achtzig.", exTr: "My grandfather is eighty." },
+      { de: "Großmutter", en: "grandmother", pt: "avó", art: "die", ex: "Die Großmutter erzählt Geschichten.", exTr: "Grandmother tells stories." },
+      { de: "Mann", en: "man / husband", pt: "homem / marido", art: "der", ex: "Der Mann liest Zeitung.", exTr: "The man reads the newspaper." },
+      { de: "Frau", en: "woman / wife", pt: "mulher / esposa", art: "die", ex: "Die Frau arbeitet hier.", exTr: "The woman works here." },
+      { de: "Kind", en: "child", pt: "criança", art: "das", ex: "Das Kind spielt im Park.", exTr: "The child plays in the park." },
+      { de: "Freund", en: "friend (m)", pt: "amigo", art: "der", ex: "Mein Freund kommt aus Italien.", exTr: "My friend comes from Italy." },
+      { de: "Freundin", en: "friend (f)", pt: "amiga", art: "die", ex: "Meine Freundin spricht Portugiesisch.", exTr: "My friend speaks Portuguese." }
+    ],
+    "Farben": [
+      { de: "rot", en: "red", pt: "vermelho", art: "adj", ex: "Ein rotes Auto.", exTr: "A red car." },
+      { de: "blau", en: "blue", pt: "azul", art: "adj", ex: "Der Himmel ist blau.", exTr: "The sky is blue." },
+      { de: "grün", en: "green", pt: "verde", art: "adj", ex: "Das Gras ist grün.", exTr: "The grass is green." },
+      { de: "gelb", en: "yellow", pt: "amarelo", art: "adj", ex: "Die Sonne ist gelb.", exTr: "The sun is yellow." },
+      { de: "schwarz", en: "black", pt: "preto", art: "adj", ex: "Eine schwarze Katze.", exTr: "A black cat." },
+      { de: "weiß", en: "white", pt: "branco", art: "adj", ex: "Schnee ist weiß.", exTr: "Snow is white." },
+      { de: "grau", en: "gray", pt: "cinza", art: "adj", ex: "Der Himmel ist heute grau.", exTr: "The sky is gray today." },
+      { de: "braun", en: "brown", pt: "marrom", art: "adj", ex: "Ein brauner Hund.", exTr: "A brown dog." },
+      { de: "rosa", en: "pink", pt: "rosa", art: "adj", ex: "Eine rosa Blume.", exTr: "A pink flower." },
+      { de: "orange", en: "orange", pt: "laranja", art: "adj", ex: "Eine orange Frucht.", exTr: "An orange fruit." }
+    ],
+    "Tage & Zeit": [
+      { de: "Tag", en: "day", pt: "dia", art: "der", ex: "Einen schönen Tag!", exTr: "Have a nice day!" },
+      { de: "Woche", en: "week", pt: "semana", art: "die", ex: "Diese Woche arbeite ich viel.", exTr: "This week I work a lot." },
+      { de: "Monat", en: "month", pt: "mês", art: "der", ex: "Der Monat hat dreißig Tage.", exTr: "The month has thirty days." },
+      { de: "Jahr", en: "year", pt: "ano", art: "das", ex: "Ein neues Jahr beginnt.", exTr: "A new year begins." },
+      { de: "Stunde", en: "hour", pt: "hora", art: "die", ex: "Eine Stunde später.", exTr: "An hour later." },
+      { de: "Minute", en: "minute", pt: "minuto", art: "die", ex: "Fünf Minuten Pause.", exTr: "Five minute break." },
+      { de: "heute", en: "today", pt: "hoje", art: null, ex: "Heute ist Montag.", exTr: "Today is Monday." },
+      { de: "morgen", en: "tomorrow", pt: "amanhã", art: null, ex: "Morgen habe ich frei.", exTr: "Tomorrow I have off." },
+      { de: "gestern", en: "yesterday", pt: "ontem", art: null, ex: "Gestern war es kalt.", exTr: "Yesterday it was cold." },
+      { de: "Montag", en: "Monday", pt: "segunda-feira", art: "der", ex: "Am Montag arbeite ich.", exTr: "On Monday I work." },
+      { de: "Dienstag", en: "Tuesday", pt: "terça-feira", art: "der", ex: "Dienstag ist mein Lieblingstag.", exTr: "Tuesday is my favorite day." },
+      { de: "Mittwoch", en: "Wednesday", pt: "quarta-feira", art: "der", ex: "Mittwoch ist Bergfest.", exTr: "Wednesday is mid-week." },
+      { de: "Donnerstag", en: "Thursday", pt: "quinta-feira", art: "der", ex: "Am Donnerstag haben wir eine Besprechung.", exTr: "On Thursday we have a meeting." },
+      { de: "Freitag", en: "Friday", pt: "sexta-feira", art: "der", ex: "Freitag ist Wochenende!", exTr: "Friday is the weekend!" },
+      { de: "Samstag", en: "Saturday", pt: "sábado", art: "der", ex: "Samstag gehe ich einkaufen.", exTr: "Saturday I go shopping." },
+      { de: "Sonntag", en: "Sunday", pt: "domingo", art: "der", ex: "Sonntag ist Ruhetag.", exTr: "Sunday is a day of rest." }
+    ],
+    "Essen & Trinken": [
+      { de: "Brot", en: "bread", pt: "pão", art: "das", ex: "Deutsches Brot ist berühmt.", exTr: "German bread is famous." },
+      { de: "Wasser", en: "water", pt: "água", art: "das", ex: "Ein Glas Wasser, bitte.", exTr: "A glass of water, please." },
+      { de: "Kaffee", en: "coffee", pt: "café", art: "der", ex: "Ich trinke Kaffee am Morgen.", exTr: "I drink coffee in the morning." },
+      { de: "Tee", en: "tea", pt: "chá", art: "der", ex: "Möchten Sie Tee?", exTr: "Would you like tea?" },
+      { de: "Milch", en: "milk", pt: "leite", art: "die", ex: "Milch mit Honig.", exTr: "Milk with honey." },
+      { de: "Käse", en: "cheese", pt: "queijo", art: "der", ex: "Käse aus der Schweiz.", exTr: "Cheese from Switzerland." },
+      { de: "Apfel", en: "apple", pt: "maçã", art: "der", ex: "Ein Apfel am Tag.", exTr: "An apple a day." },
+      { de: "Banane", en: "banana", pt: "banana", art: "die", ex: "Bananen sind gelb.", exTr: "Bananas are yellow." },
+      { de: "Fleisch", en: "meat", pt: "carne", art: "das", ex: "Ich esse kein Fleisch.", exTr: "I don't eat meat." },
+      { de: "Gemüse", en: "vegetables", pt: "legumes", art: "das", ex: "Gemüse ist gesund.", exTr: "Vegetables are healthy." },
+      { de: "Fisch", en: "fish", pt: "peixe", art: "der", ex: "Frischer Fisch vom Markt.", exTr: "Fresh fish from the market." },
+      { de: "Ei", en: "egg", pt: "ovo", art: "das", ex: "Ein Ei zum Frühstück.", exTr: "An egg for breakfast." },
+      { de: "Reis", en: "rice", pt: "arroz", art: "der", ex: "Reis mit Bohnen.", exTr: "Rice with beans." },
+      { de: "Saft", en: "juice", pt: "suco", art: "der", ex: "Orangensaft, bitte.", exTr: "Orange juice, please." },
+      { de: "Bier", en: "beer", pt: "cerveja", art: "das", ex: "Ein deutsches Bier.", exTr: "A German beer." },
+      { de: "Wein", en: "wine", pt: "vinho", art: "der", ex: "Rotwein aus Italien.", exTr: "Red wine from Italy." }
+    ],
+    "Körper": [
+      { de: "Kopf", en: "head", pt: "cabeça", art: "der", ex: "Mein Kopf tut weh.", exTr: "My head hurts." },
+      { de: "Auge", en: "eye", pt: "olho", art: "das", ex: "Schöne blaue Augen.", exTr: "Beautiful blue eyes." },
+      { de: "Nase", en: "nose", pt: "nariz", art: "die", ex: "Sie hat eine kleine Nase.", exTr: "She has a small nose." },
+      { de: "Mund", en: "mouth", pt: "boca", art: "der", ex: "Der Mund ist offen.", exTr: "The mouth is open." },
+      { de: "Ohr", en: "ear", pt: "orelha", art: "das", ex: "Er hat gute Ohren.", exTr: "He has good ears." },
+      { de: "Hand", en: "hand", pt: "mão", art: "die", ex: "Gib mir deine Hand.", exTr: "Give me your hand." },
+      { de: "Fuß", en: "foot", pt: "pé", art: "der", ex: "Mein Fuß ist müde.", exTr: "My foot is tired." },
+      { de: "Bein", en: "leg", pt: "perna", art: "das", ex: "Lange Beine.", exTr: "Long legs." },
+      { de: "Arm", en: "arm", pt: "braço", art: "der", ex: "Ein starker Arm.", exTr: "A strong arm." },
+      { de: "Haar", en: "hair", pt: "cabelo", art: "das", ex: "Sie hat lange Haare.", exTr: "She has long hair." }
+    ],
+    "Zuhause": [
+      { de: "Haus", en: "house", pt: "casa", art: "das", ex: "Das Haus ist groß.", exTr: "The house is big." },
+      { de: "Wohnung", en: "apartment", pt: "apartamento", art: "die", ex: "Meine Wohnung in Frankfurt.", exTr: "My apartment in Frankfurt." },
+      { de: "Zimmer", en: "room", pt: "quarto", art: "das", ex: "Drei Zimmer hat die Wohnung.", exTr: "The apartment has three rooms." },
+      { de: "Küche", en: "kitchen", pt: "cozinha", art: "die", ex: "In der Küche koche ich.", exTr: "I cook in the kitchen." },
+      { de: "Bad", en: "bathroom", pt: "banheiro", art: "das", ex: "Das Bad ist klein.", exTr: "The bathroom is small." },
+      { de: "Schlafzimmer", en: "bedroom", pt: "quarto de dormir", art: "das", ex: "Das Schlafzimmer ist ruhig.", exTr: "The bedroom is quiet." },
+      { de: "Wohnzimmer", en: "living room", pt: "sala de estar", art: "das", ex: "Im Wohnzimmer steht ein Sofa.", exTr: "There's a sofa in the living room." },
+      { de: "Tisch", en: "table", pt: "mesa", art: "der", ex: "Der Tisch ist aus Holz.", exTr: "The table is made of wood." },
+      { de: "Stuhl", en: "chair", pt: "cadeira", art: "der", ex: "Vier Stühle am Tisch.", exTr: "Four chairs at the table." },
+      { de: "Bett", en: "bed", pt: "cama", art: "das", ex: "Das Bett ist bequem.", exTr: "The bed is comfortable." },
+      { de: "Tür", en: "door", pt: "porta", art: "die", ex: "Die Tür ist zu.", exTr: "The door is closed." },
+      { de: "Fenster", en: "window", pt: "janela", art: "das", ex: "Das Fenster ist offen.", exTr: "The window is open." }
+    ],
+    "Verben Basis": [
+      { de: "sein", en: "to be", pt: "ser/estar", art: "v", ex: "Ich bin müde.", exTr: "I am tired." },
+      { de: "haben", en: "to have", pt: "ter", art: "v", ex: "Hast du Zeit?", exTr: "Do you have time?" },
+      { de: "gehen", en: "to go", pt: "ir", art: "v", ex: "Ich gehe zur Arbeit.", exTr: "I go to work." },
+      { de: "kommen", en: "to come", pt: "vir", art: "v", ex: "Ich komme aus Brasilien.", exTr: "I come from Brazil." },
+      { de: "machen", en: "to do/make", pt: "fazer", art: "v", ex: "Was machst du?", exTr: "What are you doing?" },
+      { de: "sagen", en: "to say", pt: "dizer", art: "v", ex: "Sag mir deinen Namen.", exTr: "Tell me your name." },
+      { de: "sehen", en: "to see", pt: "ver", art: "v", ex: "Ich sehe dich morgen.", exTr: "I'll see you tomorrow." },
+      { de: "essen", en: "to eat", pt: "comer", art: "v", ex: "Wir essen Pizza.", exTr: "We are eating pizza." },
+      { de: "trinken", en: "to drink", pt: "beber", art: "v", ex: "Trinkst du Kaffee?", exTr: "Do you drink coffee?" },
+      { de: "sprechen", en: "to speak", pt: "falar", art: "v", ex: "Sprichst du Deutsch?", exTr: "Do you speak German?" },
+      { de: "lernen", en: "to learn", pt: "aprender", art: "v", ex: "Ich lerne Deutsch.", exTr: "I am learning German." },
+      { de: "arbeiten", en: "to work", pt: "trabalhar", art: "v", ex: "Wo arbeitest du?", exTr: "Where do you work?" },
+      { de: "wohnen", en: "to live (reside)", pt: "morar", art: "v", ex: "Ich wohne in Frankfurt.", exTr: "I live in Frankfurt." },
+      { de: "heißen", en: "to be called", pt: "chamar-se", art: "v", ex: "Ich heiße Lucas.", exTr: "My name is Lucas." },
+      { de: "lieben", en: "to love", pt: "amar", art: "v", ex: "Ich liebe Schokolade.", exTr: "I love chocolate." }
+    ]
+  },
+  A2: {
+    "Beruf": [
+      { de: "Beruf", en: "profession", pt: "profissão", art: "der", ex: "Was ist Ihr Beruf?", exTr: "What is your profession?" },
+      { de: "Arbeit", en: "work", pt: "trabalho", art: "die", ex: "Die Arbeit macht Spaß.", exTr: "The work is fun." },
+      { de: "Lehrer", en: "teacher (m)", pt: "professor", art: "der", ex: "Der Lehrer ist nett.", exTr: "The teacher is nice." },
+      { de: "Lehrerin", en: "teacher (f)", pt: "professora", art: "die", ex: "Die Lehrerin spricht laut.", exTr: "The teacher speaks loudly." },
+      { de: "Arzt", en: "doctor (m)", pt: "médico", art: "der", ex: "Der Arzt ist beschäftigt.", exTr: "The doctor is busy." },
+      { de: "Ingenieur", en: "engineer", pt: "engenheiro", art: "der", ex: "Er arbeitet als Ingenieur.", exTr: "He works as an engineer." },
+      { de: "Student", en: "student", pt: "estudante", art: "der", ex: "Der Student lernt viel.", exTr: "The student studies a lot." },
+      { de: "Chef", en: "boss", pt: "chefe", art: "der", ex: "Mein Chef ist im Urlaub.", exTr: "My boss is on vacation." },
+      { de: "Büro", en: "office", pt: "escritório", art: "das", ex: "Ich gehe ins Büro.", exTr: "I go to the office." },
+      { de: "Firma", en: "company", pt: "empresa", art: "die", ex: "Die Firma ist international.", exTr: "The company is international." },
+      { de: "Gehalt", en: "salary", pt: "salário", art: "das", ex: "Das Gehalt ist gut.", exTr: "The salary is good." },
+      { de: "Kollege", en: "colleague", pt: "colega", art: "der", ex: "Mein Kollege hilft mir.", exTr: "My colleague helps me." },
+      { de: "Besprechung", en: "meeting", pt: "reunião", art: "die", ex: "Die Besprechung beginnt um neun.", exTr: "The meeting starts at nine." },
+      { de: "Projekt", en: "project", pt: "projeto", art: "das", ex: "Das Projekt ist wichtig.", exTr: "The project is important." },
+      { de: "Computer", en: "computer", pt: "computador", art: "der", ex: "Mein Computer ist neu.", exTr: "My computer is new." }
+    ],
+    "Reisen": [
+      { de: "Reise", en: "journey/trip", pt: "viagem", art: "die", ex: "Eine gute Reise!", exTr: "Have a good trip!" },
+      { de: "Zug", en: "train", pt: "trem", art: "der", ex: "Der Zug fährt pünktlich.", exTr: "The train leaves on time." },
+      { de: "Auto", en: "car", pt: "carro", art: "das", ex: "Das Auto ist schnell.", exTr: "The car is fast." },
+      { de: "Flugzeug", en: "airplane", pt: "avião", art: "das", ex: "Das Flugzeug landet bald.", exTr: "The plane lands soon." },
+      { de: "Fahrrad", en: "bicycle", pt: "bicicleta", art: "das", ex: "Ich fahre Fahrrad zur Arbeit.", exTr: "I ride a bike to work." },
+      { de: "Bus", en: "bus", pt: "ônibus", art: "der", ex: "Der Bus kommt gleich.", exTr: "The bus is coming soon." },
+      { de: "Bahnhof", en: "train station", pt: "estação de trem", art: "der", ex: "Frankfurt Hauptbahnhof.", exTr: "Frankfurt main station." },
+      { de: "Flughafen", en: "airport", pt: "aeroporto", art: "der", ex: "Der Flughafen ist groß.", exTr: "The airport is big." },
+      { de: "Hotel", en: "hotel", pt: "hotel", art: "das", ex: "Das Hotel ist im Zentrum.", exTr: "The hotel is downtown." },
+      { de: "Koffer", en: "suitcase", pt: "mala", art: "der", ex: "Mein Koffer ist schwer.", exTr: "My suitcase is heavy." },
+      { de: "Fahrkarte", en: "ticket", pt: "passagem", art: "die", ex: "Eine Fahrkarte nach Berlin.", exTr: "A ticket to Berlin." },
+      { de: "Pass", en: "passport", pt: "passaporte", art: "der", ex: "Vergiss deinen Pass nicht.", exTr: "Don't forget your passport." },
+      { de: "Urlaub", en: "vacation", pt: "férias", art: "der", ex: "Im Urlaub fahre ich nach Italien.", exTr: "On vacation I'm going to Italy." },
+      { de: "Karte", en: "map / card", pt: "mapa / cartão", art: "die", ex: "Wo ist die Karte?", exTr: "Where is the map?" }
+    ],
+    "Wetter": [
+      { de: "Sonne", en: "sun", pt: "sol", art: "die", ex: "Die Sonne scheint.", exTr: "The sun is shining." },
+      { de: "Regen", en: "rain", pt: "chuva", art: "der", ex: "Der Regen ist stark.", exTr: "The rain is heavy." },
+      { de: "Schnee", en: "snow", pt: "neve", art: "der", ex: "Der Schnee ist weiß.", exTr: "The snow is white." },
+      { de: "Wind", en: "wind", pt: "vento", art: "der", ex: "Heute ist viel Wind.", exTr: "There's a lot of wind today." },
+      { de: "Wolke", en: "cloud", pt: "nuvem", art: "die", ex: "Die Wolken sind grau.", exTr: "The clouds are gray." },
+      { de: "Wetter", en: "weather", pt: "tempo (clima)", art: "das", ex: "Wie ist das Wetter?", exTr: "How is the weather?" },
+      { de: "kalt", en: "cold", pt: "frio", art: "adj", ex: "Heute ist es kalt.", exTr: "Today it is cold." },
+      { de: "warm", en: "warm", pt: "morno", art: "adj", ex: "Das Wasser ist warm.", exTr: "The water is warm." },
+      { de: "heiß", en: "hot", pt: "quente", art: "adj", ex: "Im Sommer ist es heiß.", exTr: "In summer it is hot." },
+      { de: "kühl", en: "cool", pt: "fresco", art: "adj", ex: "Ein kühler Abend.", exTr: "A cool evening." },
+      { de: "sonnig", en: "sunny", pt: "ensolarado", art: "adj", ex: "Ein sonniger Tag.", exTr: "A sunny day." },
+      { de: "regnerisch", en: "rainy", pt: "chuvoso", art: "adj", ex: "Frankfurt ist oft regnerisch.", exTr: "Frankfurt is often rainy." }
+    ],
+    "Einkaufen": [
+      { de: "Supermarkt", en: "supermarket", pt: "supermercado", art: "der", ex: "Der Supermarkt ist offen.", exTr: "The supermarket is open." },
+      { de: "Geschäft", en: "store", pt: "loja", art: "das", ex: "Das Geschäft schließt um acht.", exTr: "The store closes at eight." },
+      { de: "Markt", en: "market", pt: "mercado", art: "der", ex: "Der Markt ist am Samstag.", exTr: "The market is on Saturday." },
+      { de: "Geld", en: "money", pt: "dinheiro", art: "das", ex: "Ich habe kein Geld.", exTr: "I have no money." },
+      { de: "Euro", en: "Euro", pt: "Euro", art: "der", ex: "Das kostet zehn Euro.", exTr: "That costs ten Euros." },
+      { de: "Preis", en: "price", pt: "preço", art: "der", ex: "Der Preis ist hoch.", exTr: "The price is high." },
+      { de: "Rechnung", en: "bill/invoice", pt: "conta", art: "die", ex: "Die Rechnung, bitte!", exTr: "The bill, please!" },
+      { de: "billig", en: "cheap", pt: "barato", art: "adj", ex: "Das ist billig.", exTr: "That is cheap." },
+      { de: "teuer", en: "expensive", pt: "caro", art: "adj", ex: "Das Auto ist teuer.", exTr: "The car is expensive." },
+      { de: "kaufen", en: "to buy", pt: "comprar", art: "v", ex: "Ich kaufe ein Buch.", exTr: "I am buying a book." },
+      { de: "bezahlen", en: "to pay", pt: "pagar", art: "v", ex: "Ich bezahle mit Karte.", exTr: "I pay by card." },
+      { de: "kosten", en: "to cost", pt: "custar", art: "v", ex: "Was kostet das?", exTr: "What does that cost?" }
+    ],
+    "Stadt": [
+      { de: "Stadt", en: "city", pt: "cidade", art: "die", ex: "Frankfurt ist eine schöne Stadt.", exTr: "Frankfurt is a beautiful city." },
+      { de: "Dorf", en: "village", pt: "vila", art: "das", ex: "Ein kleines Dorf.", exTr: "A small village." },
+      { de: "Straße", en: "street", pt: "rua", art: "die", ex: "Die Straße ist lang.", exTr: "The street is long." },
+      { de: "Platz", en: "square/place", pt: "praça", art: "der", ex: "Der Römerplatz in Frankfurt.", exTr: "Römerplatz in Frankfurt." },
+      { de: "Restaurant", en: "restaurant", pt: "restaurante", art: "das", ex: "Ein gutes Restaurant.", exTr: "A good restaurant." },
+      { de: "Café", en: "café", pt: "café", art: "das", ex: "Treffen wir uns im Café?", exTr: "Shall we meet at the café?" },
+      { de: "Bank", en: "bank", pt: "banco", art: "die", ex: "Die Bank öffnet um neun.", exTr: "The bank opens at nine." },
+      { de: "Post", en: "post office", pt: "correios", art: "die", ex: "Die Post ist um die Ecke.", exTr: "The post office is around the corner." },
+      { de: "Apotheke", en: "pharmacy", pt: "farmácia", art: "die", ex: "In der Apotheke kaufe ich Medikamente.", exTr: "I buy medicine at the pharmacy." },
+      { de: "Schule", en: "school", pt: "escola", art: "die", ex: "Die Kinder gehen zur Schule.", exTr: "The children go to school." },
+      { de: "Krankenhaus", en: "hospital", pt: "hospital", art: "das", ex: "Das Krankenhaus ist neu.", exTr: "The hospital is new." },
+      { de: "Museum", en: "museum", pt: "museu", art: "das", ex: "Das Museum öffnet um zehn.", exTr: "The museum opens at ten." }
+    ],
+    "Hobbys": [
+      { de: "Hobby", en: "hobby", pt: "passatempo", art: "das", ex: "Mein Hobby ist Fotografie.", exTr: "My hobby is photography." },
+      { de: "Sport", en: "sport", pt: "esporte", art: "der", ex: "Sport macht fit.", exTr: "Sport keeps you fit." },
+      { de: "Musik", en: "music", pt: "música", art: "die", ex: "Ich höre gerne Musik.", exTr: "I like listening to music." },
+      { de: "Buch", en: "book", pt: "livro", art: "das", ex: "Ein interessantes Buch.", exTr: "An interesting book." },
+      { de: "Film", en: "movie", pt: "filme", art: "der", ex: "Der Film ist lang.", exTr: "The movie is long." },
+      { de: "Spiel", en: "game", pt: "jogo", art: "das", ex: "Ein neues Spiel.", exTr: "A new game." },
+      { de: "schwimmen", en: "to swim", pt: "nadar", art: "v", ex: "Ich schwimme im Sommer.", exTr: "I swim in summer." },
+      { de: "laufen", en: "to run", pt: "correr", art: "v", ex: "Er läuft jeden Morgen.", exTr: "He runs every morning." },
+      { de: "tanzen", en: "to dance", pt: "dançar", art: "v", ex: "Wir tanzen Samba.", exTr: "We dance samba." },
+      { de: "fotografieren", en: "to photograph", pt: "fotografar", art: "v", ex: "Ich fotografiere die Stadt.", exTr: "I photograph the city." },
+      { de: "lesen", en: "to read", pt: "ler", art: "v", ex: "Ich lese ein Buch.", exTr: "I am reading a book." },
+      { de: "spielen", en: "to play", pt: "jogar / tocar", art: "v", ex: "Die Kinder spielen draußen.", exTr: "The children play outside." },
+      { de: "reisen", en: "to travel", pt: "viajar", art: "v", ex: "Ich reise gerne.", exTr: "I like to travel." }
+    ],
+    "Gefühle": [
+      { de: "glücklich", en: "happy", pt: "feliz", art: "adj", ex: "Ich bin glücklich hier.", exTr: "I am happy here." },
+      { de: "traurig", en: "sad", pt: "triste", art: "adj", ex: "Sie ist heute traurig.", exTr: "She is sad today." },
+      { de: "müde", en: "tired", pt: "cansado", art: "adj", ex: "Ich bin sehr müde.", exTr: "I am very tired." },
+      { de: "hungrig", en: "hungry", pt: "com fome", art: "adj", ex: "Bist du hungrig?", exTr: "Are you hungry?" },
+      { de: "durstig", en: "thirsty", pt: "com sede", art: "adj", ex: "Ich bin durstig.", exTr: "I am thirsty." },
+      { de: "krank", en: "sick", pt: "doente", art: "adj", ex: "Er ist krank.", exTr: "He is sick." },
+      { de: "gesund", en: "healthy", pt: "saudável", art: "adj", ex: "Obst ist gesund.", exTr: "Fruit is healthy." },
+      { de: "böse", en: "angry/mean", pt: "bravo / mau", art: "adj", ex: "Er ist böse auf mich.", exTr: "He is angry at me." },
+      { de: "fröhlich", en: "cheerful", pt: "alegre", art: "adj", ex: "Eine fröhliche Stimmung.", exTr: "A cheerful mood." },
+      { de: "nervös", en: "nervous", pt: "nervoso", art: "adj", ex: "Ich bin vor der Prüfung nervös.", exTr: "I'm nervous before the exam." },
+      { de: "ruhig", en: "calm", pt: "calmo", art: "adj", ex: "Bleib ruhig!", exTr: "Stay calm!" },
+      { de: "aufgeregt", en: "excited", pt: "animado", art: "adj", ex: "Er ist sehr aufgeregt.", exTr: "He is very excited." }
+    ],
+    "Verben A2": [
+      { de: "verstehen", en: "to understand", pt: "entender", art: "v", ex: "Ich verstehe nicht.", exTr: "I don't understand." },
+      { de: "denken", en: "to think", pt: "pensar", art: "v", ex: "Was denkst du?", exTr: "What do you think?" },
+      { de: "glauben", en: "to believe", pt: "acreditar", art: "v", ex: "Ich glaube, es regnet.", exTr: "I believe it's raining." },
+      { de: "fühlen", en: "to feel", pt: "sentir", art: "v", ex: "Ich fühle mich gut.", exTr: "I feel good." },
+      { de: "brauchen", en: "to need", pt: "precisar", art: "v", ex: "Ich brauche Hilfe.", exTr: "I need help." },
+      { de: "helfen", en: "to help", pt: "ajudar", art: "v", ex: "Kannst du mir helfen?", exTr: "Can you help me?" },
+      { de: "geben", en: "to give", pt: "dar", art: "v", ex: "Gib mir das Buch.", exTr: "Give me the book." },
+      { de: "nehmen", en: "to take", pt: "pegar", art: "v", ex: "Ich nehme den Bus.", exTr: "I take the bus." },
+      { de: "finden", en: "to find", pt: "encontrar", art: "v", ex: "Ich finde meine Schlüssel nicht.", exTr: "I can't find my keys." },
+      { de: "kennen", en: "to know (people/places)", pt: "conhecer", art: "v", ex: "Ich kenne Berlin gut.", exTr: "I know Berlin well." },
+      { de: "wissen", en: "to know (facts)", pt: "saber", art: "v", ex: "Ich weiß die Antwort.", exTr: "I know the answer." },
+      { de: "schreiben", en: "to write", pt: "escrever", art: "v", ex: "Ich schreibe eine E-Mail.", exTr: "I am writing an email." },
+      { de: "hören", en: "to hear/listen", pt: "ouvir", art: "v", ex: "Hörst du das?", exTr: "Do you hear that?" },
+      { de: "schlafen", en: "to sleep", pt: "dormir", art: "v", ex: "Ich schlafe gut.", exTr: "I sleep well." },
+      { de: "warten", en: "to wait", pt: "esperar", art: "v", ex: "Warte auf mich!", exTr: "Wait for me!" }
+    ],
+    "Adjektive": [
+      { de: "groß", en: "big/tall", pt: "grande/alto", art: "adj", ex: "Ein großes Haus.", exTr: "A big house." },
+      { de: "klein", en: "small", pt: "pequeno", art: "adj", ex: "Eine kleine Katze.", exTr: "A small cat." },
+      { de: "neu", en: "new", pt: "novo", art: "adj", ex: "Mein neues Auto.", exTr: "My new car." },
+      { de: "alt", en: "old", pt: "velho", art: "adj", ex: "Ein altes Buch.", exTr: "An old book." },
+      { de: "jung", en: "young", pt: "jovem", art: "adj", ex: "Sie ist sehr jung.", exTr: "She is very young." },
+      { de: "gut", en: "good", pt: "bom", art: "adj", ex: "Eine gute Idee.", exTr: "A good idea." },
+      { de: "schlecht", en: "bad", pt: "ruim", art: "adj", ex: "Schlechtes Wetter.", exTr: "Bad weather." },
+      { de: "schön", en: "beautiful", pt: "bonito", art: "adj", ex: "Eine schöne Stadt.", exTr: "A beautiful city." },
+      { de: "schnell", en: "fast", pt: "rápido", art: "adj", ex: "Ein schnelles Auto.", exTr: "A fast car." },
+      { de: "langsam", en: "slow", pt: "lento", art: "adj", ex: "Sprich langsam, bitte.", exTr: "Speak slowly, please." },
+      { de: "leicht", en: "easy/light", pt: "fácil/leve", art: "adj", ex: "Eine leichte Aufgabe.", exTr: "An easy task." },
+      { de: "schwer", en: "heavy/hard", pt: "pesado/difícil", art: "adj", ex: "Der Koffer ist schwer.", exTr: "The suitcase is heavy." },
+      { de: "einfach", en: "simple", pt: "simples", art: "adj", ex: "Das ist einfach.", exTr: "That is simple." },
+      { de: "schwierig", en: "difficult", pt: "difícil", art: "adj", ex: "Deutsch ist schwierig.", exTr: "German is difficult." },
+      { de: "wichtig", en: "important", pt: "importante", art: "adj", ex: "Das ist sehr wichtig.", exTr: "That is very important." }
+    ],
+    "Konnektoren": [
+      { de: "und", en: "and", pt: "e", art: null, ex: "Kaffee und Kuchen.", exTr: "Coffee and cake." },
+      { de: "aber", en: "but", pt: "mas", art: null, ex: "Klein, aber fein.", exTr: "Small but nice." },
+      { de: "oder", en: "or", pt: "ou", art: null, ex: "Tee oder Kaffee?", exTr: "Tea or coffee?" },
+      { de: "weil", en: "because", pt: "porque", art: null, ex: "Ich bleibe, weil es regnet.", exTr: "I'm staying because it's raining." },
+      { de: "dass", en: "that (conj.)", pt: "que", art: null, ex: "Ich denke, dass es gut ist.", exTr: "I think that it is good." },
+      { de: "wenn", en: "if/when", pt: "se/quando", art: null, ex: "Wenn du willst, komm mit.", exTr: "If you want, come along." },
+      { de: "dann", en: "then", pt: "então", art: null, ex: "Erst essen, dann arbeiten.", exTr: "First eat, then work." },
+      { de: "auch", en: "also", pt: "também", art: null, ex: "Ich auch!", exTr: "Me too!" },
+      { de: "immer", en: "always", pt: "sempre", art: null, ex: "Er ist immer pünktlich.", exTr: "He is always on time." },
+      { de: "nie", en: "never", pt: "nunca", art: null, ex: "Ich trinke nie Alkohol.", exTr: "I never drink alcohol." }
+    ]
+  },
+  Alltag: {
+    "Smalltalk": [
+      { de: "Wie geht's?", en: "How are you?", pt: "Como vai?", art: null, ex: "Hi Mark, wie geht's?", exTr: "Hi Mark, how are you?" },
+      { de: "Was machen Sie beruflich?", en: "What do you do for a living?", pt: "Qual é a sua profissão?", art: null, ex: "Und was machen Sie beruflich?", exTr: "And what do you do for a living?" },
+      { de: "Woher kommen Sie?", en: "Where are you from?", pt: "De onde você é?", art: null, ex: "Entschuldigung, woher kommen Sie?", exTr: "Excuse me, where are you from?" },
+      { de: "Wo wohnen Sie?", en: "Where do you live?", pt: "Onde mora?", art: null, ex: "Wo wohnen Sie in Frankfurt?", exTr: "Where in Frankfurt do you live?" },
+      { de: "Schönes Wetter, oder?", en: "Nice weather, isn't it?", pt: "Que tempo bom, né?", art: null, ex: "Schönes Wetter heute, oder?", exTr: "Nice weather today, isn't it?" },
+      { de: "Was gibt's Neues?", en: "What's new?", pt: "O que há de novo?", art: null, ex: "Hallo, was gibt's Neues?", exTr: "Hi, what's new?" },
+      { de: "Wirklich?", en: "Really?", pt: "Sério?", art: null, ex: "Wirklich? Das wusste ich nicht.", exTr: "Really? I didn't know that." },
+      { de: "Ach so!", en: "Oh, I see!", pt: "Ah, entendi!", art: null, ex: "Ach so, jetzt verstehe ich.", exTr: "Oh I see, now I understand." },
+      { de: "Genau!", en: "Exactly!", pt: "Exatamente!", art: null, ex: "Genau, das meine ich auch.", exTr: "Exactly, that's what I think too." },
+      { de: "Toll!", en: "Great!", pt: "Ótimo!", art: null, ex: "Toll, dass du da bist!", exTr: "Great that you're here!" },
+      { de: "Lange nicht gesehen", en: "Long time no see", pt: "Há quanto tempo!", art: null, ex: "Hey Anna, lange nicht gesehen!", exTr: "Hey Anna, long time no see!" },
+      { de: "Wochenende", en: "weekend", pt: "fim de semana", art: "das", ex: "Schönes Wochenende!", exTr: "Have a nice weekend!" },
+      { de: "Feierabend", en: "end of workday", pt: "fim do expediente", art: "der", ex: "Endlich Feierabend!", exTr: "Finally end of workday!" },
+      { de: "Sprache", en: "language", pt: "idioma", art: "die", ex: "Welche Sprachen sprechen Sie?", exTr: "Which languages do you speak?" },
+      { de: "Heimat", en: "homeland", pt: "terra natal", art: "die", ex: "Brasilien ist meine Heimat.", exTr: "Brazil is my homeland." },
+      { de: "viel zu tun", en: "a lot to do", pt: "muito o que fazer", art: null, ex: "Ich habe viel zu tun.", exTr: "I have a lot to do." },
+      { de: "Glückwunsch!", en: "Congratulations!", pt: "Parabéns!", art: null, ex: "Herzlichen Glückwunsch zum Geburtstag!", exTr: "Happy birthday!" },
+      { de: "Schönen Tag noch!", en: "Have a nice day!", pt: "Tenha um bom dia!", art: null, ex: "Tschüss, schönen Tag noch!", exTr: "Bye, have a nice day!" },
+      { de: "Pass auf dich auf!", en: "Take care!", pt: "Cuide-se!", art: null, ex: "Tschüss, pass auf dich auf!", exTr: "Bye, take care!" },
+      { de: "Klar!", en: "Of course! / Sure!", pt: "Claro!", art: null, ex: "Klar, kein Problem.", exTr: "Sure, no problem." },
+      { de: "Stimmt", en: "That's right", pt: "É verdade", art: null, ex: "Stimmt, das war so.", exTr: "Right, that's how it was." },
+      { de: "Mal sehen", en: "We'll see", pt: "Vamos ver", art: null, ex: "Mal sehen, was passiert.", exTr: "We'll see what happens." }
+    ],
+    "Restaurant": [
+      { de: "Speisekarte", en: "menu", pt: "cardápio", art: "die", ex: "Die Speisekarte, bitte.", exTr: "The menu, please." },
+      { de: "Getränkekarte", en: "drinks menu", pt: "carta de bebidas", art: "die", ex: "Können wir die Getränkekarte sehen?", exTr: "Can we see the drinks menu?" },
+      { de: "Kellner", en: "waiter", pt: "garçom", art: "der", ex: "Der Kellner kommt gleich.", exTr: "The waiter is coming." },
+      { de: "Kellnerin", en: "waitress", pt: "garçonete", art: "die", ex: "Die Kellnerin ist sehr nett.", exTr: "The waitress is very nice." },
+      { de: "Reservierung", en: "reservation", pt: "reserva", art: "die", ex: "Ich habe eine Reservierung auf den Namen Lucas.", exTr: "I have a reservation under the name Lucas." },
+      { de: "Bestellung", en: "order", pt: "pedido", art: "die", ex: "Ihre Bestellung kommt sofort.", exTr: "Your order is coming right away." },
+      { de: "Vorspeise", en: "appetizer", pt: "entrada", art: "die", ex: "Als Vorspeise nehme ich Suppe.", exTr: "For an appetizer I'll have soup." },
+      { de: "Hauptgericht", en: "main course", pt: "prato principal", art: "das", ex: "Als Hauptgericht das Schnitzel.", exTr: "For the main course the schnitzel." },
+      { de: "Nachtisch", en: "dessert", pt: "sobremesa", art: "der", ex: "Was gibt's zum Nachtisch?", exTr: "What's for dessert?" },
+      { de: "Suppe", en: "soup", pt: "sopa", art: "die", ex: "Eine warme Suppe, bitte.", exTr: "A warm soup, please." },
+      { de: "Salat", en: "salad", pt: "salada", art: "der", ex: "Ein gemischter Salat.", exTr: "A mixed salad." },
+      { de: "Schnitzel", en: "schnitzel", pt: "filé empanado", art: "das", ex: "Ein Wiener Schnitzel mit Pommes.", exTr: "A Vienna schnitzel with fries." },
+      { de: "Bratwurst", en: "sausage", pt: "linguiça grelhada", art: "die", ex: "Eine Bratwurst mit Senf.", exTr: "A sausage with mustard." },
+      { de: "Pommes", en: "fries", pt: "batata frita", art: "pl", ex: "Pommes mit Ketchup, bitte.", exTr: "Fries with ketchup, please." },
+      { de: "Trinkgeld", en: "tip", pt: "gorjeta", art: "das", ex: "Das Trinkgeld ist inklusive.", exTr: "The tip is included." },
+      { de: "Guten Appetit!", en: "Enjoy your meal!", pt: "Bom apetite!", art: null, ex: "Guten Appetit zusammen!", exTr: "Enjoy your meal everyone!" },
+      { de: "Prost!", en: "Cheers!", pt: "Saúde!", art: null, ex: "Prost, auf uns!", exTr: "Cheers, to us!" },
+      { de: "Zum Wohl!", en: "To your health!", pt: "Saúde!", art: null, ex: "Zum Wohl, meine Freunde!", exTr: "To your health, my friends!" },
+      { de: "Ich hätte gern...", en: "I'd like...", pt: "Eu gostaria de...", art: null, ex: "Ich hätte gern ein Bier.", exTr: "I'd like a beer." },
+      { de: "bestellen", en: "to order", pt: "pedir", art: "v", ex: "Was bestellst du?", exTr: "What are you ordering?" },
+      { de: "empfehlen", en: "to recommend", pt: "recomendar", art: "v", ex: "Was können Sie empfehlen?", exTr: "What can you recommend?" },
+      { de: "Getrennt oder zusammen?", en: "Separate or together?", pt: "Separado ou junto?", art: null, ex: "Zahlen Sie getrennt oder zusammen?", exTr: "Are you paying separately or together?" },
+      { de: "scharf", en: "spicy", pt: "picante", art: "adj", ex: "Ist das scharf?", exTr: "Is that spicy?" },
+      { de: "lecker", en: "delicious", pt: "delicioso", art: "adj", ex: "Das ist sehr lecker!", exTr: "That is very delicious!" },
+      { de: "satt", en: "full (after eating)", pt: "satisfeito", art: "adj", ex: "Ich bin satt, danke.", exTr: "I'm full, thank you." }
+    ],
+    "Fitnessstudio": [
+      { de: "Fitnessstudio", en: "gym", pt: "academia", art: "das", ex: "Ich gehe ins Fitnessstudio.", exTr: "I go to the gym." },
+      { de: "Training", en: "workout", pt: "treino", art: "das", ex: "Mein Training dauert eine Stunde.", exTr: "My workout lasts an hour." },
+      { de: "trainieren", en: "to train/work out", pt: "treinar", art: "v", ex: "Ich trainiere dreimal pro Woche.", exTr: "I train three times a week." },
+      { de: "Übung", en: "exercise", pt: "exercício", art: "die", ex: "Diese Übung ist schwer.", exTr: "This exercise is hard." },
+      { de: "Hantel", en: "dumbbell", pt: "haltere", art: "die", ex: "Die Hantel ist zu schwer.", exTr: "The dumbbell is too heavy." },
+      { de: "Laufband", en: "treadmill", pt: "esteira", art: "das", ex: "Ich laufe auf dem Laufband.", exTr: "I run on the treadmill." },
+      { de: "Gerät", en: "machine/equipment", pt: "aparelho", art: "das", ex: "Welches Gerät benutzt du?", exTr: "Which machine are you using?" },
+      { de: "Mitgliedschaft", en: "membership", pt: "filiação", art: "die", ex: "Meine Mitgliedschaft kostet 30 Euro.", exTr: "My membership costs 30 Euros." },
+      { de: "Vertrag", en: "contract", pt: "contrato", art: "der", ex: "Der Vertrag läuft ein Jahr.", exTr: "The contract runs for one year." },
+      { de: "Trainer", en: "trainer/coach", pt: "personal trainer", art: "der", ex: "Mein Trainer hilft mir.", exTr: "My trainer helps me." },
+      { de: "Kurs", en: "class", pt: "aula", art: "der", ex: "Der Yoga-Kurs beginnt um 18 Uhr.", exTr: "The yoga class starts at 6 pm." },
+      { de: "Muskel", en: "muscle", pt: "músculo", art: "der", ex: "Mein Muskel tut weh.", exTr: "My muscle hurts." },
+      { de: "schwitzen", en: "to sweat", pt: "suar", art: "v", ex: "Ich schwitze viel beim Training.", exTr: "I sweat a lot while training." },
+      { de: "aufwärmen", en: "to warm up", pt: "aquecer", art: "v", ex: "Ich wärme mich zehn Minuten auf.", exTr: "I warm up for ten minutes." },
+      { de: "dehnen", en: "to stretch", pt: "alongar", art: "v", ex: "Nach dem Training dehne ich mich.", exTr: "After training I stretch." },
+      { de: "Wiederholung", en: "repetition", pt: "repetição", art: "die", ex: "Zehn Wiederholungen pro Satz.", exTr: "Ten reps per set." },
+      { de: "Satz", en: "set (of reps)", pt: "série", art: "der", ex: "Drei Sätze mit zehn Wiederholungen.", exTr: "Three sets of ten reps." },
+      { de: "Gewicht", en: "weight", pt: "peso", art: "das", ex: "Das Gewicht ist zu schwer.", exTr: "The weight is too heavy." },
+      { de: "Umkleide", en: "locker room", pt: "vestiário", art: "die", ex: "Die Umkleide ist links.", exTr: "The locker room is on the left." },
+      { de: "Dusche", en: "shower", pt: "chuveiro", art: "die", ex: "Nach dem Sport gehe ich unter die Dusche.", exTr: "After sport I take a shower." },
+      { de: "Krafttraining", en: "strength training", pt: "musculação", art: "das", ex: "Heute mache ich Krafttraining.", exTr: "Today I'm doing strength training." },
+      { de: "Ausdauer", en: "endurance", pt: "resistência", art: "die", ex: "Meine Ausdauer wird besser.", exTr: "My endurance is getting better." },
+      { de: "fit", en: "fit", pt: "em forma", art: "adj", ex: "Ich fühle mich fit.", exTr: "I feel fit." },
+      { de: "stark", en: "strong", pt: "forte", art: "adj", ex: "Du bist stark!", exTr: "You are strong!" },
+      { de: "müde", en: "tired", pt: "cansado", art: "adj", ex: "Nach dem Training bin ich müde.", exTr: "After training I'm tired." }
+    ],
+    "Supermarkt": [
+      { de: "Supermarkt", en: "supermarket", pt: "supermercado", art: "der", ex: "Der Supermarkt ist bis 22 Uhr offen.", exTr: "The supermarket is open until 10 pm." },
+      { de: "Einkaufswagen", en: "shopping cart", pt: "carrinho de compras", art: "der", ex: "Ich brauche einen Einkaufswagen.", exTr: "I need a shopping cart." },
+      { de: "Einkaufskorb", en: "shopping basket", pt: "cesta de compras", art: "der", ex: "Ein Einkaufskorb reicht.", exTr: "A shopping basket is enough." },
+      { de: "Einkaufsliste", en: "shopping list", pt: "lista de compras", art: "die", ex: "Ich habe meine Einkaufsliste vergessen.", exTr: "I forgot my shopping list." },
+      { de: "Kasse", en: "checkout/till", pt: "caixa", art: "die", ex: "Die Kasse ist da vorne.", exTr: "The checkout is up front." },
+      { de: "Kassierer", en: "cashier (m)", pt: "caixa (pessoa)", art: "der", ex: "Der Kassierer ist freundlich.", exTr: "The cashier is friendly." },
+      { de: "Kassiererin", en: "cashier (f)", pt: "caixa (mulher)", art: "die", ex: "Die Kassiererin scannt die Waren.", exTr: "The cashier scans the goods." },
+      { de: "Kassenbon", en: "receipt", pt: "recibo", art: "der", ex: "Möchten Sie den Kassenbon?", exTr: "Would you like the receipt?" },
+      { de: "Angebot", en: "special offer", pt: "promoção", art: "das", ex: "Heute ist Kaffee im Angebot.", exTr: "Coffee is on offer today." },
+      { de: "Rabatt", en: "discount", pt: "desconto", art: "der", ex: "Gibt es einen Rabatt?", exTr: "Is there a discount?" },
+      { de: "Pfand", en: "deposit (bottles)", pt: "depósito (garrafas)", art: "das", ex: "Auf die Flasche gibt es Pfand.", exTr: "There's a deposit on the bottle." },
+      { de: "Tüte", en: "bag", pt: "sacola", art: "die", ex: "Brauchen Sie eine Tüte?", exTr: "Do you need a bag?" },
+      { de: "Regal", en: "shelf", pt: "prateleira", art: "das", ex: "Die Nudeln sind im Regal links.", exTr: "The pasta is on the shelf to the left." },
+      { de: "Obst", en: "fruit", pt: "frutas", art: "das", ex: "Frisches Obst ist im Angebot.", exTr: "Fresh fruit is on offer." },
+      { de: "Gemüse", en: "vegetables", pt: "legumes", art: "das", ex: "Das Gemüse ist sehr frisch.", exTr: "The vegetables are very fresh." },
+      { de: "Tiefkühlkost", en: "frozen food", pt: "congelados", art: "die", ex: "Die Tiefkühlkost ist hinten.", exTr: "The frozen food is in the back." },
+      { de: "Mehl", en: "flour", pt: "farinha", art: "das", ex: "Ich kaufe ein Kilo Mehl.", exTr: "I'm buying a kilo of flour." },
+      { de: "Zucker", en: "sugar", pt: "açúcar", art: "der", ex: "Wir brauchen noch Zucker.", exTr: "We still need sugar." },
+      { de: "Packung", en: "pack/packet", pt: "pacote", art: "die", ex: "Eine Packung Nudeln, bitte.", exTr: "A pack of pasta, please." },
+      { de: "Flasche", en: "bottle", pt: "garrafa", art: "die", ex: "Eine Flasche Wasser kostet 50 Cent.", exTr: "A bottle of water costs 50 cents." },
+      { de: "Dose", en: "can/tin", pt: "lata", art: "die", ex: "Eine Dose Tomaten.", exTr: "A can of tomatoes." },
+      { de: "Kilo", en: "kilogram", pt: "quilo", art: "das", ex: "Ein Kilo Äpfel, bitte.", exTr: "A kilo of apples, please." },
+      { de: "frisch", en: "fresh", pt: "fresco", art: "adj", ex: "Ist das Brot frisch?", exTr: "Is the bread fresh?" },
+      { de: "abgelaufen", en: "expired", pt: "vencido", art: "adj", ex: "Die Milch ist abgelaufen.", exTr: "The milk is expired." },
+      { de: "Haltbarkeitsdatum", en: "expiry date", pt: "data de validade", art: "das", ex: "Prüf das Haltbarkeitsdatum.", exTr: "Check the expiry date." },
+      { de: "wiegen", en: "to weigh", pt: "pesar", art: "v", ex: "Sie müssen das Obst wiegen.", exTr: "You have to weigh the fruit." },
+      { de: "Wo finde ich...?", en: "Where do I find...?", pt: "Onde encontro...?", art: null, ex: "Wo finde ich den Reis?", exTr: "Where do I find the rice?" }
+    ],
+    "Café": [
+      { de: "Café", en: "café", pt: "café (lugar)", art: "das", ex: "Wir treffen uns im Café.", exTr: "We're meeting at the café." },
+      { de: "Espresso", en: "espresso", pt: "espresso", art: "der", ex: "Ein Espresso, bitte.", exTr: "An espresso, please." },
+      { de: "Cappuccino", en: "cappuccino", pt: "cappuccino", art: "der", ex: "Ich nehme einen Cappuccino.", exTr: "I'll have a cappuccino." },
+      { de: "Milchkaffee", en: "café au lait", pt: "café com leite", art: "der", ex: "Ein großer Milchkaffee, bitte.", exTr: "A large café au lait, please." },
+      { de: "Kakao", en: "hot chocolate", pt: "chocolate quente", art: "der", ex: "Für die Kinder einen Kakao.", exTr: "A hot chocolate for the kids." },
+      { de: "Kuchen", en: "cake", pt: "bolo", art: "der", ex: "Der Kuchen sieht lecker aus.", exTr: "The cake looks delicious." },
+      { de: "Torte", en: "layer cake/gateau", pt: "torta", art: "die", ex: "Schwarzwälder Kirschtorte ist berühmt.", exTr: "Black Forest gateau is famous." },
+      { de: "Stück", en: "piece/slice", pt: "pedaço/fatia", art: "das", ex: "Ein Stück Kuchen, bitte.", exTr: "A slice of cake, please." },
+      { de: "Sahne", en: "whipped cream", pt: "chantilly", art: "die", ex: "Mit Sahne, bitte.", exTr: "With whipped cream, please." },
+      { de: "Tasse", en: "cup", pt: "xícara", art: "die", ex: "Eine Tasse Kaffee.", exTr: "A cup of coffee." },
+      { de: "Kanne", en: "pot", pt: "bule", art: "die", ex: "Eine Kanne Tee für zwei.", exTr: "A pot of tea for two." },
+      { de: "Löffel", en: "spoon", pt: "colher", art: "der", ex: "Ich brauche einen Löffel.", exTr: "I need a spoon." },
+      { de: "Serviette", en: "napkin", pt: "guardanapo", art: "die", ex: "Können Sie mir eine Serviette geben?", exTr: "Can you give me a napkin?" },
+      { de: "Zucker", en: "sugar", pt: "açúcar", art: "der", ex: "Nehmen Sie Zucker?", exTr: "Do you take sugar?" },
+      { de: "zum Mitnehmen", en: "to go / takeaway", pt: "para viagem", art: null, ex: "Einen Kaffee zum Mitnehmen.", exTr: "A coffee to go." },
+      { de: "zum Hieressen", en: "to have here", pt: "para comer aqui", art: null, ex: "Zum Hieressen oder zum Mitnehmen?", exTr: "For here or to go?" },
+      { de: "Was darf es sein?", en: "What would you like?", pt: "O que vai querer?", art: null, ex: "Guten Tag, was darf es sein?", exTr: "Hello, what would you like?" },
+      { de: "Ich möchte...", en: "I would like...", pt: "Eu queria...", art: null, ex: "Ich möchte einen Kaffee.", exTr: "I would like a coffee." },
+      { de: "probieren", en: "to try/taste", pt: "experimentar", art: "v", ex: "Möchten Sie den Kuchen probieren?", exTr: "Would you like to try the cake?" },
+      { de: "gemütlich", en: "cozy", pt: "aconchegante", art: "adj", ex: "Das Café ist sehr gemütlich.", exTr: "The café is very cozy." },
+      { de: "süß", en: "sweet", pt: "doce", art: "adj", ex: "Der Kuchen ist zu süß.", exTr: "The cake is too sweet." },
+      { de: "bitter", en: "bitter", pt: "amargo", art: "adj", ex: "Espresso ist bitter.", exTr: "Espresso is bitter." },
+      { de: "heiß", en: "hot", pt: "quente", art: "adj", ex: "Vorsicht, der Kaffee ist heiß!", exTr: "Careful, the coffee is hot!" }
+    ]
+  }
+};
+
+/* =========================================================================
+   GRAMMATIK — verified against multiple grammar references
+   ========================================================================= */
+const GRAMMAR_ORDER = ["Nominativ & Dativ", "Dativ: Präpositionen & Verben", "Unregelmäßige Verben"];
+
+// Dativ prepositions
+const DAT_PREP = [
+  { w: "aus", g: "from, out of", ex: "Ich komme <b>aus</b> Brasilien.", tr: "I come from Brazil." },
+  { w: "außer", g: "except for", ex: "Alle <b>außer</b> mir sind da.", tr: "Everyone except me is here." },
+  { w: "bei", g: "at, near, with", ex: "Ich wohne <b>bei</b> meinem Bruder.", tr: "I live with my brother." },
+  { w: "gegenüber", g: "across from", ex: "Das Café ist <b>gegenüber</b> dem Bahnhof.", tr: "The café is across from the station." },
+  { w: "mit", g: "with, by (means)", ex: "Ich fahre <b>mit</b> dem Zug.", tr: "I travel by train." },
+  { w: "nach", g: "after, to (places)", ex: "<b>Nach</b> der Arbeit gehe ich nach Hause.", tr: "After work I go home." },
+  { w: "seit", g: "since, for (time)", ex: "Ich lerne <b>seit</b> einem Jahr Deutsch.", tr: "I've been learning German for a year." },
+  { w: "von", g: "from, by, of", ex: "Das ist ein Geschenk <b>von</b> meiner Mutter.", tr: "That's a gift from my mother." },
+  { w: "zu", g: "to (people/places)", ex: "Ich gehe <b>zu</b> dem Arzt.", tr: "I go to the doctor." }
+];
+
+// Dativ verbs
+const DAT_VERB = [
+  { w: "helfen", g: "to help", ex: "Ich helfe <b>dir</b>.", tr: "I help you." },
+  { w: "danken", g: "to thank", ex: "Ich danke <b>dem Kellner</b>.", tr: "I thank the waiter." },
+  { w: "gefallen", g: "to please / to like", ex: "Frankfurt gefällt <b>mir</b>.", tr: "I like Frankfurt. (lit. F. pleases me)" },
+  { w: "gehören", g: "to belong to", ex: "Das Buch gehört <b>meinem Freund</b>.", tr: "The book belongs to my friend." },
+  { w: "antworten", g: "to answer (s.o.)", ex: "Sie antwortet <b>dem Chef</b>.", tr: "She answers the boss." },
+  { w: "glauben", g: "to believe (s.o.)", ex: "Ich glaube <b>dir</b> nicht.", tr: "I don't believe you." },
+  { w: "schmecken", g: "to taste good to", ex: "Der Kuchen schmeckt <b>mir</b>.", tr: "I like the cake. (lit. tastes good to me)" },
+  { w: "passen", g: "to suit / fit", ex: "Der Termin passt <b>mir</b> gut.", tr: "The appointment suits me well." },
+  { w: "gratulieren", g: "to congratulate", ex: "Wir gratulieren <b>dir</b>!", tr: "We congratulate you!" },
+  { w: "begegnen", g: "to meet (by chance)", ex: "Ich begegne <b>einem Kollegen</b>.", tr: "I run into a colleague." },
+  { w: "folgen", g: "to follow", ex: "Der Hund folgt <b>dem Mann</b>.", tr: "The dog follows the man." },
+  { w: "wehtun", g: "to hurt", ex: "Der Kopf tut <b>mir</b> weh.", tr: "My head hurts. (lit. hurts me)" }
+];
+
+// Irregular / strong & mixed verbs: [infinitiv, präsens er/sie/es, präteritum, partizip, aux 'h'/'s', english]
+const IRREG = [
+  ["sein", "ist", "war", "gewesen", "s", "to be"],
+  ["haben", "hat", "hatte", "gehabt", "h", "to have"],
+  ["werden", "wird", "wurde", "geworden", "s", "to become"],
+  ["gehen", "geht", "ging", "gegangen", "s", "to go"],
+  ["kommen", "kommt", "kam", "gekommen", "s", "to come"],
+  ["fahren", "fährt", "fuhr", "gefahren", "s", "to drive / go"],
+  ["laufen", "läuft", "lief", "gelaufen", "s", "to run / walk"],
+  ["bleiben", "bleibt", "blieb", "geblieben", "s", "to stay"],
+  ["essen", "isst", "aß", "gegessen", "h", "to eat"],
+  ["trinken", "trinkt", "trank", "getrunken", "h", "to drink"],
+  ["geben", "gibt", "gab", "gegeben", "h", "to give"],
+  ["nehmen", "nimmt", "nahm", "genommen", "h", "to take"],
+  ["sehen", "sieht", "sah", "gesehen", "h", "to see"],
+  ["lesen", "liest", "las", "gelesen", "h", "to read"],
+  ["sprechen", "spricht", "sprach", "gesprochen", "h", "to speak"],
+  ["treffen", "trifft", "traf", "getroffen", "h", "to meet"],
+  ["helfen", "hilft", "half", "geholfen", "h", "to help"],
+  ["finden", "findet", "fand", "gefunden", "h", "to find"],
+  ["schreiben", "schreibt", "schrieb", "geschrieben", "h", "to write"],
+  ["schlafen", "schläft", "schlief", "geschlafen", "h", "to sleep"],
+  ["tragen", "trägt", "trug", "getragen", "h", "to carry / wear"],
+  ["waschen", "wäscht", "wusch", "gewaschen", "h", "to wash"],
+  ["fallen", "fällt", "fiel", "gefallen", "s", "to fall"],
+  ["halten", "hält", "hielt", "gehalten", "h", "to hold / stop"],
+  ["lassen", "lässt", "ließ", "gelassen", "h", "to let / leave"],
+  ["rufen", "ruft", "rief", "gerufen", "h", "to call"],
+  ["fliegen", "fliegt", "flog", "geflogen", "s", "to fly"],
+  ["verstehen", "versteht", "verstand", "verstanden", "h", "to understand"],
+  ["wissen", "weiß", "wusste", "gewusst", "h", "to know (facts) — mixed"],
+  ["denken", "denkt", "dachte", "gedacht", "h", "to think — mixed"],
+  ["bringen", "bringt", "brachte", "gebracht", "h", "to bring — mixed"],
+  ["kennen", "kennt", "kannte", "gekannt", "h", "to know (people) — mixed"]
+];
+
+/* =========================================================================
+   TEXTE — reading passages recycling vocabulary from the app.
+   Each paragraph: { de, en, pt }. Glossary: [de, en, pt].
+   ========================================================================= */
+const TEXTS = [
+  {
+    id: "morgen",
+    title: "Mein Morgen in Frankfurt",
+    level: "A1",
+    paras: [
+      { de: "Guten Morgen! Ich heiße Lucas und ich wohne in Frankfurt. Ich komme aus Brasilien, aber jetzt ist Deutschland mein Zuhause.",
+        en: "Good morning! My name is Lucas and I live in Frankfurt. I come from Brazil, but now Germany is my home.",
+        pt: "Bom dia! Meu nome é Lucas e moro em Frankfurt. Sou do Brasil, mas agora a Alemanha é o meu lar." },
+      { de: "Jeden Tag stehe ich um sechs Uhr auf. Zuerst trinke ich einen Kaffee und esse ein Brot mit Käse. Der Kaffee ist heiß und sehr gut.",
+        en: "Every day I get up at six o'clock. First I drink a coffee and eat bread with cheese. The coffee is hot and very good.",
+        pt: "Todo dia eu acordo às seis horas. Primeiro tomo um café e como um pão com queijo. O café está quente e muito bom." },
+      { de: "Dann fahre ich mit dem Zug zur Arbeit. Die Reise dauert dreißig Minuten. Im Büro sage ich \"Guten Tag\" zu meinen Kollegen.",
+        en: "Then I take the train to work. The journey takes thirty minutes. At the office I say \"good day\" to my colleagues.",
+        pt: "Depois vou de trem para o trabalho. A viagem dura trinta minutos. No escritório digo \"bom dia\" aos meus colegas." },
+      { de: "Am Abend bin ich oft müde, aber glücklich. Frankfurt gefällt mir sehr.",
+        en: "In the evening I'm often tired, but happy. I like Frankfurt very much.",
+        pt: "À noite estou muitas vezes cansado, mas feliz. Gosto muito de Frankfurt." }
+    ],
+    gloss: [
+      ["aufstehen", "to get up", "levantar-se"],
+      ["zuerst", "first (of all)", "primeiro"],
+      ["dauern", "to last/take", "durar"],
+      ["die Reise", "journey", "viagem"],
+      ["der Kollege", "colleague", "colega"],
+      ["müde", "tired", "cansado"],
+      ["gefallen (+ Dativ)", "to please / to like", "agradar"]
+    ]
+  },
+  {
+    id: "cafe",
+    title: "Im Café",
+    level: "A1–A2",
+    paras: [
+      { de: "Am Samstag treffe ich meine Freundin Anna in einem Café. Das Café ist klein und sehr gemütlich.",
+        en: "On Saturday I meet my friend Anna at a café. The café is small and very cozy.",
+        pt: "No sábado encontro a minha amiga Anna em um café. O café é pequeno e muito aconchegante." },
+      { de: "Der Kellner kommt und fragt: \"Guten Tag, was darf es sein?\" Ich sage: \"Ich möchte einen Cappuccino und ein Stück Kuchen, bitte.\"",
+        en: "The waiter comes and asks: \"Hello, what would you like?\" I say: \"I would like a cappuccino and a slice of cake, please.\"",
+        pt: "O garçom vem e pergunta: \"Bom dia, o que vai querer?\" Eu digo: \"Eu queria um cappuccino e uma fatia de bolo, por favor.\"" },
+      { de: "Anna nimmt einen Tee mit Milch. Der Kuchen ist süß und schmeckt mir sehr gut. Wir sprechen über die Woche und lachen viel.",
+        en: "Anna has a tea with milk. The cake is sweet and I really like it. We talk about the week and laugh a lot.",
+        pt: "Anna toma um chá com leite. O bolo é doce e eu gosto muito dele. Falamos sobre a semana e rimos bastante." },
+      { de: "Nach einer Stunde bezahle ich die Rechnung. \"Schönes Wochenende!\", sagt der Kellner. \"Danke, gleichfalls!\", antworte ich.",
+        en: "After an hour I pay the bill. \"Have a nice weekend!\" says the waiter. \"Thanks, you too!\" I answer.",
+        pt: "Depois de uma hora pago a conta. \"Bom fim de semana!\", diz o garçom. \"Obrigado, igualmente!\", respondo." }
+    ],
+    gloss: [
+      ["gemütlich", "cozy", "aconchegante"],
+      ["der Kellner", "waiter", "garçom"],
+      ["schmecken (+ Dativ)", "to taste good to", "saber bem a"],
+      ["süß", "sweet", "doce"],
+      ["die Rechnung", "bill", "conta"],
+      ["gleichfalls", "likewise / you too", "igualmente"]
+    ]
+  },
+  {
+    id: "supermarkt",
+    title: "Beim Einkaufen",
+    level: "A2",
+    paras: [
+      { de: "Heute Nachmittag gehe ich in den Supermarkt. Ich nehme einen Einkaufswagen und meine Einkaufsliste.",
+        en: "This afternoon I go to the supermarket. I take a shopping cart and my shopping list.",
+        pt: "Hoje à tarde vou ao supermercado. Pego um carrinho de compras e a minha lista de compras." },
+      { de: "Ich brauche Brot, Milch, Obst und Gemüse. Die Bananen sind heute im Angebot — das ist super!",
+        en: "I need bread, milk, fruit and vegetables. The bananas are on offer today — that's great!",
+        pt: "Preciso de pão, leite, frutas e legumes. As bananas estão em promoção hoje — que ótimo!" },
+      { de: "An der Kasse frage ich die Kassiererin: \"Entschuldigung, wo finde ich den Reis?\" Sie antwortet: \"Im Regal links, neben den Nudeln.\"",
+        en: "At the checkout I ask the cashier: \"Excuse me, where do I find the rice?\" She answers: \"On the shelf to the left, next to the pasta.\"",
+        pt: "No caixa pergunto à caixa: \"Desculpe, onde encontro o arroz?\" Ela responde: \"Na prateleira à esquerda, ao lado do macarrão.\"" },
+      { de: "Ich bezahle mit Karte. Eine Flasche Wasser hat Pfand, also bekomme ich später Geld zurück. Mit zwei Tüten gehe ich nach Hause.",
+        en: "I pay by card. A bottle of water has a deposit, so I get money back later. With two bags I walk home.",
+        pt: "Pago com cartão. Uma garrafa de água tem depósito, então recebo dinheiro de volta depois. Com duas sacolas vou para casa." }
+    ],
+    gloss: [
+      ["der Einkaufswagen", "shopping cart", "carrinho de compras"],
+      ["das Angebot", "special offer", "promoção"],
+      ["die Kasse", "checkout", "caixa"],
+      ["das Regal", "shelf", "prateleira"],
+      ["das Pfand", "deposit (bottles)", "depósito"],
+      ["die Tüte", "bag", "sacola"]
+    ]
+  },
+  {
+    id: "fitness",
+    title: "Im Fitnessstudio",
+    level: "A2",
+    paras: [
+      { de: "Dreimal pro Woche gehe ich ins Fitnessstudio. Meine Mitgliedschaft kostet dreißig Euro im Monat.",
+        en: "Three times a week I go to the gym. My membership costs thirty Euros a month.",
+        pt: "Três vezes por semana vou à academia. Minha mensalidade custa trinta euros por mês." },
+      { de: "Zuerst wärme ich mich zehn Minuten auf dem Laufband auf. Dann mache ich Krafttraining mit den Hanteln.",
+        en: "First I warm up for ten minutes on the treadmill. Then I do strength training with the dumbbells.",
+        pt: "Primeiro aqueço dez minutos na esteira. Depois faço musculação com os halteres." },
+      { de: "Mein Trainer hilft mir und zeigt mir die Übungen. \"Drei Sätze mit zehn Wiederholungen\", sagt er. Ich schwitze viel, aber das ist gut.",
+        en: "My trainer helps me and shows me the exercises. \"Three sets of ten reps\", he says. I sweat a lot, but that's good.",
+        pt: "Meu personal me ajuda e me mostra os exercícios. \"Três séries de dez repetições\", ele diz. Eu suo bastante, mas isso é bom." },
+      { de: "Nach dem Training dehne ich mich und gehe unter die Dusche. Jetzt fühle ich mich fit und stark!",
+        en: "After the workout I stretch and take a shower. Now I feel fit and strong!",
+        pt: "Depois do treino me alongo e tomo banho. Agora me sinto em forma e forte!" }
+    ],
+    gloss: [
+      ["sich aufwärmen", "to warm up", "aquecer-se"],
+      ["das Krafttraining", "strength training", "musculação"],
+      ["der Trainer", "trainer / coach", "personal trainer"],
+      ["die Wiederholung", "repetition / rep", "repetição"],
+      ["schwitzen", "to sweat", "suar"],
+      ["sich dehnen", "to stretch", "alongar-se"]
+    ]
+  },
+  {
+    id: "smalltalk",
+    title: "Ein Gespräch im Büro",
+    level: "A2",
+    paras: [
+      { de: "Am Montagmorgen treffe ich meinen Kollegen Mark in der Küche. \"Hallo Mark, wie geht's? Lange nicht gesehen!\"",
+        en: "On Monday morning I meet my colleague Mark in the kitchen. \"Hi Mark, how are you? Long time no see!\"",
+        pt: "Na segunda de manhã encontro meu colega Mark na cozinha. \"Oi Mark, como vai? Há quanto tempo!\"" },
+      { de: "\"Mir geht's gut, danke! Und dir? Was gibt's Neues?\", fragt Mark. \"Ach, viel zu tun\", sage ich. \"Aber das Wochenende war schön.\"",
+        en: "\"I'm good, thanks! And you? What's new?\" asks Mark. \"Oh, a lot to do,\" I say. \"But the weekend was nice.\"",
+        pt: "\"Estou bem, obrigado! E você? O que há de novo?\", pergunta Mark. \"Ah, muito o que fazer\", digo. \"Mas o fim de semana foi bom.\"" },
+      { de: "\"Schönes Wetter heute, oder?\", sagt Mark. \"Genau\", antworte ich. \"Vielleicht gehe ich nach der Arbeit spazieren.\"",
+        en: "\"Nice weather today, isn't it?\" says Mark. \"Exactly,\" I answer. \"Maybe I'll go for a walk after work.\"",
+        pt: "\"Que tempo bom hoje, né?\", diz Mark. \"Exatamente\", respondo. \"Talvez eu vá passear depois do trabalho.\"" },
+      { de: "Die Besprechung beginnt um neun Uhr. \"Bis später!\", sage ich. \"Schönen Tag noch!\", antwortet Mark.",
+        en: "The meeting starts at nine. \"See you later!\" I say. \"Have a nice day!\" Mark answers.",
+        pt: "A reunião começa às nove. \"Até mais!\", digo. \"Tenha um bom dia!\", responde Mark." }
+    ],
+    gloss: [
+      ["Lange nicht gesehen", "long time no see", "há quanto tempo"],
+      ["Was gibt's Neues?", "what's new?", "o que há de novo?"],
+      ["viel zu tun", "a lot to do", "muito o que fazer"],
+      ["Genau", "exactly", "exatamente"],
+      ["spazieren gehen", "to go for a walk", "passear"],
+      ["die Besprechung", "meeting", "reunião"]
+    ]
+  }
+];
+
+/* =========================================================================
+   STATE
+   ========================================================================= */
+const state = {
+  level: 'A1',
+  category: 'all',
+  mode: 'browse',
+  search: '',
+  // flashcard state
+  flashIdx: 0,
+  flashFlipped: false,
+  flashDeck: [],
+  flashStats: { known: 0, unknown: 0 },
+  // quiz state
+  quizIdx: 0,
+  quizDeck: [],
+  quizScore: 0,
+  quizAnswered: false,
+  quizSelectedOption: null,
+  quizCorrectOption: null,
+  // match state
+  matchTiles: [],
+  matchSelected: null,
+  matchPairsCount: 0,
+  // write (typed recall) state
+  writeDeck: [],
+  writeIdx: 0,
+  writeScore: 0,
+  writeAnswered: false,
+  // spaced repetition toggle for flashcards
+  srsEnabled: true
+};
+
+/* =========================================================================
+   UTILITIES
+   ========================================================================= */
+function currentWords() {
+  const levelData = VOCAB[state.level];
+  let words = [];
+  if (state.category === 'all') {
+    for (const cat in levelData) {
+      levelData[cat].forEach(w => words.push({ ...w, cat }));
+    }
+  } else if (levelData[state.category]) {
+    levelData[state.category].forEach(w => words.push({ ...w, cat: state.category }));
+  }
+  if (state.search.trim()) {
+    const q = state.search.toLowerCase();
+    words = words.filter(w =>
+      w.de.toLowerCase().includes(q) ||
+      w.en.toLowerCase().includes(q) ||
+      w.pt.toLowerCase().includes(q)
+    );
+  }
+  return words;
+}
+
+function articleClass(art) {
+  if (!art) return '';
+  if (art === 'der') return 'article-der';
+  if (art === 'die') return 'article-die';
+  if (art === 'das') return 'article-das';
+  if (art === 'pl') return 'article-pl';
+  if (art === 'v') return 'article-v';
+  if (art === 'adj') return 'article-adj';
+  return '';
+}
+
+function articleLabel(art) {
+  if (!art) return '';
+  if (art === 'pl') return 'die (pl)';
+  if (art === 'v') return 'verb';
+  if (art === 'adj') return 'adj.';
+  return art;
+}
+
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  }[c]));
+}
+
+/* =========================================================================
+   AUDIO — browser Web Speech API (no files, works offline)
+   ========================================================================= */
+const SPEECH_OK = typeof window !== 'undefined'
+  && 'speechSynthesis' in window
+  && typeof SpeechSynthesisUtterance !== 'undefined';
+let deVoice = null;
+
+function pickGermanVoice() {
+  if (!SPEECH_OK) return;
+  const voices = window.speechSynthesis.getVoices() || [];
+  // Prefer a de-DE voice; fall back to any German voice
+  deVoice = voices.find(v => v.lang === 'de-DE')
+        || voices.find(v => /^de(-|_)/i.test(v.lang))
+        || voices.find(v => /german|deutsch/i.test(v.name))
+        || null;
+}
+if (SPEECH_OK) {
+  pickGermanVoice();
+  // Voices often load asynchronously
+  window.speechSynthesis.onvoiceschanged = pickGermanVoice;
+}
+
+function speakGerman(text, btnEl) {
+  if (!SPEECH_OK) return;
+  try {
+    window.speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'de-DE';
+    if (deVoice) u.voice = deVoice;
+    u.rate = 0.92;
+    u.pitch = 1.0;
+    if (btnEl) {
+      btnEl.classList.add('speaking');
+      u.onend = u.onerror = () => btnEl.classList.remove('speaking');
+    }
+    window.speechSynthesis.speak(u);
+  } catch (e) { /* silently ignore */ }
+}
+
+// Strips articles/labels so TTS reads the word cleanly. Keeps der/die/das (useful to hear gender).
+function speakablePhrase(w) {
+  if (w.art === 'der' || w.art === 'die' || w.art === 'das') return w.art + ' ' + w.de;
+  return w.de;
+}
+
+function speakerBtnHTML(extraClass) {
+  const cls = 'speak-btn' + (extraClass ? ' ' + extraClass : '') + (SPEECH_OK ? '' : ' speak-unavailable');
+  // Tabler-style outline volume icon
+  return `<button class="${cls}" data-speak aria-label="Anhören" title="Anhören / Listen">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 8a5 5 0 0 1 0 8"></path>
+      <path d="M17.7 5a9 9 0 0 1 0 14"></path>
+      <path d="M6 15h-2a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h2l3.5 -4.5a.8 .8 0 0 1 1.5 .5v14a.8 .8 0 0 1 -1.5 .5l-3.5 -4.5"></path>
+    </svg>
+  </button>`;
+}
+
+// Wires up every [data-speak] button within a container to speak the given text.
+function wireSpeaker(scopeEl, text) {
+  if (!scopeEl) return;
+  const btn = scopeEl.querySelector('[data-speak]');
+  if (btn) {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      speakGerman(text, btn);
+    });
+  }
+}
+
+/* =========================================================================
+   SPACED REPETITION (SRS) — lightweight Leitner-style scheduling.
+   Persists to localStorage when available; degrades to in-memory otherwise.
+   Each word keyed by level::de. Record: { box, due } where box 0..5 and
+   due is a "session counter" so due words resurface sooner.
+   ========================================================================= */
+const SRS_KEY = 'deutsch_srs_v1';
+let srsStore = {};
+let srsPersist = false;
+let srsSessionCounter = 0;
+
+(function initSrsStore() {
+  try {
+    const raw = window.localStorage.getItem(SRS_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      srsStore = parsed.store || {};
+      srsSessionCounter = parsed.counter || 0;
+    }
+    // probe write access
+    window.localStorage.setItem(SRS_KEY + '_probe', '1');
+    window.localStorage.removeItem(SRS_KEY + '_probe');
+    srsPersist = true;
+  } catch (e) {
+    srsPersist = false; // in-memory only (e.g. sandboxed preview)
+  }
+})();
+
+function srsSave() {
+  if (!srsPersist) return;
+  try {
+    window.localStorage.setItem(SRS_KEY, JSON.stringify({ store: srsStore, counter: srsSessionCounter }));
+  } catch (e) { /* ignore quota / access errors */ }
+}
+
+function srsKey(w) { return state.level + '::' + w.de; }
+
+function srsGet(w) {
+  return srsStore[srsKey(w)] || { box: 0, due: 0 };
+}
+
+// Leitner intervals per box (in "sessions"). Higher box = seen less often.
+const SRS_INTERVAL = [0, 1, 2, 4, 7, 12];
+
+function srsUpdate(w, correct) {
+  const k = srsKey(w);
+  const rec = srsStore[k] || { box: 0, due: 0 };
+  if (correct) rec.box = Math.min(5, rec.box + 1);
+  else rec.box = Math.max(0, rec.box - 1);
+  rec.due = srsSessionCounter + SRS_INTERVAL[rec.box];
+  rec.seen = (rec.seen || 0) + 1;
+  srsStore[k] = rec;
+  srsSave();
+}
+
+function srsTier(w) {
+  const rec = srsStore[srsKey(w)];
+  if (!rec || rec.box === 0) return 'due';
+  if (rec.box >= 4) return 'known';
+  return 'learning';
+}
+
+// Orders a word list so due/weak words come first, then by box ascending,
+// with light shuffling inside each tier to avoid identical sessions.
+function srsOrder(words) {
+  const withMeta = words.map(w => {
+    const rec = srsStore[srsKey(w)] || { box: 0, due: 0 };
+    const isDue = rec.due <= srsSessionCounter;
+    return { w, box: rec.box, isDue, r: Math.random() };
+  });
+  withMeta.sort((a, b) => {
+    if (a.isDue !== b.isDue) return a.isDue ? -1 : 1; // due first
+    if (a.box !== b.box) return a.box - b.box;         // weaker first
+    return a.r - b.r;                                  // shuffle within tier
+  });
+  return withMeta.map(m => m.w);
+}
+
+function srsCounts(words) {
+  let due = 0, learning = 0, known = 0;
+  words.forEach(w => {
+    const t = srsTier(w);
+    if (t === 'due') due++;
+    else if (t === 'learning') learning++;
+    else known++;
+  });
+  return { due, learning, known };
+}
+
+function srsResetLevel() {
+  const prefix = state.level + '::';
+  Object.keys(srsStore).forEach(k => { if (k.startsWith(prefix)) delete srsStore[k]; });
+  srsSave();
+}
+
+// Normalizes a typed answer for forgiving comparison.
+function normalizeAnswer(s) {
+  return String(s).trim().toLowerCase()
+    .replace(/\s+/g, ' ')
+    .replace(/[.!?,;:]+$/, '');
+}
+// Strips a leading article so "Tisch" matches "der Tisch" partially.
+function stripArticle(s) {
+  return s.replace(/^(der|die|das)\s+/i, '').trim();
+}
+// Levenshtein distance for "almost correct" feedback.
+function editDistance(a, b) {
+  const m = a.length, n = b.length;
+  if (!m) return n; if (!n) return m;
+  const dp = Array.from({ length: m + 1 }, (_, i) => [i, ...Array(n).fill(0)]);
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+  for (let i = 1; i <= m; i++) {
+    for (let j = 1; j <= n; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      dp[i][j] = Math.min(dp[i-1][j] + 1, dp[i][j-1] + 1, dp[i-1][j-1] + cost);
+    }
+  }
+  return dp[m][n];
+}
+
+/* =========================================================================
+   SIDEBAR
+   ========================================================================= */
+function renderSidebar() {
+  const sb = document.getElementById('sidebar');
+
+  // Grammatik sidebar
+  if (state.level === 'Grammatik') {
+    let html = `<div class="sidebar-title">Themen · Grammatik</div>`;
+    GRAMMAR_ORDER.forEach(topic => {
+      html += `<button class="cat-btn ${state.category === topic ? 'active' : ''}" data-cat="${escapeHtml(topic)}">
+        <span>${escapeHtml(topic)}</span>
+      </button>`;
+    });
+    sb.innerHTML = html;
+    sb.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.category = btn.dataset.cat;
+        renderSidebar();
+        renderMain();
+      });
+    });
+    return;
+  }
+
+  // Texte sidebar
+  if (state.level === 'Texte') {
+    let html = `<div class="sidebar-title">Lesetexte · Reading</div>`;
+    TEXTS.forEach(t => {
+      html += `<button class="cat-btn ${state.category === t.id ? 'active' : ''}" data-cat="${escapeHtml(t.id)}">
+        <span>${escapeHtml(t.title)}</span><span class="count">${escapeHtml(t.level)}</span>
+      </button>`;
+    });
+    sb.innerHTML = html;
+    sb.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        state.category = btn.dataset.cat;
+        renderSidebar();
+        renderMain();
+      });
+    });
+    return;
+  }
+
+  // Vocabulary sidebar (A1 / A2 / Alltag)
+  const levelData = VOCAB[state.level];
+  const total = Object.values(levelData).reduce((sum, arr) => sum + arr.length, 0);
+  let html = `<div class="sidebar-title">Kategorien · ${state.level}</div>`;
+  html += `<button class="cat-btn all ${state.category === 'all' ? 'active' : ''}" data-cat="all">
+    <span>Alle Wörter</span><span class="count">${total}</span>
+  </button>`;
+  for (const cat in levelData) {
+    html += `<button class="cat-btn ${state.category === cat ? 'active' : ''}" data-cat="${escapeHtml(cat)}">
+      <span>${escapeHtml(cat)}</span><span class="count">${levelData[cat].length}</span>
+    </button>`;
+  }
+  sb.innerHTML = html;
+  sb.querySelectorAll('.cat-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.category = btn.dataset.cat;
+      renderSidebar();
+      renderMain();
+    });
+  });
+}
+
+/* =========================================================================
+   BROWSE MODE
+   ========================================================================= */
+function renderBrowse() {
+  const words = currentWords();
+  const catLabel = state.category === 'all' ? 'Alle Wörter' : state.category;
+  let html = `
+    <div class="section-head">
+      <h2>${escapeHtml(catLabel)}</h2>
+      <span class="meta">${state.level} · ${words.length} ${words.length === 1 ? 'Wort' : 'Wörter'} · Tap to expand</span>
+    </div>
+  `;
+  if (!words.length) {
+    html += `<div class="empty">Keine Wörter gefunden. No words match your search.</div>`;
+  } else {
+    html += '<div class="grid">';
+    words.forEach((w, i) => {
+      html += `
+        <div class="word-card" data-idx="${i}">
+          ${w.art ? `<span class="article ${articleClass(w.art)}">${articleLabel(w.art)}</span>` : ''}
+          <div class="de-row">
+            <div class="de">${escapeHtml(w.de)}</div>
+            ${speakerBtnHTML()}
+          </div>
+          <div class="translations">
+            <div><span class="lang">EN</span>${escapeHtml(w.en)}</div>
+            <div><span class="lang">PT</span>${escapeHtml(w.pt)}</div>
+          </div>
+          <div class="example">
+            <em>${escapeHtml(w.ex)}</em>
+            <span class="ex-trans">${escapeHtml(w.exTr)}</span>
+          </div>
+        </div>
+      `;
+    });
+    html += '</div>';
+  }
+  document.getElementById('main').innerHTML = html;
+  document.querySelectorAll('.word-card').forEach((c, i) => {
+    const w = words[i];
+    // expand on card click, but not when the speaker button is pressed
+    c.addEventListener('click', () => c.classList.toggle('expanded'));
+    wireSpeaker(c, speakablePhrase(w));
+  });
+}
+
+/* =========================================================================
+   FLASHCARD MODE
+   ========================================================================= */
+function initFlashDeck() {
+  const words = currentWords();
+  state.flashDeck = state.srsEnabled ? srsOrder(words) : shuffle(words);
+  state.flashIdx = 0;
+  state.flashFlipped = false;
+  state.flashStats = { known: 0, unknown: 0 };
+}
+
+function srsBarHTML(words) {
+  const c = srsCounts(words);
+  const persistNote = srsPersist
+    ? 'Progress saved on this device.'
+    : 'Progress kept for this session only.';
+  return `<div class="srs-bar">
+    <span class="srs-stat"><span class="srs-dot due"></span> Fällig ${c.due}</span>
+    <span class="srs-stat"><span class="srs-dot learning"></span> Lernen ${c.learning}</span>
+    <span class="srs-stat"><span class="srs-dot known"></span> Gewusst ${c.known}</span>
+    <span class="srs-note">${persistNote}</span>
+    <button class="srs-reset" id="srsReset">Fortschritt zurücksetzen</button>
+  </div>`;
+}
+
+function renderFlash() {
+  if (!state.flashDeck.length) {
+    initFlashDeck();
+  }
+  const words = state.flashDeck;
+  if (!words.length) {
+    document.getElementById('main').innerHTML = `<div class="empty">Keine Karten. No cards to show.</div>`;
+    return;
+  }
+
+  if (state.flashIdx >= words.length) {
+    // advance the SRS session clock once a full pass completes
+    srsSessionCounter++;
+    srsSave();
+    const total = state.flashStats.known + state.flashStats.unknown;
+    document.getElementById('main').innerHTML = `
+      <div class="section-head">
+        <h2>Geschafft!</h2>
+        <span class="meta">${state.level} · Flashcard Session</span>
+      </div>
+      <div class="quiz-summary">
+        <div class="big-num">${state.flashStats.known}/${total}</div>
+        <div class="label">Bekannte Wörter${state.srsEnabled ? ' · weak words return sooner' : ''}</div>
+        <button class="flash-btn primary" id="flashRestart">Neu starten</button>
+      </div>
+    `;
+    document.getElementById('flashRestart').addEventListener('click', () => {
+      initFlashDeck();
+      renderFlash();
+    });
+    return;
+  }
+
+  const w = words[state.flashIdx];
+  const pct = ((state.flashIdx) / words.length) * 100;
+  const tier = srsTier(w);
+  const tierLabel = { due: 'Fällig', learning: 'Lernen', known: 'Gewusst' }[tier];
+
+  const html = `
+    <div class="section-head">
+      <h2>Flashcards</h2>
+      <span class="meta">${state.level} · ${state.category === 'all' ? 'Alle Kategorien' : state.category}</span>
+    </div>
+    ${state.srsEnabled ? srsBarHTML(currentWords()) : ''}
+    <div class="flash-stage">
+      <div class="flash-progress">
+        <span>Karte ${state.flashIdx + 1} / ${words.length}</span>
+        <div class="bar"><div class="bar-fill" style="width:${pct}%"></div></div>
+        <span>✓ ${state.flashStats.known} · ✗ ${state.flashStats.unknown}</span>
+      </div>
+      <div class="flashcard ${state.flashFlipped ? 'flipped' : ''}" id="flashcard">
+        <div class="flashcard-inner">
+          <div class="flash-side front">
+            ${state.srsEnabled ? `<span class="flash-srs-tag ${tier}">${tierLabel}</span>` : ''}
+            <span class="label">Deutsch</span>
+            ${w.art ? `<span class="article ${articleClass(w.art)}">${articleLabel(w.art)}</span>` : ''}
+            <div class="main-word">${escapeHtml(w.de)}</div>
+            ${speakerBtnHTML('lg')}
+            <div class="flash-hint" style="margin-top:18px">Klicken zum Umdrehen</div>
+          </div>
+          <div class="flash-side back">
+            <span class="label">EN · PT</span>
+            <div class="main-word" style="font-size:32px">${escapeHtml(w.en)}</div>
+            <div class="secondary">${escapeHtml(w.pt)}</div>
+            <div class="ex"><em>${escapeHtml(w.ex)}</em><br><span style="font-size:12px;color:var(--gray)">${escapeHtml(w.exTr)}</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="flash-controls">
+        <button class="flash-btn dont" id="flashDont">Nochmal üben ✗</button>
+        <button class="flash-btn" id="flashFlip">${state.flashFlipped ? 'Frage' : 'Antwort'}</button>
+        <button class="flash-btn know" id="flashKnow">Gewusst ✓</button>
+      </div>
+    </div>
+  `;
+  document.getElementById('main').innerHTML = html;
+
+  const card = document.getElementById('flashcard');
+  // speaker button lives on the front face; wire it without flipping the card
+  wireSpeaker(card, speakablePhrase(w));
+  card.addEventListener('click', (e) => {
+    if (e.target.closest('[data-speak]')) return;
+    state.flashFlipped = !state.flashFlipped;
+    renderFlash();
+  });
+  document.getElementById('flashFlip').addEventListener('click', (e) => {
+    e.stopPropagation();
+    state.flashFlipped = !state.flashFlipped;
+    renderFlash();
+  });
+  document.getElementById('flashKnow').addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (state.srsEnabled) srsUpdate(w, true);
+    state.flashStats.known++;
+    state.flashIdx++;
+    state.flashFlipped = false;
+    renderFlash();
+  });
+  document.getElementById('flashDont').addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (state.srsEnabled) srsUpdate(w, false);
+    state.flashStats.unknown++;
+    state.flashIdx++;
+    state.flashFlipped = false;
+    renderFlash();
+  });
+  const resetBtn = document.getElementById('srsReset');
+  if (resetBtn) {
+    resetBtn.addEventListener('click', () => {
+      srsResetLevel();
+      initFlashDeck();
+      renderFlash();
+    });
+  }
+}
+
+/* =========================================================================
+   WRITE / SCHREIBEN MODE — active recall: type the German from EN/PT cue
+   ========================================================================= */
+function initWriteDeck() {
+  const words = currentWords();
+  state.writeDeck = (state.srsEnabled ? srsOrder(words) : shuffle(words)).slice(0, Math.min(15, words.length));
+  state.writeIdx = 0;
+  state.writeScore = 0;
+  state.writeAnswered = false;
+}
+
+function evaluateAnswer(input, w) {
+  const guess = normalizeAnswer(input);
+  if (!guess) return { verdict: 'no' };
+
+  const target = normalizeAnswer(w.de);
+  const targetNoArt = normalizeAnswer(stripArticle(w.de));
+  const guessNoArt = normalizeAnswer(stripArticle(input));
+
+  // Exact (with or without article)
+  if (guess === target) return { verdict: 'ok', exact: true };
+  if (guessNoArt === targetNoArt) {
+    // correct word — but did they need an article and miss/wrong it?
+    const needsArticle = (w.art === 'der' || w.art === 'die' || w.art === 'das');
+    if (needsArticle && guess !== target) {
+      return { verdict: 'partly', reason: 'article' };
+    }
+    return { verdict: 'ok', exact: true };
+  }
+  // Almost — small typo (edit distance 1 on the no-article form)
+  if (targetNoArt.length >= 4 && editDistance(guessNoArt, targetNoArt) <= 1) {
+    return { verdict: 'partly', reason: 'typo' };
+  }
+  return { verdict: 'no' };
+}
+
+function renderWrite() {
+  if (!state.writeDeck.length) initWriteDeck();
+  if (!state.writeDeck.length) {
+    document.getElementById('main').innerHTML = `<div class="empty">Keine Wörter zum Üben.</div>`;
+    return;
+  }
+
+  if (state.writeIdx >= state.writeDeck.length) {
+    srsSessionCounter++; srsSave();
+    const total = state.writeDeck.length;
+    const pct = Math.round((state.writeScore / total) * 100);
+    document.getElementById('main').innerHTML = `
+      <div class="section-head"><h2>Fertig!</h2><span class="meta">${state.level} · Schreiben</span></div>
+      <div class="quiz-summary">
+        <div class="big-num">${state.writeScore}/${total}</div>
+        <div class="label">${pct}% richtig geschrieben</div>
+        <button class="flash-btn primary" id="writeRestart">Nochmal</button>
+      </div>
+    `;
+    document.getElementById('writeRestart').addEventListener('click', () => { initWriteDeck(); renderWrite(); });
+    return;
+  }
+
+  const w = state.writeDeck[state.writeIdx];
+  const needsArticle = (w.art === 'der' || w.art === 'die' || w.art === 'das');
+
+  document.getElementById('main').innerHTML = `
+    <div class="section-head">
+      <h2>Schreiben</h2>
+      <span class="meta">${state.level} · Type the German</span>
+    </div>
+    <div class="write-stage">
+      <div class="write-card">
+        <div class="write-header">
+          <span>Wort ${state.writeIdx + 1} / ${state.writeDeck.length}</span>
+          <span class="write-score">Punkte: ${state.writeScore}</span>
+        </div>
+        <div class="write-prompt-label">Schreibe auf Deutsch</div>
+        <div class="write-cue">${escapeHtml(w.en)}</div>
+        <div class="write-cue-sub">${escapeHtml(w.pt)}</div>
+        ${needsArticle ? `<div class="write-hint-art">Tipp: mit Artikel (der / die / das)</div>` : ''}
+        <div class="write-input-row">
+          <input class="write-input" id="writeInput" type="text" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="…" />
+          ${speakerBtnHTML('lg')}
+        </div>
+        <div id="writeFeedback"></div>
+      </div>
+    </div>
+  `;
+
+  const input = document.getElementById('writeInput');
+  const feedback = document.getElementById('writeFeedback');
+  // Speaker reads the correct answer (useful after answering, but available anytime)
+  wireSpeaker(document.querySelector('.write-input-row'), speakablePhrase(w));
+
+  function submit() {
+    if (state.writeAnswered) { advance(); return; }
+    const res = evaluateAnswer(input.value, w);
+    state.writeAnswered = true;
+    const correct = res.verdict === 'ok';
+    if (correct) state.writeScore++;
+    if (state.srsEnabled) srsUpdate(w, correct);
+
+    input.classList.add(res.verdict === 'ok' ? 'correct' : res.verdict === 'partly' ? 'close' : 'wrong');
+    input.disabled = true;
+
+    let verdictText, verdictClass;
+    if (res.verdict === 'ok') { verdictText = 'Richtig! ✓'; verdictClass = 'ok'; }
+    else if (res.verdict === 'partly' && res.reason === 'article') { verdictText = 'Fast — falscher/fehlender Artikel'; verdictClass = 'partly'; }
+    else if (res.verdict === 'partly' && res.reason === 'typo') { verdictText = 'Fast — kleiner Tippfehler'; verdictClass = 'partly'; }
+    else { verdictText = 'Nicht ganz ✗'; verdictClass = 'no'; }
+
+    feedback.innerHTML = `
+      <div class="write-feedback">
+        <div class="write-verdict ${verdictClass}">${verdictText}</div>
+        <div class="write-answer">Antwort: <span class="ans-de">${escapeHtml(w.de)}</span></div>
+        <div class="write-ex"><em>${escapeHtml(w.ex)}</em><span class="tr">${escapeHtml(w.exTr)}</span></div>
+        <div style="margin-top:16px"><button class="flash-btn primary" id="writeNext">Weiter →</button></div>
+      </div>
+    `;
+    document.getElementById('writeNext').addEventListener('click', advance);
+  }
+
+  function advance() {
+    state.writeIdx++;
+    state.writeAnswered = false;
+    renderWrite();
+  }
+
+  input.addEventListener('keydown', (e) => { if (e.key === 'Enter') { e.preventDefault(); submit(); } });
+  input.focus();
+}
+
+/* =========================================================================
+   QUIZ MODE
+   ========================================================================= */
+function initQuizDeck() {
+  state.quizDeck = shuffle(currentWords()).slice(0, Math.min(15, currentWords().length));
+  state.quizIdx = 0;
+  state.quizScore = 0;
+  state.quizAnswered = false;
+  state.quizSelectedOption = null;
+  state.quizCorrectOption = null;
+}
+
+function buildQuizQuestion(idx) {
+  const allWords = currentWords();
+  const correct = state.quizDeck[idx];
+  const distractors = shuffle(allWords.filter(w => w.de !== correct.de)).slice(0, 3);
+  const options = shuffle([correct, ...distractors]);
+  return { correct, options };
+}
+
+let currentQuizQ = null;
+
+function renderQuiz() {
+  if (state.quizDeck.length === 0) initQuizDeck();
+
+  if (state.quizDeck.length === 0) {
+    document.getElementById('main').innerHTML = `<div class="empty">Nicht genug Wörter für ein Quiz.</div>`;
+    return;
+  }
+
+  if (state.quizIdx >= state.quizDeck.length) {
+    const total = state.quizDeck.length;
+    const pct = Math.round((state.quizScore / total) * 100);
+    document.getElementById('main').innerHTML = `
+      <div class="section-head"><h2>Quiz beendet</h2><span class="meta">${state.level}</span></div>
+      <div class="quiz-summary">
+        <div class="big-num">${state.quizScore}/${total}</div>
+        <div class="label">${pct}% korrekt</div>
+        <button class="flash-btn primary" id="quizRestart">Neues Quiz</button>
+      </div>
+    `;
+    document.getElementById('quizRestart').addEventListener('click', () => {
+      initQuizDeck();
+      currentQuizQ = null;
+      renderQuiz();
+    });
+    return;
+  }
+
+  if (!state.quizAnswered) {
+    currentQuizQ = buildQuizQuestion(state.quizIdx);
+  }
+  const q = currentQuizQ;
+
+  let html = `
+    <div class="section-head">
+      <h2>Quiz</h2>
+      <span class="meta">${state.level} · Multiple Choice</span>
+    </div>
+    <div class="quiz-stage">
+      <div class="quiz-card">
+        <div class="quiz-header">
+          <span>Frage ${state.quizIdx + 1} / ${state.quizDeck.length}</span>
+          <span class="quiz-score">Punkte: ${state.quizScore}</span>
+        </div>
+        <div class="quiz-prompt">Was bedeutet auf Englisch?</div>
+        <div class="quiz-word">
+          ${q.correct.art && (q.correct.art === 'der' || q.correct.art === 'die' || q.correct.art === 'das') ? `<span class="article-tag ${articleClass(q.correct.art)}">${q.correct.art}</span>` : ''}
+          ${escapeHtml(q.correct.de)}
+        </div>
+        <div class="quiz-options">
+  `;
+  q.options.forEach((opt, i) => {
+    const letter = ['A','B','C','D'][i];
+    let cls = 'quiz-option';
+    if (state.quizAnswered) {
+      if (opt.de === q.correct.de) cls += ' correct';
+      else if (i === state.quizSelectedOption) cls += ' wrong';
+    }
+    html += `<button class="${cls}" data-i="${i}" ${state.quizAnswered ? 'disabled' : ''}>
+      <span class="key">${letter}</span><span>${escapeHtml(opt.en)}</span>
+    </button>`;
+  });
+  html += `
+        </div>
+        ${state.quizAnswered ? `
+          <div class="quiz-next">
+            <div style="font-size:14px;color:var(--ink-soft);margin-bottom:12px;font-style:italic">
+              ${escapeHtml(q.correct.ex)} <span style="color:var(--gray)">— ${escapeHtml(q.correct.exTr)}</span>
+            </div>
+            <button class="flash-btn primary" id="quizNext">Weiter →</button>
+          </div>
+        ` : ''}
+      </div>
+    </div>
+  `;
+  document.getElementById('main').innerHTML = html;
+
+  if (!state.quizAnswered) {
+    document.querySelectorAll('.quiz-option').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const i = parseInt(btn.dataset.i);
+        state.quizSelectedOption = i;
+        state.quizAnswered = true;
+        if (q.options[i].de === q.correct.de) {
+          state.quizScore++;
+        }
+        renderQuiz();
+      });
+    });
+  } else {
+    document.getElementById('quizNext').addEventListener('click', () => {
+      state.quizIdx++;
+      state.quizAnswered = false;
+      state.quizSelectedOption = null;
+      renderQuiz();
+    });
+  }
+}
+
+/* =========================================================================
+   MATCH MODE
+   ========================================================================= */
+function initMatch() {
+  const pool = shuffle(currentWords()).slice(0, 8);
+  const deTiles = pool.map(w => ({ id: w.de, type: 'de', text: w.de, art: w.art }));
+  const enTiles = pool.map(w => ({ id: w.de, type: 'en', text: w.en }));
+  state.matchTiles = shuffle([...deTiles, ...enTiles]).map((t, i) => ({ ...t, key: i, matched: false }));
+  state.matchSelected = null;
+  state.matchPairsCount = 0;
+}
+
+function renderMatch() {
+  if (!state.matchTiles.length) initMatch();
+  const allMatched = state.matchTiles.every(t => t.matched);
+
+  if (allMatched && state.matchTiles.length) {
+    document.getElementById('main').innerHTML = `
+      <div class="section-head"><h2>Alles gefunden!</h2><span class="meta">${state.level}</span></div>
+      <div class="quiz-summary">
+        <div class="big-num">${state.matchPairsCount}</div>
+        <div class="label">Paare gefunden</div>
+        <button class="flash-btn primary" id="matchRestart">Neues Spiel</button>
+      </div>
+    `;
+    document.getElementById('matchRestart').addEventListener('click', () => {
+      initMatch();
+      renderMatch();
+    });
+    return;
+  }
+
+  let html = `
+    <div class="section-head">
+      <h2>Match</h2>
+      <span class="meta">${state.level} · Paare verbinden</span>
+    </div>
+    <div class="match-stage">
+      <div class="match-header">Tippe ein deutsches Wort und seine Übersetzung · Pair the German word with its translation</div>
+      <div class="match-grid">
+  `;
+  state.matchTiles.forEach(t => {
+    const cls = 'match-tile ' + t.type + (t.matched ? ' matched' : '') + (state.matchSelected === t.key ? ' selected' : '');
+    html += `<button class="${cls}" data-key="${t.key}" ${t.matched ? 'disabled' : ''}>
+      ${t.type === 'de' && t.art && (t.art === 'der' || t.art === 'die' || t.art === 'das') ? `<span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray);margin-right:8px">${t.art}</span>` : ''}
+      ${escapeHtml(t.text)}
+    </button>`;
+  });
+  html += `</div></div>`;
+  document.getElementById('main').innerHTML = html;
+
+  document.querySelectorAll('.match-tile').forEach(el => {
+    el.addEventListener('click', () => {
+      const key = parseInt(el.dataset.key);
+      const tile = state.matchTiles.find(t => t.key === key);
+      if (!tile || tile.matched) return;
+
+      if (state.matchSelected === null) {
+        state.matchSelected = key;
+        renderMatch();
+        return;
+      }
+      if (state.matchSelected === key) {
+        state.matchSelected = null;
+        renderMatch();
+        return;
+      }
+      const first = state.matchTiles.find(t => t.key === state.matchSelected);
+      if (first.type !== tile.type && first.id === tile.id) {
+        // match!
+        first.matched = true;
+        tile.matched = true;
+        state.matchSelected = null;
+        state.matchPairsCount++;
+        renderMatch();
+      } else {
+        // wrong - shake
+        const prev = state.matchSelected;
+        state.matchSelected = null;
+        renderMatch();
+        const el1 = document.querySelector(`.match-tile[data-key="${prev}"]`);
+        const el2 = document.querySelector(`.match-tile[data-key="${key}"]`);
+        if (el1) el1.classList.add('wrong-shake');
+        if (el2) el2.classList.add('wrong-shake');
+        setTimeout(() => {
+          if (el1) el1.classList.remove('wrong-shake');
+          if (el2) el2.classList.remove('wrong-shake');
+        }, 350);
+      }
+    });
+  });
+}
+
+/* =========================================================================
+   GRAMMATIK RENDERING
+   ========================================================================= */
+function caseTableDefinite() {
+  const rows = [
+    ["Nominativ", "der", "die", "das", "die", false, "subject — Wer/Was?"],
+    ["Akkusativ", "den", "die", "das", "die", false, "direct object — Wen?"],
+    ["Dativ", "dem", "der", "dem", "den +n", true, "indirect object — Wem?"]
+  ];
+  let h = `<div class="gram-table-wrap"><table class="gram"><thead><tr>
+    <th>Kasus</th><th class="col-m">maskulin</th><th class="col-f">feminin</th><th class="col-n">neutrum</th><th class="col-pl">Plural</th>
+  </tr></thead><tbody>`;
+  rows.forEach(r => {
+    h += `<tr class="${r[5] ? 'highlight' : ''}">
+      <th>${r[0]}<span class="hint" style="text-transform:none;letter-spacing:0;color:var(--gray);font-weight:400">${r[6]}</span></th>
+      <td><span class="form">${r[1]}</span></td>
+      <td><span class="form">${r[2]}</span></td>
+      <td><span class="form">${r[3]}</span></td>
+      <td><span class="form">${r[4]}</span></td>
+    </tr>`;
+  });
+  h += `</tbody></table></div>`;
+  return h;
+}
+
+function caseTableIndefinite() {
+  const rows = [
+    ["Nominativ", "ein", "eine", "ein", false],
+    ["Akkusativ", "einen", "eine", "ein", false],
+    ["Dativ", "einem", "einer", "einem", true]
+  ];
+  let h = `<div class="gram-table-wrap"><table class="gram"><thead><tr>
+    <th>Kasus</th><th class="col-m">maskulin</th><th class="col-f">feminin</th><th class="col-n">neutrum</th>
+  </tr></thead><tbody>`;
+  rows.forEach(r => {
+    h += `<tr class="${r[4] ? 'highlight' : ''}">
+      <th>${r[0]}</th>
+      <td><span class="form">${r[1]}</span></td>
+      <td><span class="form">${r[2]}</span></td>
+      <td><span class="form">${r[3]}</span></td>
+    </tr>`;
+  });
+  h += `</tbody></table></div>`;
+  return h;
+}
+
+function pronounTable() {
+  const rows = [
+    ["ich", "mir", "I → (to) me"],
+    ["du", "dir", "you → (to) you"],
+    ["er", "ihm", "he → (to) him"],
+    ["sie", "ihr", "she → (to) her"],
+    ["es", "ihm", "it → (to) it"],
+    ["wir", "uns", "we → (to) us"],
+    ["ihr", "euch", "you (pl) → (to) you"],
+    ["sie", "ihnen", "they → (to) them"],
+    ["Sie", "Ihnen", "you (formal) → (to) you"]
+  ];
+  let h = `<div class="gram-table-wrap"><table class="gram"><thead><tr>
+    <th>Nominativ</th><th>Dativ</th><th>English</th>
+  </tr></thead><tbody>`;
+  rows.forEach(r => {
+    h += `<tr>
+      <td><span class="form">${r[0]}</span></td>
+      <td class="highlight" style="background:#F7EDD3"><span class="form">${r[1]}</span></td>
+      <td style="color:var(--gray);font-size:13px">${r[2]}</td>
+    </tr>`;
+  });
+  h += `</tbody></table></div>`;
+  return h;
+}
+
+function renderGrammarNomDat() {
+  return `
+    <div class="gram-intro">
+      In German, a noun changes its <strong>article</strong> depending on its role in the sentence — this is called a <strong>case (Kasus)</strong>. The <strong>Nominativ</strong> marks the subject (the doer), and the <strong>Dativ</strong> marks the indirect object (the receiver — "to/for whom"). Akkusativ is shown too for contrast.
+    </div>
+
+    <div class="gram-block">
+      <h3>Bestimmter Artikel</h3>
+      <div class="sub">Definite article — "the"</div>
+      ${caseTableDefinite()}
+      <div class="gram-note"><strong>Dativ-Plural rule:</strong> in the dative plural, the article becomes <em>den</em> and the noun adds <strong>-n</strong> (if it doesn't already end in one): die Kinder → mit <em>den Kinder<strong>n</strong></em>.</div>
+    </div>
+
+    <div class="gram-block">
+      <h3>Unbestimmter Artikel</h3>
+      <div class="sub">Indefinite article — "a / an"</div>
+      ${caseTableIndefinite()}
+      <div class="gram-note">The same endings apply to <strong>kein-</strong> and all possessives (<em>mein, dein, sein, ihr…</em>): <em>mit mein<strong>em</strong> Bruder</em>, <em>aus ein<strong>er</strong> Stadt</em>.</div>
+    </div>
+
+    <div class="gram-block">
+      <h3>Personalpronomen</h3>
+      <div class="sub">Personal pronouns: Nominativ → Dativ</div>
+      ${pronounTable()}
+    </div>
+
+    <div class="gram-block">
+      <h3>Sehen Sie den Unterschied</h3>
+      <div class="sub">The same noun in different cases</div>
+      <div class="gram-list">
+        <div class="gram-item">
+          <div class="head"><span class="word">Der Mann</span><span class="gloss">Nominativ</span></div>
+          <div class="ex"><b>Der Mann</b> liest. <span class="tr">The man reads. (he is the subject)</span></div>
+        </div>
+        <div class="gram-item">
+          <div class="head"><span class="word">dem Mann</span><span class="gloss">Dativ</span></div>
+          <div class="ex">Ich gebe <b>dem Mann</b> ein Buch. <span class="tr">I give the man a book. (he receives it)</span></div>
+        </div>
+        <div class="gram-item">
+          <div class="head"><span class="word">Die Frau</span><span class="gloss">Nominativ</span></div>
+          <div class="ex"><b>Die Frau</b> arbeitet. <span class="tr">The woman works.</span></div>
+        </div>
+        <div class="gram-item">
+          <div class="head"><span class="word">der Frau</span><span class="gloss">Dativ</span></div>
+          <div class="ex">Ich helfe <b>der Frau</b>. <span class="tr">I help the woman.</span></div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderGrammarDativ() {
+  let prep = `<div class="gram-list">`;
+  DAT_PREP.forEach(p => {
+    prep += `<div class="gram-item">
+      <div class="head"><span class="word">${p.w}</span><span class="gloss">${p.g}</span></div>
+      <div class="ex">${p.ex} <span class="tr">${p.tr}</span></div>
+    </div>`;
+  });
+  prep += `</div>`;
+
+  let verb = `<div class="gram-list">`;
+  DAT_VERB.forEach(v => {
+    verb += `<div class="gram-item">
+      <div class="head"><span class="word">${v.w}</span><span class="gloss">${v.g}</span></div>
+      <div class="ex">${v.ex} <span class="tr">${v.tr}</span></div>
+    </div>`;
+  });
+  verb += `</div>`;
+
+  return `
+    <div class="gram-intro">
+      Two things reliably trigger the <strong>Dativ</strong>: certain <strong>prepositions</strong> (always) and certain <strong>verbs</strong> (their object goes in the dative). Memorize them as fixed sets.
+    </div>
+
+    <div class="gram-block">
+      <h3>Dativ-Präpositionen</h3>
+      <div class="sub">These 9 prepositions always take the dative</div>
+      ${prep}
+      <div class="gram-note"><strong>Rhythm trick:</strong> say them as a chant — <em>"aus, außer, bei, mit, nach, seit, von, zu"</em> (plus gegenüber). <strong>Contractions:</strong> bei+dem = <em>beim</em>, von+dem = <em>vom</em>, zu+dem = <em>zum</em>, zu+der = <em>zur</em>.</div>
+    </div>
+
+    <div class="gram-block">
+      <h3>Dativ-Verben</h3>
+      <div class="sub">Their object takes the dative, not the accusative</div>
+      ${verb}
+      <div class="gram-note"><strong>Watch out:</strong> <em>gefallen</em> and <em>schmecken</em> work "backwards" vs. English. The thing liked is the <em>subject</em>, and the person is the <em>dative object</em>: "Der Kuchen schmeckt mir" = literally "the cake tastes good <em>to me</em>".</div>
+    </div>
+  `;
+}
+
+function renderGrammarIrregular() {
+  let h = `
+    <div class="gram-intro">
+      <strong>Strong verbs</strong> change their stem vowel in the past instead of adding <em>-te</em>. Learn each in four parts: the <strong>infinitive</strong>, the <strong>3rd-person present</strong> (often vowel-changing), the <strong>Präteritum</strong> (written past), and the <strong>Partizip II</strong> (used with <em>haben/sein</em> for the spoken perfect). The colour shows the auxiliary.
+    </div>
+    <div class="gram-table-wrap"><table class="gram"><thead><tr>
+      <th>Infinitiv</th><th>Präsens (er/sie/es)</th><th>Präteritum</th><th>Partizip II</th><th>English</th>
+    </tr></thead><tbody>`;
+  IRREG.forEach(v => {
+    const auxClass = v[4] === 's' ? 'aux-sein' : 'aux-haben';
+    const auxWord = v[4] === 's' ? 'ist' : 'hat';
+    h += `<tr>
+      <td class="de-cell">${v[0]}</td>
+      <td><span class="form">${v[1]}</span></td>
+      <td><span class="form">${v[2]}</span></td>
+      <td class="${auxClass}">${auxWord} ${v[3]}</td>
+      <td style="color:var(--gray);font-size:13px">${v[5]}</td>
+    </tr>`;
+  });
+  h += `</tbody></table></div>
+    <div class="legend">
+      <span><span class="dot haben"></span> haben (most verbs)</span>
+      <span><span class="dot sein"></span> sein (movement / change of state)</span>
+    </div>
+    <div class="gram-note"><strong>Patterns help:</strong> many follow predictable vowel shifts — e→i/ie in the present (geben→gibt, sehen→sieht), and i→a→u across the parts (finden, fand, gefunden; trinken, trank, getrunken). The last four (<em>wissen, denken, bringen, kennen</em>) are <strong>mixed verbs</strong>: vowel change + regular <em>-te</em>/<em>-t</em> endings.</div>
+  `;
+  return h;
+}
+
+function renderGrammar() {
+  if (!GRAMMAR_ORDER.includes(state.category)) state.category = GRAMMAR_ORDER[0];
+  let body = '';
+  if (state.category === "Nominativ & Dativ") body = renderGrammarNomDat();
+  else if (state.category === "Dativ: Präpositionen & Verben") body = renderGrammarDativ();
+  else if (state.category === "Unregelmäßige Verben") body = renderGrammarIrregular();
+
+  document.getElementById('main').innerHTML = `
+    <div class="section-head">
+      <h2>${escapeHtml(state.category)}</h2>
+      <span class="meta">Grammatik · Reference</span>
+    </div>
+    ${body}
+  `;
+}
+
+/* =========================================================================
+   TEXTE RENDERING
+   ========================================================================= */
+function renderTexte() {
+  const text = TEXTS.find(t => t.id === state.category) || TEXTS[0];
+  state.category = text.id;
+
+  let paras = '';
+  text.paras.forEach((p, i) => {
+    paras += `<p data-para="${i}">${escapeHtml(p.de)} <span class="vw-speak">${speakerBtnHTML()}</span>
+      <span class="trans">${escapeHtml(p.en)}<span class="pt-line">${escapeHtml(p.pt)}</span></span>
+    </p>`;
+  });
+
+  let gloss = '';
+  text.gloss.forEach((g, i) => {
+    gloss += `<div class="gloss-row" data-gloss="${i}">
+      <div class="g-de" style="display:flex;align-items:center;gap:8px">${escapeHtml(g[0])} ${speakerBtnHTML()}</div>
+      <div class="g-en">${escapeHtml(g[1])}</div>
+      <div class="g-pt">${escapeHtml(g[2])}</div>
+    </div>`;
+  });
+
+  document.getElementById('main').innerHTML = `
+    <div class="section-head">
+      <h2>${escapeHtml(text.title)}</h2>
+      <span class="meta">Lesetext · Reading</span>
+    </div>
+    <div class="text-stage">
+      <div class="text-meta-bar">
+        <span class="text-level-badge">${escapeHtml(text.level)}</span>
+        <button class="text-toggle-btn" id="transToggle">Übersetzung zeigen</button>
+        ${SPEECH_OK ? `<button class="text-toggle-btn" id="readAll">▶ Ganzen Text vorlesen</button>` : ''}
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gray)">Toggle EN + PT · 🔊 to listen</span>
+      </div>
+      <div class="text-body" id="textBody">
+        ${paras}
+      </div>
+      <div class="text-glossary">
+        <div class="gloss-head">Wortschatz · Glossary</div>
+        <div class="gloss-grid">${gloss}</div>
+      </div>
+    </div>
+  `;
+
+  const toggle = document.getElementById('transToggle');
+  const body = document.getElementById('textBody');
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('show-trans');
+    const on = body.classList.contains('show-trans');
+    toggle.classList.toggle('on', on);
+    toggle.textContent = on ? 'Übersetzung verbergen' : 'Übersetzung zeigen';
+  });
+
+  // Per-paragraph speakers
+  body.querySelectorAll('p[data-para]').forEach(p => {
+    const idx = parseInt(p.dataset.para);
+    wireSpeaker(p, text.paras[idx].de);
+  });
+  // Glossary speakers
+  document.querySelectorAll('.gloss-row[data-gloss]').forEach(row => {
+    const idx = parseInt(row.dataset.gloss);
+    // strip parenthetical grammar notes like "(+ Dativ)" for cleaner TTS
+    wireSpeaker(row, text.gloss[idx][0].replace(/\s*\(.*?\)\s*/g, ' ').trim());
+  });
+  // Read whole text (paragraph by paragraph)
+  const readAll = document.getElementById('readAll');
+  if (readAll) {
+    readAll.addEventListener('click', () => {
+      if (!SPEECH_OK) return;
+      window.speechSynthesis.cancel();
+      text.paras.forEach(p => {
+        const u = new SpeechSynthesisUtterance(p.de);
+        u.lang = 'de-DE';
+        if (deVoice) u.voice = deVoice;
+        u.rate = 0.92;
+        window.speechSynthesis.speak(u);
+      });
+    });
+  }
+}
+
+/* =========================================================================
+   ROUTER
+   ========================================================================= */
+function renderMain() {
+  const modeBar = document.getElementById('modeBar');
+
+  // Grammatik & Texte are study sections — hide the vocab mode bar
+  if (state.level === 'Grammatik') {
+    modeBar.style.display = 'none';
+    renderGrammar();
+    return;
+  }
+  if (state.level === 'Texte') {
+    modeBar.style.display = 'none';
+    renderTexte();
+    return;
+  }
+
+  modeBar.style.display = '';
+  if (state.mode === 'browse') {
+    renderBrowse();
+  } else if (state.mode === 'flash') {
+    initFlashDeck();
+    renderFlash();
+  } else if (state.mode === 'write') {
+    initWriteDeck();
+    renderWrite();
+  } else if (state.mode === 'quiz') {
+    initQuizDeck();
+    currentQuizQ = null;
+    renderQuiz();
+  } else if (state.mode === 'match') {
+    initMatch();
+    renderMatch();
+  }
+}
+
+/* =========================================================================
+   INIT
+   ========================================================================= */
+document.querySelectorAll('#levelToggle button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    if (SPEECH_OK) window.speechSynthesis.cancel();
+    document.querySelectorAll('#levelToggle button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.level = btn.dataset.level;
+    // Set a sensible default selection for the section
+    if (state.level === 'Grammatik') state.category = GRAMMAR_ORDER[0];
+    else if (state.level === 'Texte') state.category = TEXTS[0].id;
+    else state.category = 'all';
+    renderSidebar();
+    renderMain();
+  });
+});
+
+document.querySelectorAll('.mode-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    if (SPEECH_OK) window.speechSynthesis.cancel();
+    document.querySelectorAll('.mode-tab').forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    state.mode = tab.dataset.mode;
+    renderMain();
+  });
+});
+
+document.getElementById('search').addEventListener('input', (e) => {
+  state.search = e.target.value;
+  if ((state.level === 'A1' || state.level === 'A2' || state.level === 'Alltag') && state.mode === 'browse') {
+    renderBrowse();
+  }
+});
+
+renderSidebar();
+renderMain();
+</script>
+</body>
+</html>
